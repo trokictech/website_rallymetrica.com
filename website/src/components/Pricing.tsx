@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Container } from '@/components/Container'
 import { plans } from '@/lib/site'
 
@@ -20,6 +21,7 @@ export function Pricing() {
         </div>)}
       </div>
       <p className="mt-8 text-center text-xs leading-5 text-muted">Subscriptions renew through the App Store and can be changed or cancelled any time in Settings › Plan. Your matches stay on your phone whichever plan you are on.</p>
+      <p className="mt-3 text-center text-xs leading-5"><Link href="/learn/stats-engine" className="font-semibold text-accent hover:underline">What the stats engine measures <span aria-hidden="true">↗</span></Link></p>
     </Container>
   </section>
 }

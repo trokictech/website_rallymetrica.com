@@ -14,13 +14,13 @@ export function Hero() {
         <div className="mt-9 flex flex-wrap items-center gap-4"><AppStoreLink /><Button href="/#pricing" variant="outline">See the plans <span aria-hidden="true">↗</span></Button></div>
         <p className="mt-5 text-xs leading-5"><a href="#privacy" className="text-ink hover:underline">It’s your data. <span className="font-semibold text-accent">You own it.</span> ↗</a><span className="block text-muted">Matches live on your phone. Sharing is end-to-end encrypted.</span></p>
       </div>
-      <div className="relative mx-auto flex w-full max-w-[560px] items-start justify-between gap-6 lg:-mt-2">
+      <div className="relative mx-auto flex w-full max-w-[560px] items-start justify-between gap-4 sm:gap-6 lg:-mt-2">
         <div className="hero-glow pointer-events-none absolute -inset-x-16 top-10 bottom-0" aria-hidden="true" />
-        <div className="relative z-10 flex flex-col items-start gap-5 pt-10 sm:pt-16">
-          <img src="/mark.svg" alt="" width={176} height={176} className="h-[132px] w-[132px] sm:h-[176px] sm:w-[176px]" />
-          <p className="max-w-[200px] text-sm leading-6 text-muted">The score, the shots and the rallies — recorded from the side of the court, one tap per ball.</p>
+        <div className="relative z-10 flex flex-col items-start gap-5 pt-8 sm:pt-16">
+          <img src="/mark.svg" alt="" width={176} height={176} className="h-[96px] w-[96px] sm:h-[176px] sm:w-[176px]" />
+          <p className="hidden max-w-[200px] text-sm leading-6 text-muted sm:block">The score, the shots and the rallies — recorded from the side of the court, one tap per ball.</p>
         </div>
-        <AppScreenshot name="live" alt="Rallymetrica live court with the score and detailed shot tracking" priority className="relative z-10 w-[230px] shrink-0 sm:w-[285px]" />
+        <AppScreenshot name="live" alt="Rallymetrica live court with the score and detailed shot tracking" priority className="relative z-10 w-[min(230px,56vw)] shrink-0 sm:w-[285px]" />
       </div>
     </Container>
   </section>
