@@ -25,7 +25,7 @@ export const guides: Guide[] = [
     notes: ['Setup opens with your saved default rules and tracking level.', 'If you adjust a player’s zone traits during setup, those changes apply to this match only.', 'You can start without waiting for weather.'],
   },
   {
-    slug: 'tracking-modes', title: 'Choose your tracking mode', description: 'Find the right balance between simple scoring and detailed insight.', category: 'Getting started', duration: '3 min', screen: 'live-counter', screenAlt: 'Tracking settings in Rallymetrica',
+    slug: 'tracking-modes', title: 'Choose your tracking mode', description: 'Find the right balance between simple scoring and detailed insight.', category: 'Getting started', duration: '3 min', screen: 'live-counter', screenAlt: 'The live court in Counter mode: one tap per shot, then the ending',
     intro: 'The data you record determines the insight you can review. Choose a level that is practical for the match you are watching.',
     steps: [
       { title: 'Open the tracking options', body: 'Go to **New match → Tracking**. The three choices are **Score**, **Counter**, and **Detailed**.' },
@@ -86,7 +86,7 @@ export const guides: Guide[] = [
     notes: ['Points arrive on the coach’s phone in the background, with a notification every set, game or point as the coach chooses under Settings → Notifications — per student under Settings → Students. Unfinished shot taps are not shared until the point is saved.', 'Offline updates queue and sync in order when connectivity returns. Offline unlinking also waits for connectivity to notify the other phone.', 'Shared matches are read-only on the coach’s phone; the recording phone controls the match.', 'The delivery relay stores encrypted messages until retrieval, plus device and connection details. It cannot read the shared match content.', 'Unlinking does not remove independently recorded coach matches or copies already exported or shared outside the link. Pausing stops new updates and keeps received copies.', 'Detailed tracking supplies the placements needed for full rally replay and pattern execution results.'],
   },
   {
-    slug: 'coaching-patterns', title: 'Assign a pattern. Measure its success.', description: 'Create patterns of play, assign them to players, and review execution and points won.', category: 'Coaching', duration: '6 min', screen: 'patterns', screenAlt: 'Rallymetrica coach pattern editor with court and player assignments',
+    slug: 'coaching-patterns', title: 'Assign a pattern. Measure its success.', description: 'Create patterns of play, assign them to players, and review execution and points won.', category: 'Coaching', duration: '6 min', screen: 'pattern-editor', screenAlt: 'Rallymetrica coach pattern editor with a drawn shot sequence and Assign to',
     intro: 'Turn a tactical idea into a sequence you can draw and assign. Detailed match reports connect the plan with its execution: how often the sequence was completed, and how often those points were won.',
     steps: [
       { title: 'Open the pattern library', body: 'On the **Coach** plan, go to **Patterns → + New pattern**. Choose **Blank court** or start from a template.' },

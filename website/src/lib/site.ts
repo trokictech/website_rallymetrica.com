@@ -1,6 +1,8 @@
 /* Set the verified Apple listing URL here when Rallymetrica launches. */
 export const appStoreUrl: string | null = null
 
+export const siteUrl = 'https://rallymetrica.com'
+
 /* Prices as set in App Store Connect (Oct 2026). The 7-day free trial applies to every subscription. */
 export const plans = [
   { id: 'free', name: 'Free', price: 'Free', per: '', note: 'No account, no card', items: ['Score every match, point by point', 'Two detailed matches to try: shots, landings, replays, the full stats report'] },
@@ -9,6 +11,7 @@ export const plans = [
 ]
 
 export const supportEmail = 'help@rallymetrica.com'
+export const companyName = 'Trokic Tech LLC'
 
 export const navigation = [
   { label: 'Features', href: '/features' },
