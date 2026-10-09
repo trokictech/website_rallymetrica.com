@@ -2,25 +2,19 @@
 
 Brand mark copied unchanged from `trokictech/rally`, `design/lib/design/logo/rallymetrica-white-yellow.svg`.
 
-App screens copied unchanged from the same repository:
+## public/screens/ (Oct 9, 2026)
+Real screenshots from the 0.3.4 TestFlight build (iPhone 15 Pro, 1179×2556), cropped to the app's own frame with the device's corner radius and halved to 590×1278 PNG. Re-shoot when a screen changes; keep the names so the components need no edit.
 
-| Website asset | Repository source |
-| --- | --- |
-| `public/screens/live.png` | `app/docs/step-2/live-dark-app.png` |
-| `public/screens/momentum.png` | `app/docs/step-3/report-momentum-dark-app.png` |
-| `public/screens/stats.png` | `app/docs/step-3/stats-trend-dark-app.png` |
-| `public/screens/replay.png` | `app/docs/step-3/replay-dark-app.png` |
-| `public/screens/setup.png` | `app/docs/step-3/setup-tracking-dark-app.png` |
-| `public/screens/patterns.png` | `app/docs/step-4/pattern-draft-assign-dark-app.png` |
-| `public/screens/patterns-create.png` | `app/docs/step-3/pattern-form-dark-app.png` |
-| `public/screens/patterns-assign.png` | `app/docs/step-3/pattern-assign-dark-app.png` |
-| `public/screens/patterns-report.png` | `app/docs/step-3/report-patterns-dark-app.png` |
-| `public/screens/coach-link-approval.png` | `app/docs/step-3/settings-coach-request-dark-app.png` |
-| `public/screens/coach-student.png` | `app/docs/step-3/settings-student-dark-app.png` |
-| `public/screens/coach-qr.png` | `app/docs/step-3/settings-coach-dark-app.png` |
+| File | Screen | Used by |
+| --- | --- | --- |
+| live.png | the live court, Detailed tracking | Hero, Features › Record, /features 01 |
+| momentum.png | report › MOMENTUM | Hero, /features 02 |
+| aggression.png | report › AGGRESSION | Features › Analyze |
+| stats.png | Stats with trend | Features › Improve, /features 04 |
+| home.png | Home with a live card | Coach section, /features 05 |
+| players.png | the roster | Coach section |
+| report.png · matches.png · patterns.png · profile.png | spare | — |
 
-Screens are from development captures and some show the earlier RALLY branding. Replace the website copies with final release screenshots before public launch. Source assets and app files were not edited.
-
-The example QR preview is cropped in CSS to the Coach heading, QR card, and example ID (source region x=0, y=1080, width=804, height=488). The source asset is unchanged; historical footer text is outside the visible crop.
+Earlier captures (patterns-create, patterns-assign, patterns-report, replay, setup, coach-*) are from the September builds and show the old RALLY branding; replace them from the current build before launch. Source assets and app files were not edited.
 
 The website is adapted from the supplied TypeScript Pocket template. Its commercial license is retained in LICENSE.md. Manrope is self-hosted by Next.js through next/font.
