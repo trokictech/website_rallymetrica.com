@@ -2,15 +2,27 @@
 
 Production static website for [Rallymetrica](https://rallymetrica.com/). This repository publishes the existing product showcase, feature walkthroughs, and seven user guides through GitHub Pages. The app is currently coming soon.
 
-The repository contains only the compiled website and publishing files. The editable Pocket-based website source remains in the original local website project. No Rallymetrica app source, credentials, build caches, or original template archive is included.
+The editable website source, configuration, dependency lockfile, and assets are in `website/`. The compiled website and publishing files remain at the repository root. No Rallymetrica app source, credentials, build caches, or original template archive is included.
+
+## Run locally
+
+Use Node.js 20.9 or newer and npm. From a fresh clone:
+
+```sh
+cd website
+npm ci
+npm run dev
+```
+
+Edit pages and components in `website/src/` and assets in `website/public/`. See `website/README.md` for the guide content and App Store launch configuration.
 
 ## Publishing updates
 
-1. Edit the original website project and build its static export with `npm run build`.
-2. From this checkout, run `python package-site.py path/to/website/out`.
+1. From `website/`, run `npm run build` to create the static export in `website/out/`.
+2. From the repository root, run `python package-site.py website/out` (Python 3 required).
 3. Review and commit `site.zip` and `index.html`, then push to `main`.
 
-The packaging helper preserves Next.js navigation data and adds the flattened segment aliases needed by the Windows export. It rejects source maps and symbolic links. The Pages workflow extracts the archive, uploads the completed artifact, and deploys it.
+The packaging helper preserves Next.js navigation data and adds the flattened segment aliases needed by the Windows export. It rejects source maps and symbolic links. The Pages workflow extracts the archive, uploads the completed artifact, and deploys it. Source-only commits do not deploy until the compiled files are rebuilt and committed.
 
 ## Hosting
 
