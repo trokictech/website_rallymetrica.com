@@ -5,8 +5,8 @@ import '@/styles/tailwind.css'
 const manrope = Manrope({ subsets: ['latin'], display: 'swap', variable: '--font-manrope' })
 
 export const metadata: Metadata = {
-  title: { template: '%s · Rallymetrica', default: 'Rallymetrica · Know your game' },
-  description: 'Track tennis matches, connect players and coaches with live updates, and measure assigned patterns of play. Explore Rallymetrica and learn how to use it.',
+  title: { template: '%s · Rallymetrica', default: 'Rallymetrica · Record. Analyze. Improve.' },
+  description: 'Tennis match tracking for players and coaches. Tap the points as they are played; Rallymetrica turns them into a report, a replay and a season of stats — and sends every point to your coach, live.',
   icons: { icon: '/brand/rallymetrica.svg' },
 }
 
