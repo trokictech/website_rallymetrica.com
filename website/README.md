@@ -1,6 +1,6 @@
 # Rallymetrica website
 
-An independent product showcase and user guide built from the supplied Pocket TypeScript template. All website source, configuration, assets, and generated files stay inside `website/`. There are no imports or build dependencies on `app/`, `design/`, `icons/`, or `relay/`.
+The product site and user guides for Rallymetrica, built from the Pocket TypeScript template on Next.js 16 and Tailwind 4. All source, configuration and assets stay inside `website/`; nothing here imports from `app/`, `design/`, `icons/` or `relay/`.
 
 ## Run locally
 
@@ -10,26 +10,30 @@ npm ci
 npm run dev
 ```
 
-## Verify and build
+## Verify, build, publish
 
 ```sh
 npx tsc --noEmit
-npm run build
+npm run build            # static export to out/
+python ../package-site.py out   # writes ../site.zip
 ```
 
-Next.js exports a static site to `out/`. Configure the hosting project’s root as `website/`, build with `npm run build`, and publish `out/`. The existing Rallymetrica app and repository-level configuration do not need changes.
+Commit `site.zip` at the repository root; the Pages workflow (`.github/workflows/pages.yml`) unzips it and deploys to rallymetrica.com. The root `index.html` and `ASSETS.md` from an earlier hand-built package are not part of the deploy and can be deleted.
 
 ## Pages
 
-- `/`: product showcase, interactive Track/Review/Improve tabs, coach–player linking and pattern execution, learning links, and FAQs.
-- `/features/`: six feature walkthroughs with app screenshots.
-- `/learn/`: searchable guides with topic filters.
-- `/learn/<slug>/`: seven step-by-step guides, including live coach–player linking and pattern execution results, with preview screens and related guides.
+- `/` — hero, Record · Analyze · Improve galleries, coach link, patterns of play, plans, privacy, the stats engine teaser, learn preview, FAQs.
+- `/features/` — six feature walkthroughs with app screens; the replay moves.
+- `/learn/` — searchable guides with topic filters, plus the stats engine reference.
+- `/learn/<slug>/` — seven step-by-step guides with preview screens and related guides.
+- `/learn/stats-engine/` — the reference: every metric, what it needs, how it is counted; momentum, patterns, cuts, trends.
+- `/privacy/`, `/terms/` — the policies App Review links to.
+- `sitemap.xml`, `robots.txt` — generated at build.
 
 ## App Store launch
 
-The app is not live yet. Set the verified Apple App Store listing URL in `src/lib/site.ts` when it launches. The shared header and App Store action will then become links; until then they explicitly show Coming soon. No download hosting or signup form is included.
+The app is in TestFlight. Set the verified App Store listing URL in `src/lib/site.ts` (`appStoreUrl`) when it goes live; the header pill, the App Store buttons and the FAQ switch from Coming soon to links.
 
 ## Content and assets
 
-Guide content lives in `src/lib/guides.ts` and reflects the current app controls and tracking limitations. See ASSETS.md for screenshot origins and the pre-launch screenshot refresh. The uploaded Pocket license is retained in LICENSE.md.
+Guide content lives in `src/lib/guides.ts`; plans, prices, navigation and contact in `src/lib/site.ts`. Screens under `public/screens/` are rendered from the design prototype — see ASSETS.md — and should be replaced with release-build captures before launch, keeping the file names. Manrope is self-hosted through next/font. The Pocket license is retained in LICENSE.md.
