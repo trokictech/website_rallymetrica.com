@@ -13,7 +13,7 @@ export type Guide = {
 
 export const guides: Guide[] = [
   {
-    slug: 'your-first-match', title: 'Your first match', description: 'Choose your players, set the rules, and get onto the live court.', category: 'Getting started', duration: '4 min', screen: 'setup', screenAlt: 'Rallymetrica match setup showing tracking options',
+    slug: 'your-first-match', title: 'Your first match', description: 'Choose your players, set the rules, and get onto the live court.', category: 'Getting started', duration: '4 min', screen: 'new-match', screenAlt: 'Rallymetrica match setup showing tracking options',
     intro: 'A little setup gives every point its context. Choose the two players, the match format, and how much detail you want to record.',
     steps: [
       { title: 'Start with the players', body: 'On Home, tap **New match**. In **Players**, tap **Choose** in each slot. Select two different players from your roster, or tap **+ New player** and save a new player.' },
@@ -25,7 +25,7 @@ export const guides: Guide[] = [
     notes: ['Setup opens with your saved default rules and tracking level.', 'If you adjust a player’s zone traits during setup, those changes apply to this match only.', 'You can start without waiting for weather.'],
   },
   {
-    slug: 'tracking-modes', title: 'Choose your tracking mode', description: 'Find the right balance between simple scoring and detailed insight.', category: 'Getting started', duration: '3 min', screen: 'setup', screenAlt: 'Tracking settings in Rallymetrica',
+    slug: 'tracking-modes', title: 'Choose your tracking mode', description: 'Find the right balance between simple scoring and detailed insight.', category: 'Getting started', duration: '3 min', screen: 'live-counter', screenAlt: 'Tracking settings in Rallymetrica',
     intro: 'The data you record determines the insight you can review. Choose a level that is practical for the match you are watching.',
     steps: [
       { title: 'Open the tracking options', body: 'Go to **New match → Tracking**. The three choices are **Score**, **Counter**, and **Detailed**.' },
@@ -73,7 +73,7 @@ export const guides: Guide[] = [
     notes: ['Moving average needs at least two matches with metric values. Trend needs at least three.', 'A missing value can mean “not captured” or “no points in this cut.” It is not a zero.', 'Stats and profile Trends share the same match window.'],
   },
   {
-    slug: 'coach-player-link', title: 'Link your coach. Share the match live.', description: 'Connect both phones with encrypted sharing, then unlink whenever you choose.', category: 'Coaching', duration: '5 min', screen: 'momentum', screenAlt: 'Rallymetrica match report that a linked coach can follow on their phone',
+    slug: 'coach-player-link', title: 'Link your coach. Share the match live.', description: 'Connect both phones with encrypted sharing, then unlink whenever you choose.', category: 'Coaching', duration: '5 min', screen: 'coach-link', screenAlt: 'Rallymetrica Coach link screen showing the pairing code',
     intro: 'A linked coach can follow a player’s match on their own phone. Each saved point updates the shared match as it lands, giving both people the same score, report, and recorded rallies to review. Your matches live on your phone, and everything sent between the two phones is end-to-end encrypted.',
     steps: [
       { title: 'Show the player’s code', body: 'On the player’s phone, open the gear on **Home**, then **Settings → Coach link**. Display the QR code. This screen requires the **Player** plan.' },
