@@ -1,0 +1,31 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+@theme {
+  --font-sans: var(--font-manrope), sans-serif;
+  --color-accent: #f8fba6;
+  --color-ground: #111217;
+  --color-surface: #1b1c24;
+  --color-muted: #acaebc;
+  --color-ink: #f6f6f8;
+}
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { background: #111217; color: #f6f6f8; font-family: var(--font-manrope), sans-serif; }
+::selection { background: #f8fba6; color: #111217; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+button:not(:disabled), summary { cursor: pointer; }
+:focus-visible { outline: 2px solid #f8fba6; outline-offset: 5px; }
+.eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
+.section-heading { font-size: clamp(2rem, 4vw, 3.3rem); font-weight: 600; letter-spacing: -.05em; line-height: 1.12; }
+.hero-orbit { border: 1px solid #f8fba61a; border-radius: 50%; position: absolute; width: 680px; height: 680px; top: -60px; left: -55px; }
+.hero-orbit::before, .hero-orbit::after { content: ''; position: absolute; border: 1px solid #f8fba610; border-radius: 50%; inset: 60px; }
+.hero-orbit::after { inset: 120px; }
+.hero-glow { background: radial-gradient(ellipse at center, #f8fba60d 0, transparent 70%); }
+.phone-shell { padding: 8px; border-radius: 36px; border: 1px solid #4f515a; background: #0b0c11; box-shadow: 0 30px 80px #0008, inset 0 0 0 2px #22242c; }
+.phone-screen { border-radius: 28px; overflow: hidden; background: #1b1c24; }
+.phone-screen img { display: block; width: 100%; height: auto; }
+.guide-copy p, .guide-copy li { color: #acaebc; line-height: 1.85; }
+.guide-copy strong { color: #f6f6f8; font-weight: 600; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }
