@@ -1,0 +1,122 @@
+import { type Metadata } from 'next'
+import Link from 'next/link'
+import { Container } from '@/components/Container'
+import { AppScreenshot } from '@/components/AppScreenshot'
+
+export const metadata: Metadata = { title: 'The stats engine', description: 'Every Rallymetrica statistic defined: what each metric needs (Score, Counter or Detailed), how it is counted, how momentum, aggression, pressure and patterns are computed, and how matches become a trend.' }
+
+type Level = 'Score' | 'Counter' | 'Detailed'
+type Row = { metric: string; how: string; needs: Level; better?: 'up' | 'down' }
+type Group = { id: string; title: string; page: string; lead: string; rows: Row[]; notes?: string[] }
+
+const levels: { name: Level; what: string; unlocks: string }[] = [
+  { name: 'Score', what: 'You tap the side that won the point. The engine keeps the score, the games and sets under the match’s rules, every break point and pressure situation, and the momentum curve.', unlocks: 'Points won · break points · the whole Pressure page · Momentum · Timeline' },
+  { name: 'Counter', what: 'You tap once per shot and record how the point ended — ace, service winner, winner, forced or unforced error, double fault — and the wing. Everything about serving, returning and endings follows.', unlocks: 'Serve · Return · winners and errors · rally length · Aggression' },
+  { name: 'Detailed', what: 'You tap where each ball landed. That adds the geometry: direction and depth, serve targets, zone traits, the landing maps, the full rally replay and pattern matching.', unlocks: 'Placement · Landings · serve zones · Patterns · replay paths' },
+]
+
+const groups: Group[] = [
+  { id: 'points', title: 'Points', page: 'POINTS', lead: 'The headline rows: the result, the serve, and how points ended.', rows: [
+    { metric: 'Points won', how: 'points won ÷ points played', needs: 'Score', better: 'up' },
+    { metric: 'Break points won', how: 'break points converted ÷ break points held as the receiver', needs: 'Score', better: 'up' },
+    { metric: '1st serve in', how: 'first serves in ÷ service points', needs: 'Counter', better: 'up' },
+    { metric: '1st serve pts won', how: 'points won behind a first serve ÷ first serves in', needs: 'Counter', better: 'up' },
+    { metric: '2nd serve in', how: 'second serves in ÷ second-serve points (a double fault counts against)', needs: 'Counter', better: 'up' },
+    { metric: '2nd serve pts won', how: 'points won behind a second serve ÷ second serves in', needs: 'Counter', better: 'up' },
+    { metric: 'Aces', how: 'serves the receiver did not touch', needs: 'Counter', better: 'up' },
+    { metric: 'Service winners', how: 'serves touched but not put back in play', needs: 'Counter', better: 'up' },
+    { metric: 'Double faults', how: 'second serves missed', needs: 'Counter', better: 'down' },
+    { metric: 'Winners', how: 'shots that ended the point without the opponent reaching the ball', needs: 'Counter', better: 'up' },
+    { metric: 'Unforced errors', how: 'errors recorded as unforced', needs: 'Counter', better: 'down' },
+    { metric: 'Forced errors', how: 'errors recorded as forced by the opponent’s shot', needs: 'Counter', better: 'down' },
+    { metric: 'Total errors', how: 'unforced + forced', needs: 'Counter', better: 'down' },
+  ] },
+  { id: 'return', title: 'Return', page: 'RETURN', lead: 'The same facts read from the receiver’s side.', rows: [
+    { metric: '1st serve return in', how: 'returns put in play ÷ first-serve points received', needs: 'Counter', better: 'up' },
+    { metric: '1st serve return pts won', how: 'points won when receiving a first serve ÷ first-serve points received', needs: 'Counter', better: 'up' },
+    { metric: '2nd serve return in', how: 'returns put in play ÷ second-serve points received', needs: 'Counter', better: 'up' },
+    { metric: '2nd serve return pts won', how: 'points won when receiving a second serve ÷ second-serve points received', needs: 'Counter', better: 'up' },
+    { metric: 'Return winners', how: 'returns that won the point outright', needs: 'Counter', better: 'up' },
+    { metric: 'Return errors', how: 'returns missed — unforced, forced and total', needs: 'Counter', better: 'down' },
+  ] },
+  { id: 'pressure', title: 'Pressure', page: 'PRESSURE', lead: 'Twelve rows, every one read from the score before the point. Only Score tracking is needed for all of them.', rows: [
+    { metric: 'Pressure points won', how: 'points won ÷ pressure points — a break point for either side, 40–40 and after, or any tiebreak point', needs: 'Score', better: 'up' },
+    { metric: 'Break points won', how: 'converted ÷ held, as the receiver', needs: 'Score', better: 'up' },
+    { metric: 'Break points saved', how: 'saved ÷ faced, as the server', needs: 'Score', better: 'up' },
+    { metric: 'First points won', how: 'the first point of each game', needs: 'Score', better: 'up' },
+    { metric: '30–30 points won', how: 'points played from 30–30', needs: 'Score', better: 'up' },
+    { metric: '40–40 points won', how: 'points played from deuce', needs: 'Score', better: 'up' },
+    { metric: 'Breaks consolidated', how: 'service games held straight after breaking, of such games (same set)', needs: 'Score', better: 'up' },
+    { metric: 'Breaks back', how: 'games broken straight back after being broken, of such games', needs: 'Score', better: 'up' },
+    { metric: 'Set points won', how: 'set points converted ÷ set points held', needs: 'Score', better: 'up' },
+    { metric: 'Set points saved', how: 'set points saved ÷ set points faced', needs: 'Score', better: 'up' },
+    { metric: 'Match points saved', how: 'match points saved ÷ match points faced', needs: 'Score', better: 'up' },
+    { metric: 'Tiebreak points won', how: 'points won in tiebreaks ÷ tiebreak points played', needs: 'Score', better: 'up' },
+  ], notes: ['A set point or match point is decided before the point is played: winning it would end the set or the match, for either side, under the match’s rules. The engine replays the scoring rules to know.', 'Game-level rows (breaks consolidated, breaks back) read whole games, so a set filter applies to them and a score filter does not.'] },
+  { id: 'placement', title: 'Placement', page: 'PLACEMENT · LANDINGS', lead: 'Where the balls went. Every row here needs the landings a Detailed match records.', rows: [
+    { metric: 'Crosscourt · Down the line · Middle', how: 'share of the player’s shots by direction', needs: 'Detailed' },
+    { metric: 'Deep landings', how: 'landings beyond the player’s deep line ÷ landings in court', needs: 'Detailed', better: 'up' },
+    { metric: 'Serves T · middle · wide', how: 'share of serves in, by target', needs: 'Detailed' },
+    { metric: '1st serves here · 2nd serves here', how: 'serves in under the lit serve zone — DEUCE · AD, T · MID · WIDE', needs: 'Detailed', better: 'up' },
+    { metric: 'Forehands from own FH zone', how: 'balls arriving in the forehand zone taken with a forehand ÷ balls arriving there', needs: 'Detailed', better: 'up' },
+    { metric: 'Into opponent’s FH zone', how: 'share of shots sent into the opponent’s forehand zone', needs: 'Detailed', better: 'down' },
+  ], notes: ['Where “deep”, “middle” and the forehand zone begin is set per player — the zone traits under Players → profile → Zones (Middle 10–75, Deep 50–90, FH 50–100, T · wide 5–25). A change made at match setup applies to that match only.', 'A serve has no origin, so serve placement reads T · middle · wide only: no direction or depth rows, and no forehand-zone row — which wing a serve found depends on the service box and is never inferred from geometry.', 'Shot speeds and stroke counts (forehands, backhands, volleys, overheads) appear on a SHOTS page only for matches that recorded them.'] },
+  { id: 'aggression', title: 'Aggression', page: 'AGGRESSION', lead: 'Whether a player is building points or giving them away — the classical aggressive margin, written out for how Rallymetrica tags a point.', rows: [
+    { metric: 'Aggressive margin', how: 'built − given, signed, in points. Built: winners, aces, forced errors induced. Given: unforced errors, double faults, invited forced errors', needs: 'Counter', better: 'up' },
+    { metric: 'Efficiency', how: 'built ÷ given — 1.0× is even; above it, a player built more than they gave away', needs: 'Counter', better: 'up' },
+  ], notes: ['The invited / pressured split needs landings. A forced error you commit is invited when your own previous ball landed short and middle — not past the service line, and in the middle third of the court’s width. It counts −1 against you and +1 for the attacker. Every other forced error is pressured: the opponent beat a player who was in the point. It is shown in grey and not counted.', 'On a Counter match there are no landings, so every forced error reads as pressured — the opponent’s credit. The page says so: tracked without landings, forced errors read as the opponent’s.', 'The report page shows a headline per player, bars per game as MARGIN (built − given) or BUILT % (built ÷ (built + given)), the shots behind any game on a tap, and the forced · winners · unforced split of all points beneath, so the court call that the margin rests on stays visible. Both rows read a dash under ten decided points.'] },
+]
+
+const sections = [
+  { id: 'levels', title: 'What each tracking level unlocks' },
+  { id: 'catalogue', title: 'The catalogue' },
+  { id: 'momentum', title: 'Momentum' },
+  { id: 'patterns', title: 'Patterns' },
+  { id: 'cuts', title: 'Cuts: asking a narrower question' },
+  { id: 'over-time', title: 'Stats over time' },
+  { id: 'missing', title: 'Reading a missing value' },
+]
+
+const situations = [
+  ['Break point', 'the receiver is a point from breaking'],
+  ['Break game', 'every point of a game the receiver won'],
+  ['Break consolidation', 'every point of the service game straight after a break, held or not (same set, no tiebreak)'],
+  ['Tiebreak', 'every tiebreak point'],
+  ['Set point', 'before the point, winning it would end the set, for either side'],
+  ['Match point', 'before the point, winning it would end the match, for either side'],
+]
+
+function Pill({ level }: { level: Level }) {
+  return <span className="inline-block rounded-full border border-accent/25 px-2 py-0.5 text-[10px] font-semibold tracking-[.12em] text-accent uppercase">{level}</span>
+}
+
+export default function StatsEnginePage() {
+  return <Container className="py-12 sm:py-16">
+    <Link href="/learn" className="text-sm text-muted hover:text-accent">← All guides</Link>
+    <div className="mt-10 grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-14">
+      <aside className="hidden lg:block"><nav aria-label="On this page" className="sticky top-8"><p className="eyebrow mb-6 text-accent">The stats engine</p>{sections.map(section => <a href={`#${section.id}`} key={section.id} className="block border-l border-white/15 py-2.5 pl-4 text-sm leading-6 text-muted hover:text-ink">{section.title}</a>)}<p className="eyebrow mt-8 mb-4 text-accent">Guides</p><Link href="/learn/stats-and-trends" className="block border-l border-white/15 py-2.5 pl-4 text-sm leading-6 text-muted hover:text-ink">See your progress over time</Link><Link href="/learn/reports-and-replay" className="block border-l border-white/15 py-2.5 pl-4 text-sm leading-6 text-muted hover:text-ink">Read the match. Revisit the rally.</Link></nav></aside>
+      <article className="guide-copy">
+        <header className="max-w-3xl"><div className="eyebrow flex gap-4 text-accent"><span>Reference</span><span className="text-muted">12 min read</span></div><h1 className="mt-5 text-4xl leading-[1.12] font-semibold tracking-[-.05em] text-ink sm:text-5xl">The stats engine.<br /><span className="text-accent">Every number, defined.</span></h1><p className="mt-6 text-lg leading-8">Rallymetrica computes every statistic from the points you record, under the rules of the match. Nothing is estimated from video or sensors: a number exists only when the point data behind it was tapped. This page lists what the engine measures, how each metric is defined, which tracking level it needs, and how the Stats tab turns a run of matches into a trend.</p></header>
+
+        <section id="levels" className="mt-14 scroll-mt-8 border-t border-white/10 pt-8"><h2 className="text-2xl font-semibold tracking-tight text-ink">What each tracking level unlocks</h2><p className="mt-4 text-sm">The tracking level is chosen at match setup and can be changed during the match; the new level applies to that match. Each level includes everything below it.</p><div className="mt-8 grid gap-5 md:grid-cols-3">{levels.map(level => <div key={level.name} className="rounded-2xl border border-white/10 bg-surface/60 p-6"><p className="eyebrow text-accent">{level.name}</p><p className="mt-4 text-sm">{level.what}</p><p className="mt-5 text-xs leading-6"><span className="font-semibold text-ink">Unlocks · </span>{level.unlocks}</p></div>)}</div><div className="mt-8 grid gap-6 sm:grid-cols-3"><figure><AppScreenshot name="live-score" alt="The live court in Score mode" className="mx-auto w-full max-w-[200px]" /><figcaption className="mt-3 text-center text-xs">Score</figcaption></figure><figure><AppScreenshot name="live-counter" alt="The live court in Counter mode" className="mx-auto w-full max-w-[200px]" /><figcaption className="mt-3 text-center text-xs">Counter</figcaption></figure><figure><AppScreenshot name="live" alt="The live court in Detailed mode" className="mx-auto w-full max-w-[200px]" /><figcaption className="mt-3 text-center text-xs">Detailed</figcaption></figure></div></section>
+
+        <section id="catalogue" className="mt-14 scroll-mt-8 border-t border-white/10 pt-8"><h2 className="text-2xl font-semibold tracking-tight text-ink">The catalogue</h2><p className="mt-4 text-sm">One catalogue feeds the report’s tables, the player profile’s trends and the Stats tab’s chart, so a row means the same thing everywhere. Each row knows which direction is better; a report table lights the better side. Ratios show the fraction beneath the percentage.</p>
+          {groups.map(group => <div id={group.id} key={group.id} className="mt-12 scroll-mt-8"><div className="flex flex-wrap items-baseline justify-between gap-3"><h3 className="text-xl font-semibold text-ink">{group.title}</h3><span className="eyebrow text-muted">Report page · {group.page}</span></div><p className="mt-3 text-sm">{group.lead}</p><div className="mt-5 overflow-hidden rounded-2xl border border-white/10"><div className="hidden grid-cols-[1fr_1.6fr_96px] gap-4 border-b border-white/10 bg-surface px-5 py-3 sm:grid"><span className="eyebrow text-muted">Metric</span><span className="eyebrow text-muted">How it is counted</span><span className="eyebrow text-muted">Needs</span></div>{group.rows.map(row => <div key={row.metric} className="grid gap-2 border-b border-white/10 px-5 py-4 last:border-b-0 sm:grid-cols-[1fr_1.6fr_96px] sm:gap-4"><div className="flex items-start justify-between gap-3"><span className="text-sm font-semibold text-ink">{row.metric}{row.better === 'down' && <span className="ml-2 text-xs font-normal text-muted">fewer is better</span>}</span><span className="sm:hidden"><Pill level={row.needs} /></span></div><span className="text-sm">{row.how}</span><span className="hidden sm:block"><Pill level={row.needs} /></span></div>)}</div>{group.notes && <ul className="mt-5 list-disc space-y-2 pl-5 text-sm">{group.notes.map(note => <li key={note}>{note}</li>)}</ul>}</div>)}
+          <div className="mt-10 grid gap-6 sm:grid-cols-2"><figure><AppScreenshot name="aggression" alt="The report’s Aggression page: the margin per game for both players" className="mx-auto w-full max-w-[230px]" /><figcaption className="mt-3 text-center text-xs">AGGRESSION · built above the line, given below</figcaption></figure><figure><AppScreenshot name="landings" alt="The report’s Landings page: the court maps" className="mx-auto w-full max-w-[230px]" /><figcaption className="mt-3 text-center text-xs">LANDINGS · the placement rows drawn on the court</figcaption></figure></div>
+        </section>
+
+        <section id="momentum" className="mt-14 scroll-mt-8 border-t border-white/10 pt-8"><h2 className="text-2xl font-semibold tracking-tight text-ink">Momentum</h2><div className="mt-6 grid gap-10 md:grid-cols-[1fr_230px] md:items-start"><div className="space-y-4 text-sm"><p>The momentum curve is the probability that a player goes on to win the match, recomputed after every point from the <strong>exact score</strong> and the rules in force — set format, tiebreak, no-ad. The serve-point rates behind it start from the player’s history and update as the match goes on, so the curve settles the longer the match runs. Only Score tracking is needed.</p><p><strong>Swings</strong> are the moments the curve changed course most. The engine finds the change points, weighs each by how much was riding on it, and marks the strong ones with a disc, the weak ones with a ring and the biggest with a star. Tap a swing to compare the stretch before it with the stretch after: points played and win chance for each player.</p><p><strong>Live</strong>, the curve extends as points arrive. Under a cut, momentum highlights rather than filters: a set cut fades the other sets, a score or situation cut beads the curve at those points — blue where the first player won them, green the second.</p></div><figure><AppScreenshot name="momentum" alt="The report’s Momentum page with the curve and its swings" className="mx-auto w-full max-w-[230px]" /><figcaption className="mt-3 text-center text-xs">MOMENTUM · the biggest swing starred</figcaption></figure></div></section>
+
+        <section id="patterns" className="mt-14 scroll-mt-8 border-t border-white/10 pt-8"><h2 className="text-2xl font-semibold tracking-tight text-ink">Patterns</h2><div className="mt-6 grid gap-10 md:grid-cols-[1fr_230px] md:items-start"><div className="space-y-4 text-sm"><p>A pattern of play is a sequence of two to four landing zones drawn by a coach and assigned to a player. Up to three patterns are selected per player in a Detailed match setup; the engine then matches every recorded point against them.</p><p>An <strong>attempt</strong> is counted when a point reaches the pattern’s opening zone with the right player hitting and the right serve context (any, first or second serve, when the pattern opens with a serve). A <strong>completion</strong> means the full sequence of zones was recorded, in order; consecutive landings must alternate sides. Each pattern counts at most once per point.</p><p><strong>3 of 7 attempts · 67% won</strong> reads: three complete executions from seven openings, and two of those three points won. The percentage is points won <em>after completion</em>, which is the question a coach is asking. A match keeps the patterns selected at its start; later edits do not rewrite its results. Player profiles bring the results together across Detailed matches.</p></div><figure><AppScreenshot name="profile-patterns" alt="A player profile’s Patterns tab with completions out of attempts" className="mx-auto w-full max-w-[230px]" /><figcaption className="mt-3 text-center text-xs">Profile › PATTERNS · across matches</figcaption></figure></div></section>
+
+        <section id="cuts" className="mt-14 scroll-mt-8 border-t border-white/10 pt-8"><h2 className="text-2xl font-semibold tracking-tight text-ink">Cuts: asking a narrower question</h2><p className="mt-4 text-sm">Every table page, TIMELINE, MOMENTUM and LANDINGS carry the same filter track; so does the Stats tab. A cut keeps only the points that fit, and every row is recomputed from them.</p><ul className="mt-5 list-disc space-y-3 pl-5 text-sm"><li><strong>Set</strong> — S1 … S5, the sets the match played.</li><li><strong>Situation</strong> — one at a time: {situations.map(([name, meaning], index) => <span key={name}>{index > 0 && '; '}<strong>{name}</strong> ({meaning})</span>)}.</li><li><strong>Score</strong> — the game score before the point, read server first: the presets First point · 30–30 · Deuce · Advantage, or any pair on the two wheels. A score cut rests under a point situation and stays live inside a game situation — “30–30 points inside break games”.</li><li><strong>The page’s own tracks</strong> — Serving · Returning; rally length 0–4 · 5–8 · 9+ (a point property, so under a serve view 9+ reads “where the serves landed in points that became long rallies”); starred points; on the serve and return pages Deuce · Ad and T · Mid · Wide; on the landing maps Serve · Return · Rally · End.</li></ul><p className="mt-5 text-sm">An option greys out when no row on the page can use it, or when it could not change the row — rally length on aces, break point on break points. PRESSURE turns the score cut off because each row names its own score; COVER and PATTERNS take no cuts; Win rate takes none.</p></section>
+
+        <section id="over-time" className="mt-14 scroll-mt-8 border-t border-white/10 pt-8"><h2 className="text-2xl font-semibold tracking-tight text-ink">Stats over time</h2><div className="mt-6 grid gap-10 md:grid-cols-[1fr_230px] md:items-start"><div className="space-y-4 text-sm"><p>The Stats tab charts one catalogue row across a window of matches. On Free and Player the subject is you; on Coach, any player on the roster. Choosing an opponent narrows the window to that head-to-head; on Coach, picking two players and a common opponent draws both as series on one axis.</p><p>The <strong>window</strong> is Last · 3 · 7 · 10 · All, shared with the profile’s Trends. Each match’s value is computed from that match’s own points under the same cuts — the chart is the report, repeated.</p><p><strong>Moving average</strong> draws the window mean with its usual range — the middle 80% of where a normal match for this player lands, from five matches — and reads the line yellow above the average, red below. <strong>Trend</strong> fits a straight line through the matches with its own band; the legend states the slope, for example +0.4% per match. A match in progress is the last, hollow point on the curve. Tap any dot for that match’s card and its report.</p></div><figure><AppScreenshot name="stats" alt="The Stats tab: one metric across a window of matches with its trend" className="mx-auto w-full max-w-[230px]" /><figcaption className="mt-3 text-center text-xs">STATS · a metric, match after match</figcaption></figure></div></section>
+
+        <section id="missing" className="mt-14 scroll-mt-8 rounded-2xl border border-accent/15 bg-accent/[.04] p-6"><h2 className="eyebrow text-accent">Reading a missing value</h2><ul className="mt-4 list-disc space-y-3 pl-4 text-sm"><li>A dash means the value was not captured at this match’s tracking level, or that no points fall under the current cut. It is never a zero.</li><li>In a trend, a match with no points under the cut is a gap, not a drop.</li><li>The aggression rows read a dash under ten decided points. The moving average needs two matches; the trend three; the bands five.</li><li>Pattern counts come only from recorded landings: Counter and Score matches have no attempts and no completions.</li></ul></section>
+
+        <section className="mt-16 border-t border-white/10 pt-8"><p className="eyebrow text-accent">Keep exploring</p><div className="mt-6 grid gap-4 sm:grid-cols-2">{[['stats-and-trends', 'See your progress over time'], ['reports-and-replay', 'Read the match. Revisit the rally.']].map(([slug, title]) => <Link href={`/learn/${slug}`} key={slug} className="rounded-2xl border border-white/10 p-6 transition-colors hover:border-accent/30"><p className="text-xs text-muted">Guide</p><h2 className="mt-3 text-lg font-semibold text-ink">{title}</h2><p className="mt-3 text-sm text-accent">Read the guide ↗</p></Link>)}</div></section>
+      </article>
+    </div>
+  </Container>
+}
