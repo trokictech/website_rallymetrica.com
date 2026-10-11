@@ -1,0 +1,47 @@
+import { type Metadata } from 'next'
+import { LegalDoc, type LegalSection } from '@/components/LegalDoc'
+import { companyName, supportEmail } from '@/lib/site'
+
+export const metadata: Metadata = { title: 'Support', description: 'Help with Rallymetrica: getting started, plans and purchases, the coach link, your data, and how to reach us.' }
+
+const sections: LegalSection[] = [
+  { id: 'contact', title: 'Reach us', paragraphs: [
+    `Write to ${supportEmail}. Say which iPhone and iOS version you use, which plan you are on (gear → Plan), and what you expected against what happened. A screenshot helps. We answer within two business days.`,
+  ] },
+  { id: 'start', title: 'Getting started', bullets: [
+    'First start: enter a first name, then choose Continue free or a plan. Nothing else is asked; there is no account.',
+    'Home shows live and recent matches. The tabs below are Players, Matches, Stats and, on Coach plans, Patterns. The gear at the top right opens Settings.',
+    'New match: choose the two players, the rules and the tracking level — Score, Counter or Detailed — then Start match. The Learn section has a step-by-step guide for each.',
+    'To see every screen populated before you record anything: gear → Data → Load demo season.',
+  ] },
+  { id: 'plans', title: 'Plans and purchases', bullets: [
+    'Free scores every match and includes two Detailed matches to try. Player adds Detailed tracking on every match, the full stats engine and a coach link. Coach (up to 5 students) and Academy (up to 25) add the roster, play patterns and per-student notifications.',
+    'Every subscription starts with a 7-day free trial and is billed through your Apple ID. Cancel any time in iPhone Settings → your name → Subscriptions; the plan runs to the end of the period you paid for.',
+    'Changing plan: gear → Plan. Upgrades take effect at once; a downgrade applies when the current period ends.',
+    'Reinstalled or new phone: gear → Plan → Restore purchases. Your plan is tied to your Apple ID, so nothing is lost; your match data is restored separately from a backup (below).',
+    'Refunds are handled by Apple: reportaproblem.apple.com.',
+  ] },
+  { id: 'coach', title: 'The coach link', bullets: [
+    'Linking: the player opens gear → Coach link to show a code; the coach opens gear → Students → Add student and scans it; the player taps Link to confirm. Both phones need to be online.',
+    'After that the coach receives the player’s matches live, point by point. Everything travels end-to-end encrypted between the two phones; our relay cannot read it.',
+    'Live scores not arriving: check the coach’s gear → Notifications (and the per-student setting under gear → Students), that notifications are allowed for Rallymetrica in iPhone Settings, and that the player’s phone has a connection — points are queued and sent when it does.',
+    'Unlinking: the player taps gear → Coach link → Unlink; the coach taps the student → Remove. The coach’s copies of the player’s matches are removed; the player keeps everything.',
+  ] },
+  { id: 'data', title: 'Your data', bullets: [
+    'Matches live on your phone, not on our servers. Deleting the app deletes them.',
+    'Backup: gear → Data → Save backup writes a file you can keep in Files, iCloud Drive or anywhere you choose. Restore it on any phone with gear → Data → Restore backup.',
+    'Start over: gear → Data → Clear all data removes every player and match from the phone. Your subscription is unaffected.',
+    'What leaves the phone and why is set out in full in the privacy policy.',
+  ] },
+  { id: 'problems', title: 'Something is wrong', bullets: [
+    'Purchases are not available: make sure you are signed in to the App Store on the phone and have a connection, then try again. On a TestFlight build, purchases are test purchases and are never charged.',
+    'The app shows the wrong plan after a purchase: gear → Plan → Restore purchases.',
+    'A match looks mirrored or a point is wrong: open the match → Timeline, tap the point and correct it; the report recalculates.',
+    'Anything else: write to us with the steps that led there. If the app has crashed, iPhone Settings → Privacy & Security → Analytics & Improvements → Analytics Data holds a log named Rallymetrica you can attach.',
+  ] },
+  { id: 'about', title: 'About', paragraphs: [`Rallymetrica is made by ${companyName} in Atlanta, Georgia. Privacy policy and terms of use are linked below.`] },
+]
+
+export default function Support() {
+  return <LegalDoc eyebrow="Support" title="Here to help." updated="October 11, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us; a real person reads every message." sections={sections} />
+}
