@@ -9,17 +9,17 @@ const sections: LegalSection[] = [
     `These terms are an agreement between you and ${companyName} (“we”), the maker of Rallymetrica. They cover the Rallymetrica iOS app and the website rallymetrica.com. By installing or using either, you accept them; if you do not, please do not use Rallymetrica. The Privacy policy explains how data is handled and forms part of these terms.`,
   ] },
   { id: 'service', title: 'What Rallymetrica is', paragraphs: [
-    'Rallymetrica records tennis matches point by point on your phone and turns the record into scores, reports, replays and statistics. A player can link a coach so that the coach follows the match live on their own phone. The app works offline; no account is required.',
+    'Rallymetrica records tennis matches and practice sessions point by point on your phone and turns the record into scores, reports, replays and statistics. A player can link a coach so that the coach follows the match live on their own phone. The app works offline; no account is required.',
   ] },
   { id: 'plans', title: 'Plans, trials and subscriptions', bullets: [
-    'Free scores every match and includes two detailed matches to try. Player and Coach (Coach for up to 5 students, Academy for up to 25) are auto-renewing subscriptions bought through the App Store at the prices shown there, which may vary by country.',
+    'Free scores every match and includes two detailed matches to try. Player adds detailed tracking and practice sessions; Coach (for up to 5 students) and Academy (for up to 25) add the roster. All three are auto-renewing subscriptions bought through the App Store at the prices shown there, which may vary by country.',
     'Each subscription starts with a 7-day free trial, once per Apple ID. Payment is charged to your Apple ID when the trial ends unless you cancel at least 24 hours before. The subscription renews automatically at the same price and period until cancelled.',
     'You manage, change or cancel a subscription in your Apple ID settings (Settings → Apple ID → Subscriptions) or from Settings → Plan in the app. Cancelling stops the next renewal; the current period runs to its end. Refunds are handled by Apple under its terms.',
     'Your subscription is tied to your Apple ID. Reinstalling the app or moving to a new phone restores it through Restore purchases; it does not restore your matches, which are yours to back up.',
-    'Features that need a plan are described in the app and on this website. If a plan lapses, the matches you recorded stay on your phone and remain readable at the Free level.',
+    'Features that need a plan are described in the app and on this website. If a plan lapses, the matches and sessions you recorded stay on your phone and remain readable at the Free level.',
   ] },
   { id: 'your-content', title: 'Your content', paragraphs: [
-    'Everything you record — players, matches, points, patterns, notes — is yours. You are responsible for keeping backups (Settings → Data) and for having permission to record the people whose matches you track, including opponents and students. Give people the names they would want; initials are enough.',
+    'Everything you record — players, matches, sessions, points, patterns, notes — is yours. You are responsible for keeping backups (Settings → Data) and for having permission to record the people whose matches you track, including opponents, partners and students. Give people the names they would want; initials are enough.',
     'We do not receive, store or claim any rights over your match data. Where a match is shared through a coach link, you grant the linked coach the right to view it in the app for coaching you; that right ends when you unlink, as described in the Privacy policy.',
   ] },
   { id: 'link', title: 'The coach link', bullets: [
@@ -58,5 +58,5 @@ const sections: LegalSection[] = [
 ]
 
 export default function Terms() {
-  return <LegalDoc eyebrow="Terms of use" title="The rules of the court." updated="October 9, 2026" intro="Plain terms for a plain app: what you get on each plan, how subscriptions work through Apple, what is yours, and where our responsibility ends." sections={sections} />
+  return <LegalDoc eyebrow="Terms of use" title="The rules of the court." updated="October 14, 2026" intro="Plain terms for a plain app: what you get on each plan, how subscriptions work through Apple, what is yours, and where our responsibility ends." sections={sections} />
 }
