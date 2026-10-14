@@ -22,11 +22,11 @@ Commit `site.zip` at the repository root; the Pages workflow (`.github/workflows
 
 ## Pages
 
-- `/` — hero, Record · Analyze · Improve galleries, coach link, patterns of play, plans, privacy, the stats engine teaser, learn preview, FAQs.
-- `/features/` — six feature walkthroughs with app screens; the replay moves.
+- `/` — hero, Record · Analyze · Improve galleries, practice sessions (Rally · Co-op · Serve), coach link, patterns of play, plans, privacy, the stats engine teaser, learn preview, FAQs.
+- `/features/` — seven feature walkthroughs with app screens; the replay moves.
 - `/learn/` — searchable guides with topic filters, plus the stats engine reference.
-- `/learn/<slug>/` — seven step-by-step guides with preview screens and related guides.
-- `/learn/stats-engine/` — the reference: every metric, what it needs, how it is counted; momentum, patterns, cuts, trends.
+- `/learn/<slug>/` — eleven step-by-step guides with preview screens and related guides (practice sessions since Oct 14).
+- `/learn/stats-engine/` — the reference: every metric, what it needs, how it is counted; momentum, patterns, practice sessions, cuts, trends.
 - `/privacy/`, `/terms/` — the policies App Review links to.
 - `sitemap.xml`, `robots.txt` — generated at build.
 

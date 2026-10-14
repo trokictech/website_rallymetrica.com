@@ -31,4 +31,16 @@ Rendered from the design prototype (design/shell/Home Shell.dc.html, Coach plan,
 | new-match.png | match setup | your-first-match guide |
 | welcome.png, about-you.png, choose-plan.png | the first start | spare |
 
+## Placeholders (Oct 14, 2026) — drawn frames, not captures; replace with the 4g build's captures, keeping the names
+
+| File | Screen to capture | Used by |
+| --- | --- | --- |
+| sessions.png | the Sessions tab › RALLY page: the live rail, FINISHED · n, the filters | spare (the sessions guide's intro picture when captured) |
+| rally-court.png | the live court on a VS rally: B1 · B2 on the board, the tally under SCORE, the starter's dot | Home › Practice › Rally · practice-sessions guide |
+| coop-court.png | the live court on a co-op: RUNS · BEST and the run in progress | Home › Practice › Co-op |
+| serve-court.png | the serve court: DEUCE · AD and T · MID · WIDE strips, the running IN % · ON TARGET % | Home › Practice › Serve · /features 05 |
+| serve-report.png | serve report › TREND (STREAKS · TARGET on one axis) | stats engine › Practice sessions |
+| runs.png | co-op report › RUNS (the bars, average · median, the cells) | spare |
+| rally-report.png | VS rally report › COVER (the tally, the blocks, MODE · FORMAT · START · LENGTH) | spare |
+
 The website is adapted from the supplied TypeScript Pocket template. Its commercial license is retained in LICENSE.md. Manrope is self-hosted by Next.js through next/font.

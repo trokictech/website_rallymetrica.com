@@ -1,3 +1,32 @@
+# Oct 14, 2026 — the decisions pass (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
+
+The site is read against DECISIONS.md from the Oct 11 practice brief to the Oct 14 rulings. Every page that describes the product now describes it as decided — including what 4g-i · 4g-ii still build. New screens are PLACEHOLDER renders (public/screens/, marked in ASSETS.md) to be replaced by captures from the 4g build, keeping the names.
+
+## New
+- **Practice sessions, everywhere they belong.** Home: `PracticeFeatures.tsx` (Rally · Co-op · Serve tabs) after Record · Analyze · Improve. /features: a new 05 / Practice block (Patterns moves to 07). Learn: the guide **/learn/practice-sessions/** (the Sessions tab, a VS rally's setup — presets FIRST TO 11 · 15 · 21 · TIMED 10 · OPEN, blocks, serve or feed start, SERVES 2 · 1, rotation — the court and the board, the co-op run, the serve basket with the court's DEUCE · AD and T · MID · WIDE strips, IN % · ON TARGET %, and the three reports). The stats engine reference gains **Practice sessions** (the VS rally on the match catalogue, the co-op's RUNS · ENDINGS, the serve catalogue with its own cuts, TREND) and the rally race model under Momentum. FAQs: "Can I track practice, not only matches?", "Do practice sessions count in my Stats?" (no — matches only), "Does it work on iPad?".
+- **Plans** carry sessions on Player (and so on Coach · Academy); Free lists its three facts (score every match, the score-derived report, two detailed matches to try).
+- **Support** gains a Practice sessions section; the tabs read Players · Sessions (Matches · Rally · Serve) · Stats · Patterns; iPad's two panes; the Data labels are the app's (Back up to a file · Restore from backup · Load demo season · Clear all data).
+
+## Corrected
+- **"Matches" the tab → "Sessions"** wherever a tab is named (guides: first match, reports, coach link, roster; support); "Matches" the page stays where it is the page.
+- **Momentum:** p₀ is the player's history shrunk toward the tour's 62% with the same κ (the Oct 13 ruling; a formula line added, κ = 40); the newest provisional swing stays listed beside the largest (4f-iv); "biggest" → **largest** swing (the Oct 12 word) in the reference and the figcaption.
+- **The usual range:** the band is the middle 80% literally since the Oct 13 correction — the half-width's t is the one-sided 90% value; the "±19 points" figure (measured under the old meaning) is dropped, "wider than the chart" stays.
+- **The catalogue:** the first group is POINTS · SERVE (its serve rows sit on the SERVE page); Win rate (Stats only) listed; the double-fault row's one-serve reading (Faults); the record-kind sentence — what a kind cannot hold is absent, never greyed; Pressure, Placement and Aggression notes name what a rally or co-op changes; the landing maps light one class of ball at a time (END exclusive with the ball pick).
+- **Coach link:** sessions arrive live like matches; a session notifies at its start and end only (no set · game · point cadence). Hero, title and description read "match and practice tracking".
+- **Privacy · Terms · Support** dated Oct 14; privacy names sessions among what is stored and shared and the relay's 30-day sweep of idle devices; terms name sessions and partners.
+- **Roster:** the coach guide's note describes the card's bookmark — the player's initials, the live ones pulsing (Oct 14).
+
+## Placeholders (replace with 4g captures, same names)
+sessions.png · rally-court.png · coop-court.png · serve-court.png · serve-report.png · runs.png · rally-report.png — dark frames with the screen's name; drawn, not captured.
+
+## Not changed
+- Screens already on the site still show the pre-Oct-12 legend grid on MOMENTUM and STATS (14 · 4; now 26 · 6, 8 under the plot) — re-shot with 4g's capture pass (DECISIONS › Step 4f-iv review Q14).
+- `appStoreUrl` stays null until the listing is live.
+
+Build: `npm run build` → `python ../package-site.py out` → commit `site.zip`.
+
+---
+
 # Oct 9, 2026 — the full pass (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
 ## New
