@@ -36,9 +36,9 @@ Rendered from the design prototype (design/shell/Home Shell.dc.html, Coach plan,
 | File | Screen to capture | Used by |
 | --- | --- | --- |
 | sessions.png | the Sessions tab › RALLY page: the live rail, FINISHED · n, the filters | spare (the sessions guide's intro picture when captured) |
-| rally-court.png | the live court on a VS rally: B1 · B2 on the board, the tally under SCORE, the starter's dot | Home › Practice › Rally · practice-sessions guide |
-| coop-court.png | the live court on a co-op: RUNS · BEST and the run in progress | Home › Practice › Co-op |
-| serve-court.png | the serve court: DEUCE · AD and T · MID · WIDE strips, the running IN % · ON TARGET % | Home › Practice › Serve · /features 05 |
+| rally-court.png | the live court on a VS rally: B1 · B2 on the board, the tally under SCORE, the starter's dot | Home › Practice › Rally · rally-sessions guide |
+| coop-court.png | the live court on a co-op: RUNS · BEST and the run in progress | Home › Practice › Co-op · coop-sessions guide |
+| serve-court.png | the serve court: DEUCE · AD and T · MID · WIDE strips, the running IN % · ON TARGET % | Home › Practice › Serve · /features 05 · serve-sessions guide |
 | serve-report.png | serve report › TREND (STREAKS · TARGET on one axis) | stats engine › Practice sessions |
 | runs.png | co-op report › RUNS (the bars, average · median, the cells) | spare |
 | rally-report.png | VS rally report › COVER (the tally, the blocks, MODE · FORMAT · START · LENGTH) | spare |

@@ -10,19 +10,19 @@ const kinds = [
     name: 'Rally', title: 'A game with a score, without a match’s length.',
     description: 'First to 11, 15 or 21 — in one block or up to five — timed, or open. Start each rally with a serve or a feed; the rotation is set once and the board says who starts next. Every rally is a point: the same taps, the same report.',
     items: ['Serve or feed start; two serves or one (the second-serves-only drill)', 'Blocks as sets: B1 · B2 on the board, a block speaks when it is won', 'The match report on a rally: momentum, aggression, points, placement, patterns'],
-    screen: 'rally-court', alt: 'The live court on a VS rally session: blocks on the board and the tally', caption: 'VS · one rally, one point, the tally under SCORE.',
+    guide: '/learn/rally-sessions', screen: 'rally-court', alt: 'The live court on a VS rally session: blocks on the board and the tally', caption: 'VS · one rally, one point, the tally under SCORE.',
   },
   {
     name: 'Co-op', title: 'Keep the ball in play. Count the run.',
     description: 'Two players, one count. Any miss ends the run, and the run is recorded with its length and how it ended. Timed or open; the feed starts every run.',
     items: ['RUNS · BEST and the run in progress on the board', 'Every run as a bar, with the average and the median', 'Endings by place — into the net, long, wide, unplayable — and balls hit, for each player'],
-    screen: 'coop-court', alt: 'The live court on a co-op session: the run in progress and the best run', caption: 'CO-OP · the run in progress, the best so far.',
+    guide: '/learn/coop-sessions', screen: 'coop-court', alt: 'The live court on a co-op session: the run in progress and the best run', caption: 'CO-OP · the run in progress, the best so far.',
   },
   {
     name: 'Serve', title: 'A basket of serves, judged against a target.',
     description: 'One server, blocks of 5, 10 or 20 — pairs with a second serve after a fault, first serves only, or second serves only. Pick the side and the target on the court, tap where each serve lands, and read two numbers: in, and on target.',
     items: ['DEUCE · AD and T · MID · WIDE picked per block on the court', 'IN % and ON TARGET % running as you serve; the block closes on its count', 'The report: the serve table, the placement map, streaks and accuracy over the session'],
-    screen: 'serve-court', alt: 'The serve court: the side and target strips, the running in and on-target shares', caption: 'SERVE · the target strip, the running in % and on target %.',
+    guide: '/learn/serve-sessions', screen: 'serve-court', alt: 'The serve court: the side and target strips, the running in and on-target shares', caption: 'SERVE · the target strip, the running in % and on target %.',
   },
 ]
 
@@ -46,7 +46,7 @@ export function PracticeFeatures() {
                 <h3 className="mt-5 max-w-md text-3xl leading-tight font-semibold tracking-[-.04em] sm:text-4xl">{kind.title}</h3>
                 <p className="mt-5 max-w-md leading-7 text-muted">{kind.description}</p>
                 <ul className="mt-7 space-y-3">{kind.items.map(item => <li key={item} className="flex gap-3 text-sm text-ink"><span className="text-accent" aria-hidden="true">✓</span>{item}</li>)}</ul>
-                <Button href="/learn/practice-sessions" variant="outline" className="mt-9">How sessions work ↗</Button>
+                <Button href={kind.guide} variant="outline" className="mt-9">Read the guide ↗</Button>
               </div>
               <div className="mx-auto w-[260px] sm:w-[290px]">
                 <AppScreenshot name={kind.screen} alt={kind.alt} />
