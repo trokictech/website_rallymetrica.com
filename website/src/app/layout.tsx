@@ -5,7 +5,7 @@ import { siteUrl } from '@/lib/site'
 
 const manrope = Manrope({ subsets: ['latin'], display: 'swap', variable: '--font-manrope' })
 const title = 'Rallymetrica · Record. Analyze. Improve.'
-const description = 'Tennis match tracking for players and coaches. Tap the points as they are played; Rallymetrica turns them into a report, a replay and a season of stats — and sends every point to your coach, live.'
+const description = 'Tennis match and practice tracking for players and coaches. Tap the points as they are played — in a match, a rally game or a serve session; Rallymetrica turns them into a report, a replay and a season of stats — and sends every point to your coach, live.'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
