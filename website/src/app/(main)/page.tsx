@@ -1,5 +1,6 @@
 import { Hero } from '@/components/Hero'
 import { PrimaryFeatures } from '@/components/PrimaryFeatures'
+import { PracticeFeatures } from '@/components/PracticeFeatures'
 import { CoachFeatures } from '@/components/CoachFeatures'
 import { PatternFeatures } from '@/components/PatternFeatures'
 import { Pricing } from '@/components/Pricing'
@@ -10,5 +11,5 @@ import { CallToAction } from '@/components/CallToAction'
 import { Faqs } from '@/components/Faqs'
 
 export default function Home() {
-  return <><Hero /><PrimaryFeatures /><CoachFeatures /><PatternFeatures /><Pricing /><PrivacyFeatures /><StatsEngine /><LearnPreview /><CallToAction /><Faqs /></>
+  return <><Hero /><PrimaryFeatures /><PracticeFeatures /><CoachFeatures /><PatternFeatures /><Pricing /><PrivacyFeatures /><StatsEngine /><LearnPreview /><CallToAction /><Faqs /></>
 }
