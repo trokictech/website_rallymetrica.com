@@ -7,9 +7,9 @@ export function Hero() {
   return <section className="overflow-hidden">
     <Container className="relative grid gap-14 pt-16 pb-16 lg:min-h-[760px] lg:grid-cols-2 lg:gap-8 lg:pt-28 lg:pb-20">
       <div className="relative z-10 lg:pt-7">
-        <div className="eyebrow mb-7 flex items-center gap-3 text-accent"><span className="h-1.5 w-1.5 rounded-full bg-accent" />Tennis match tracking for players and coaches</div>
+        <div className="eyebrow mb-7 flex items-center gap-3 text-accent"><span className="h-1.5 w-1.5 rounded-full bg-accent" />Tennis match and practice tracking for players and coaches</div>
         <h1 className="max-w-xl text-[clamp(3.5rem,6vw,5.4rem)] leading-[1.04] font-semibold tracking-[-.065em]">Record. Analyze.<br /><span className="text-accent">Improve.</span></h1>
-        <p className="mt-7 max-w-[440px] text-base leading-7 text-muted">Tap the points as they are played. Rallymetrica turns them into a match report, a replay and a season of stats.</p>
+        <p className="mt-7 max-w-[440px] text-base leading-7 text-muted">Tap the points as they are played — in a match, a rally game or a serve session. Rallymetrica turns them into a report, a replay and a season of stats.</p>
         <div className="mt-6 max-w-[440px] border-l-2 border-accent pl-4"><p className="text-base font-semibold">Your match. <span className="text-accent">Live on your coach’s phone.</span></p><p className="mt-2 text-sm leading-6 text-muted">Link once by scanning a code. From then on every point you save reaches your coach as it lands, with a notification every set, game or point — their choice.</p></div>
         <div className="mt-9 flex flex-wrap items-center gap-4"><AppStoreLink /><Button href="/#pricing" variant="outline">See the plans <span aria-hidden="true">↗</span></Button></div>
         <p className="mt-5 text-xs leading-5"><a href="#privacy" className="text-ink hover:underline">It’s your data. <span className="font-semibold text-accent">You own it.</span> ↗</a><span className="block text-muted">Matches live on your phone. Sharing is end-to-end encrypted.</span></p>

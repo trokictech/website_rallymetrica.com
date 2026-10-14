@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 
 const steps = [
   { number: '01', title: 'Connect', description: 'The player opens Settings → Coach link to show their Rallymetrica code. The coach scans it from Settings → Students → Add student, and the player taps Link. Their profile, match history and any match in progress arrive on the coach’s phone.' },
-  { number: '02', title: 'Follow', description: 'From then on every point the player saves reaches the coach as it lands — in the background, with a notification every set, game or point, set per student. Open the live card for the score, the report so far and the replay.' },
+  { number: '02', title: 'Follow', description: 'From then on every point the player saves reaches the coach as it lands — in the background, with a notification every set, game or point, set per student. Open the live card for the score, the report so far and the replay. Rally and serve sessions arrive the same way; for a session you are told when it starts and when it ends.' },
 ]
 
 export function CoachFeatures() {
@@ -13,7 +13,7 @@ export function CoachFeatures() {
       <div className="mx-auto max-w-2xl text-center">
         <p className="eyebrow text-accent">Player and coach, connected</p>
         <h2 className="section-heading mt-5">Coach the player.<br /><span className="text-accent">Follow the match.</span></h2>
-        <p className="mt-5 text-base leading-7 text-muted">Link the two phones once. Then follow your students’ matches live on your own phone — up to 5 on Coach, 25 on Academy — with the score, the stats and the recorded rallies.</p>
+        <p className="mt-5 text-base leading-7 text-muted">Link the two phones once. Then follow your students’ matches and practice sessions live on your own phone — up to 5 students on Coach, 25 on Academy — with the score, the stats and the recorded rallies.</p>
       </div>
       <div className="mt-12 grid items-center gap-14 lg:grid-cols-2 lg:gap-14">
         <div>
@@ -26,7 +26,7 @@ export function CoachFeatures() {
         <div className="mx-auto grid w-full max-w-[540px] gap-8 sm:grid-cols-2 sm:gap-6">
           <figure className="mx-auto w-full max-w-[260px] sm:max-w-[250px]">
             <AppScreenshot name="players" alt="A coach’s roster with linked students" />
-            <figcaption className="mt-5 text-center text-xs leading-5 text-muted">The roster: every student, the live ones marked.</figcaption>
+            <figcaption className="mt-5 text-center text-xs leading-5 text-muted">The roster: every student, the live ones marked on the bookmark.</figcaption>
           </figure>
           <figure className="mx-auto w-full max-w-[260px] sm:max-w-[250px]">
             <AppScreenshot name="home" alt="A student’s live match on the coach’s Home screen" />
