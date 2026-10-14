@@ -7,6 +7,8 @@ The site is read against DECISIONS.md from the Oct 11 practice brief to the Oct 
 - **Plans** carry sessions on Player (and so on Coach · Academy); Free lists its three facts (score every match, the score-derived report, two detailed matches to try).
 - **Support** gains a Practice sessions section; the tabs read Players · Sessions (Matches · Rally · Serve) · Stats · Patterns; iPad's two panes; the Data labels are the app's (Back up to a file · Restore from backup · Load demo season · Clear all data).
 
+- **Reading the new charts** (second pass, Oct 14): the sessions guide gains three reading steps — a co-op's RUNS page (the average and median lines read together, Over 10, Balls a minute over the lit runs' seconds, the per-player rows), ENDINGS (who ended the runs and how, what each ending points to) and the serve SERVE · TREND pages (streak against IN %, the mean · median streak lines, the TARGET curve's direction, the cut against the session); the reference's Practice section gains *Streaks, accuracy and the two lines* and *Reading a co-op's two lines*.
+
 ## Corrected
 - **"Matches" the tab → "Sessions"** wherever a tab is named (guides: first match, reports, coach link, roster; support); "Matches" the page stays where it is the page.
 - **Momentum:** p₀ is the player's history shrunk toward the tour's 62% with the same κ (the Oct 13 ruling; a formula line added, κ = 40); the newest provisional swing stays listed beside the largest (4f-iv); "biggest" → **largest** swing (the Oct 12 word) in the reference and the figcaption.
