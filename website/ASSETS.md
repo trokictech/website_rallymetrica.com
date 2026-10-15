@@ -46,5 +46,8 @@ Rendered from the design prototype (design/shell/Home Shell.dc.html, Coach plan,
 The website is adapted from the supplied TypeScript Pocket template. Its commercial license is retained in LICENSE.md. Manrope is self-hosted by Next.js through next/font.
 
 
+## Placeholder added Oct 15
+forecast.png — STATS · FORECAST (the reference's Forecast section); replace with the 4h build's capture, same name.
+
 ## Stale by the Oct 15 palette (re-shot once, last — after the design backlog's export)
 Every chart and court screen: stats · momentum · aggression · live · landings and the seven 4g placeholders (sessions · rally-court · coop-court · serve-court · serve-report · runs · rally-report). The serve court's and placement's pictures also move with the band (a share of the service box, a fifth by default). Nothing is re-shot before the design export and 4h(a)'s palette are both in the app.
