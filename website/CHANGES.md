@@ -1,3 +1,24 @@
+# Oct 15, 2026 — the forecast, the palette and the audit's definitions (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
+
+Read against every decision since the Oct 14 pass (design/docs/website-review-oct15.md). Text only — no screen changes; every chart and court picture is stale by the Oct 15 palette and is re-shot once, last.
+
+## New
+- **The forecast.** /learn/stats-engine › Stats over time reads *Three views, three questions*: FORECAST — an exponential-smoothing model (level · trend · damped trend, the member by a small-sample criterion), the dashed baseline the forecast as it stood before each match (refitted from the matches before it alone, never hindsight), the NEXT star one slot past the last match with its 80% range, five matches (eight for a slope), a range that never collapses; a *Reading it* bullet on the gap (+4 vs forecast); a new *The match forecast* paragraph (the two serve rates through the scoring model — a win chance with its range, the likely set score, the expected length, points and break chances; *Asiya likely · 54–71%* · *Even — either way*; on the card before the first point and on the cover). The stats guide gains the step *Ask what the next one should be* (five questions now). FAQ: *Does it forecast the next match?* The home teaser's paragraph names it. Built in 4h; described as decided.
+
+## Corrected
+- **The palette:** the Stats line is one quiet line and the DOTS read above · below — yellow · coral; the band is a shaded grey tone with dashed edges (was "blue"); the model lines are dashed; "red" → "coral" in the reference and the stats guide; RUNS' shortest run coral, its two lines dashed; a fault on the serve placement a hollow red ring.
+- **Definitions:** '2nd serve pts won' ÷ second-serve points (a double fault a second serve lost); '2nd serve return pts won' ÷ second-serve points received (a double fault one won); the 'return in' rows ÷ the serves received that landed — the server's and the receiver's rows sum to 100% of the same points again. The missing-value box: a count row reads a dash when none of the selected points was recorded at its level (a score-only set inside a Detailed match). Momentum's prior reads the player's history in the order played.
+- **The serve session:** the T and WIDE zones are a share of the service box, a fifth by default; the band a serve fell in is its zone; the block summary's title and six cells, END SESSION alone after the last block, the picks kept across a kill, a cut-short session's unplayed blocks faint.
+- **The VS rally:** a session that ends level is a tie — no winner, no crown.
+
+## Not changed
+- Screens: all stale by the palette (the charts, the courts, the Stats tab); the seven 4g placeholders stay. One re-shoot after the design backlog's export.
+- Plans, prices, the coach link, iPad, privacy and terms.
+
+Build: `npm run build` → `python ../package-site.py out` → commit `site.zip`.
+
+---
+
 # Oct 14, 2026 — the decisions pass (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
 The site is read against DECISIONS.md from the Oct 11 practice brief to the Oct 14 rulings. Every page that describes the product now describes it as decided — including what 4g-i · 4g-ii still build. New screens are PLACEHOLDER renders (public/screens/, marked in ASSETS.md) to be replaced by captures from the 4g build, keeping the names.

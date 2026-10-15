@@ -44,3 +44,7 @@ Rendered from the design prototype (design/shell/Home Shell.dc.html, Coach plan,
 | rally-report.png | VS rally report › COVER (the tally, the blocks, MODE · FORMAT · START · LENGTH) | spare |
 
 The website is adapted from the supplied TypeScript Pocket template. Its commercial license is retained in LICENSE.md. Manrope is self-hosted by Next.js through next/font.
+
+
+## Stale by the Oct 15 palette (re-shot once, last — after the design backlog's export)
+Every chart and court screen: stats · momentum · aggression · live · landings and the seven 4g placeholders (sessions · rally-court · coop-court · serve-court · serve-report · runs · rally-report). The serve court's and placement's pictures also move with the band (a share of the service box, a fifth by default). Nothing is re-shot before the design export and 4h(a)'s palette are both in the app.
