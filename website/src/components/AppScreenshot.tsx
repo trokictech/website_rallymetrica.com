@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { PhoneFrame } from '@/components/PhoneFrame'
 
-const practiceScreens = new Set(['sessions', 'rally-court', 'coop-court', 'serve-court', 'serve-report', 'runs', 'rally-report', 'forecast', 'forecast-card', 'forecast-cover', 'forecast-flip'])
+const practiceScreens = new Set(['sessions', 'rally-court', 'coop-court', 'serve-court', 'serve-report', 'runs', 'rally-report', 'forecast', 'forecast-card', 'forecast-cover', 'forecast-flip', 'pressure'])
 
 export function AppScreenshot({ name, alt, className, priority = false }: { name: string; alt: string; className?: string; priority?: boolean }) {
   const isPracticeScreen = practiceScreens.has(name)

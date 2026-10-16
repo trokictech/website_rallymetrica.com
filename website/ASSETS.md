@@ -47,7 +47,7 @@ The website is adapted from the supplied TypeScript Pocket template. Its commerc
 
 
 ## Placeholders added Oct 16
-forecast-card.png · forecast-flip.png · forecast-cover.png — the home page's Forecast block (StatsEngine.tsx › frames); replace with the 4h-c build's captures of the LIVE card's chip, the flipped card and a live report's cover, same names.
+forecast-cover.png — the home page's Stats engine › Forecast tab (replace with 4h-c's capture of a live report's cover); pressure.png — the Pressure tab (the re-shoot). forecast-card.png · forecast-flip.png are kept for the reference's later use.
 
 ## Placeholder added Oct 15
 forecast.png — STATS · FORECAST (the reference's Forecast section); replace with the 4h build's capture, same name.
