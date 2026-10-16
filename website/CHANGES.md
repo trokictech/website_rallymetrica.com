@@ -3,6 +3,7 @@
 Text only; no screens.
 
 ## Home page
+- **The Forecast tab's description** names the mechanism — the per-player smoothing model, the shrinkage, the exact scoring arithmetic, the push-through range, the live re-read — and states the plan: first and second serves, unforced errors, winners and aggression are tested next as inputs, each earning its place by forecasting real matches better.
 - **It's your data and Learn Rallymetrica** take the horizontal card row (the old Stats engine grammar: heading left, lead or buttons right, then three cards across under hairlines) instead of the heading-left / stacked-list-right form; the privacy notes sit as two small columns under the cards.
 - **The Stats engine section moves up** — from after Pricing · Privacy to right after the match features — and is rebuilt in the house pattern every other section uses (the centred heading, the pill tabs, one panel of text + phone each): **01 Forecast · 02 Momentum · 03 Aggression · 04 Pressure**, Forecast first — *A forecast that moves with every point*, three checks (the live card, the live cover, the Stats tab), the live cover's screen (a placeholder until 4h-c's capture), a button into the reference. Patterns has its own section already.
 
@@ -13,6 +14,8 @@ Text only; no screens.
 - **FAQ** *Does it forecast the next match?* and the home teaser's fifth card — the two kinds.
 
 ## Corrected
+- **Rallymetrica**, never "Rally", as the product's name (four Oct 16 sentences); "Rally" stays the Sessions page's name.
+- **The reference's match-forecast section** gains *What feeds the rates is decided by evidence, and it is growing* — today's input (the serve rate), the four forms tested next (the serve split with double faults, recent error form, recent aggression form, the plain rate as the baseline), the judging rule (held-out matches, log loss · Brier · coverage, the simpler model on a tie), and that the live FORECAST table already shows errors and winners against their forecasts.
 - *Even — either way* → **Even match** (the app's words); the match range is no longer described as a linear approximation.
 
 Build: `npm run build` → `python ../package-site.py out` → commit `site.zip`.

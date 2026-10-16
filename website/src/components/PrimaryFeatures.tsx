@@ -27,7 +27,7 @@ const features: { name: string; title: string; description: string; guide: strin
     shots: [
       { screen: 'momentum', alt: 'The report’s Momentum page with the win chance curve and its swings', caption: 'Momentum · who was ahead, and where it swung' },
       { screen: 'aggression', alt: 'The report’s Aggression page with the margin per game', caption: 'Aggression · built against given away' },
-      { screen: 'replay', alt: 'Rally replay animating a recorded point', caption: 'Replay · the recorded rally, shot by shot', replay: true },
+      { screen: 'replay', alt: 'Rallymetrica’s replay animating a recorded point', caption: 'Replay · the recorded rally, shot by shot', replay: true },
       { screen: 'landings', alt: 'The report’s Landings page: where the balls went', caption: 'Landings · where the balls went' },
     ],
   },
