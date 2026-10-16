@@ -11,5 +11,5 @@ import { CallToAction } from '@/components/CallToAction'
 import { Faqs } from '@/components/Faqs'
 
 export default function Home() {
-  return <><Hero /><PrimaryFeatures /><PracticeFeatures /><CoachFeatures /><PatternFeatures /><Pricing /><PrivacyFeatures /><StatsEngine /><LearnPreview /><CallToAction /><Faqs /></>
+  return <><Hero /><PrimaryFeatures /><StatsEngine /><PracticeFeatures /><CoachFeatures /><PatternFeatures /><Pricing /><PrivacyFeatures /><LearnPreview /><CallToAction /><Faqs /></>
 }

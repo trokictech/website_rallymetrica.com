@@ -46,6 +46,9 @@ Rendered from the design prototype (design/shell/Home Shell.dc.html, Coach plan,
 The website is adapted from the supplied TypeScript Pocket template. Its commercial license is retained in LICENSE.md. Manrope is self-hosted by Next.js through next/font.
 
 
+## Placeholders added Oct 16
+forecast-card.png · forecast-flip.png · forecast-cover.png — the home page's Forecast block (StatsEngine.tsx › frames); replace with the 4h-c build's captures of the LIVE card's chip, the flipped card and a live report's cover, same names.
+
 ## Placeholder added Oct 15
 forecast.png — STATS · FORECAST (the reference's Forecast section); replace with the 4h build's capture, same name.
 

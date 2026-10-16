@@ -2,6 +2,9 @@
 
 Text only; no screens.
 
+## Home page
+- **The Stats engine section moves up** — from after Pricing · Privacy to right after the match features — and **Forecast leads it** as a full-width block: *A forecast that moves with every point*, two paragraphs, three framed screens (the card's chip · the flipped card · the live cover's section — placeholders until the 4h-c capture), a link to the reference; Momentum · Aggression · Pressure · Patterns as the four cards beneath. The heading's paragraph no longer carries the forecast clause.
+
 ## Rewritten
 - **/learn/stats-engine › Forecast** — rebuilt around the distinction the product now makes: *Row forecasts: one number, its own history* (the ETS family, the shrinkage, the window as a view — Last 3 shows the same star All shows) · *The baseline is honest* · *The range* (the floors, a margin's two points) · *Match forecasts: two players, one scoring system* (the serve rates through the arithmetic of the format; the range pushed THROUGH the scoring model, inside 0–100 by construction; *Even match* whenever the range covers a half) · *The forecast lives through the match* (the pre-match number is the live curve's first point; the live card's FORECAST chip and flip, the live cover's FORECAST section with its two-sided table and the pace column; gone when the match closes) · *Win rate: where the two meet* (the baselines are the match model's, the star the chance against the players you face, averaged by how often — never the opponents averaged first; the page as the match model's calibration). The formula block gains the push-through range and the next-match sum; *Reading it* opens with "know which forecast you are reading". 30 min read.
 - **The match guide** — the cover step describes the live FORECAST section; the live-card step the FORECAST chip and the flip (and REPLAY, which replaces REPLAY SO FAR).
