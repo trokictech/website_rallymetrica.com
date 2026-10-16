@@ -1,3 +1,20 @@
+# Oct 16, 2026 — the forecast as a prime object (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
+
+Text only; no screens.
+
+## Rewritten
+- **/learn/stats-engine › Forecast** — rebuilt around the distinction the product now makes: *Row forecasts: one number, its own history* (the ETS family, the shrinkage, the window as a view — Last 3 shows the same star All shows) · *The baseline is honest* · *The range* (the floors, a margin's two points) · *Match forecasts: two players, one scoring system* (the serve rates through the arithmetic of the format; the range pushed THROUGH the scoring model, inside 0–100 by construction; *Even match* whenever the range covers a half) · *The forecast lives through the match* (the pre-match number is the live curve's first point; the live card's FORECAST chip and flip, the live cover's FORECAST section with its two-sided table and the pace column; gone when the match closes) · *Win rate: where the two meet* (the baselines are the match model's, the star the chance against the players you face, averaged by how often — never the opponents averaged first; the page as the match model's calibration). The formula block gains the push-through range and the next-match sum; *Reading it* opens with "know which forecast you are reading". 30 min read.
+- **The match guide** — the cover step describes the live FORECAST section; the live-card step the FORECAST chip and the flip (and REPLAY, which replaces REPLAY SO FAR).
+- **The stats guide** — the forecast step adds the window rule and the Win rate row's different kind.
+- **FAQ** *Does it forecast the next match?* and the home teaser's fifth card — the two kinds.
+
+## Corrected
+- *Even — either way* → **Even match** (the app's words); the match range is no longer described as a linear approximation.
+
+Build: `npm run build` → `python ../package-site.py out` → commit `site.zip`.
+
+---
+
 # Oct 15, 2026 — the forecast, the palette and the audit's definitions (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
 Read against every decision since the Oct 14 pass (design/docs/website-review-oct15.md). Text only — no screen changes; every chart and court picture is stale by the Oct 15 palette and is re-shot once, last.

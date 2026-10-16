@@ -6,7 +6,7 @@ const cards = [
   { id: 'aggression', number: '02', title: 'Aggression', description: 'Points built — winners, aces, errors forced — against points given away, as a signed margin and an efficiency.' },
   { id: 'pressure', number: '03', title: 'Pressure', description: 'Break points, 30–30, deuce, set and match points, breaks consolidated and broken back. Twelve rows, each read before the point.' },
   { id: 'patterns', number: '04', title: 'Patterns', description: 'Attempts, completions and the points won after a completed sequence, from the landings you tapped.' },
-  { id: 'forecast', number: '05', title: 'Forecast', description: 'What the next match should be, from the last ones — with its range — and what each past match should have been before it was played.' },
+  { id: 'forecast', number: '05', title: 'Forecast', description: 'Two kinds: a statistic’s next value from its own history, and a match’s win chance from both players through the scoring system — live on the card and the cover, and both always with their range.' },
 ]
 
 export function StatsEngine() {
