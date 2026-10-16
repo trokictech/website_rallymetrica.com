@@ -51,12 +51,12 @@ const sections: LegalSection[] = [
     'You represent that you are not located in a country subject to a U.S. Government embargo or designated a “terrorist supporting” country, and that you are not on any U.S. Government list of prohibited or restricted parties.',
     'Apple and its subsidiaries are third-party beneficiaries of this agreement and may enforce it against you.',
   ] },
-  { id: 'law', title: 'Governing law and changes', paragraphs: [
-    'These terms are governed by the laws of the State of Georgia, USA, without regard to its conflict-of-law rules; nothing in them takes away consumer rights you have under the law of the country where you live. We may update these terms; the effective date above will change and the app will point to the new version. Continued use after a change means you accept it.',
+  { id: 'law', title: 'Consumer rights and changes', paragraphs: [
+    'Nothing in these terms takes away consumer rights you have under the law of the country where you live. We may update these terms; the effective date above will change and the app will point to the new version. Continued use after a change means you accept it.',
   ] },
   { id: 'contact', title: 'Contact', paragraphs: [`${companyName} · ${supportEmail}`] },
 ]
 
 export default function Terms() {
-  return <LegalDoc eyebrow="Terms of use" title="The rules of the court." updated="October 14, 2026" intro="Plain terms for a plain app: what you get on each plan, how subscriptions work through Apple, what is yours, and where our responsibility ends." sections={sections} />
+  return <LegalDoc eyebrow="Terms of use" title="The rules of the court." updated="October 16, 2026" intro="Plain terms for a plain app: what you get on each plan, how subscriptions work through Apple, what is yours, and where our responsibility ends." sections={sections} />
 }

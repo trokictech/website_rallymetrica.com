@@ -13,7 +13,7 @@ const sections: LegalSection[] = [
     'No advertising, no sale of personal data, no third-party analytics in the app or on this website.',
   ] },
   { id: 'who', title: 'Who we are', paragraphs: [
-    `Rallymetrica is made by ${companyName}, a Georgia (USA) limited liability company. This policy covers the Rallymetrica iOS app and the website rallymetrica.com. Questions go to ${supportEmail}.`,
+    `Rallymetrica is made by ${companyName}. This policy covers the Rallymetrica iOS app and the website rallymetrica.com. Questions go to ${supportEmail}.`,
   ] },
   { id: 'on-device', title: 'What the app stores on your phone', paragraphs: [
     'Everything you record stays in the app’s storage on your device: the players you create (the names you give them), matches and practice sessions with every point, patterns of play, zone traits, notes, settings and your plan state. iOS protects this storage with the device’s own encryption, and it is included in any iPhone backup you make with Apple.',
@@ -50,5 +50,5 @@ const sections: LegalSection[] = [
 ]
 
 export default function Privacy() {
-  return <LegalDoc eyebrow="Privacy" title="Your data stays yours." updated="October 14, 2026" intro="Rallymetrica was built so that we do not have to be trusted with your matches: they live on your phone, and anything you share with a coach is encrypted before it leaves. This page says exactly what the app and this website do with data, and what they do not." sections={sections} />
+  return <LegalDoc eyebrow="Privacy" title="Your data stays yours." updated="October 16, 2026" intro="Rallymetrica was built so that we do not have to be trusted with your matches: they live on your phone, and anything you share with a coach is encrypted before it leaves. This page says exactly what the app and this website do with data, and what they do not." sections={sections} />
 }

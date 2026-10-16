@@ -48,9 +48,9 @@ const sections: LegalSection[] = [
     'A match looks mirrored or a point is wrong: open the match → Timeline, tap the point and correct it; the report recalculates.',
     'Anything else: write to us with the steps that led there. If the app has crashed, iPhone Settings → Privacy & Security → Analytics & Improvements → Analytics Data holds a log named Rallymetrica you can attach.',
   ] },
-  { id: 'about', title: 'About', paragraphs: [`Rallymetrica is made by ${companyName} in Atlanta, Georgia. Privacy policy and terms of use are linked below.`] },
+  { id: 'about', title: 'About', paragraphs: [`Rallymetrica is made by ${companyName}. Privacy policy and terms of use are linked below.`] },
 ]
 
 export default function Support() {
-  return <LegalDoc eyebrow="Support" title="Here to help." updated="October 14, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us; a real person reads every message." sections={sections} />
+  return <LegalDoc eyebrow="Support" title="Here to help." updated="October 16, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us; a real person reads every message." sections={sections} />
 }
