@@ -10,7 +10,7 @@ const ways = [
 
 /* The report on paper — the one picture on the home page that is not a phone, because this is the one feature that leaves it (Oct 18). The composite is three Letter pages rendered from the design prototype's Report PDF (cover · Aggression · Landings), fanned on the site's ground; ASSETS.md names the file. */
 export function PaperFeatures() {
-  return <section id="paper" className="border-t border-white/10 py-20 sm:py-28">
+  return <section id="paper" className="overflow-hidden border-t border-white/10 py-20 sm:py-28">
     <Container>
       <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
         <div>
