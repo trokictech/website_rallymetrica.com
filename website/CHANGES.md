@@ -1,3 +1,10 @@
+# Oct 18, 2026 (night) — light mode shows light phones (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
+
+- **Nineteen more LIGHT twins** under public/screens/ (ASSETS.md lists them); `src/lib/screens.ts › lightScreens` now names every screen the site shows but the replay, so the theme switch no longer leaves dark phones on a light page — the Record gallery, Practice, Patterns, the coach sheets and every guide included. `point-end.png` · `pattern-editor.png` re-captured in dark at the site's crop and added to `AppScreenshot › croppedScreens`.
+- Left for the next pass: a light `replay-sprite.png` for the ReplayLoop (Home › Analyze, /features 04).
+
+---
+
 # Oct 18, 2026 (late) — the support page's contact card
 
 - **/support opens on a contact card** (`ContactCard.tsx`, the CallToAction surface): the eyebrow SUPPORT & PRODUCT QUESTIONS, the address as the headline, the one-line ask, WRITE AN EMAIL opening a pre-addressed mail with the subject 'Rallymetrica support'. The old Reach us section becomes 'What to include'; About no longer names a city. `LegalDoc` gains an optional `lead` slot under the header.

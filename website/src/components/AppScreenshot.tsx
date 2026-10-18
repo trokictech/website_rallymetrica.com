@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { PhoneFrame } from '@/components/PhoneFrame'
 import { lightScreens } from '@/lib/screens'
 
-const croppedScreens = new Set(['aggression', 'choose-plan', 'coach-link', 'coop-court', 'forecast', 'forecast-card', 'forecast-cover', 'forecast-flip', 'home', 'landings', 'live', 'live-counter', 'live-score', 'matches', 'momentum', 'new-match', 'patterns', 'players', 'pressure', 'profile', 'profile-patterns', 'profile-zones', 'rally-court', 'rally-report', 'report-cover', 'report-points', 'report-summary', 'report-timeline', 'runs', 'serve-court', 'serve-report', 'sessions', 'settings', 'stats', 'stats-trend', 'students'])
+const croppedScreens = new Set(['aggression', 'choose-plan', 'coach-link', 'coop-court', 'forecast', 'forecast-card', 'forecast-cover', 'forecast-flip', 'home', 'landings', 'live', 'live-counter', 'live-score', 'matches', 'momentum', 'new-match', 'pattern-editor', 'patterns', 'players', 'point-end', 'pressure', 'profile', 'profile-patterns', 'profile-zones', 'rally-court', 'rally-report', 'report-cover', 'report-points', 'report-summary', 'report-timeline', 'runs', 'serve-court', 'serve-report', 'sessions', 'settings', 'stats', 'stats-trend', 'students'])
 
 export function AppScreenshot({ name, alt, className, priority = false }: { name: string; alt: string; className?: string; priority?: boolean }) {
   const isCroppedScreen = croppedScreens.has(name)
