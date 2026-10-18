@@ -28,6 +28,7 @@ Commit `site.zip` at the repository root; the Pages workflow (`.github/workflows
 - `/learn/<slug>/` — thirteen step-by-step guides with preview screens and related guides (rally · co-op · serve sessions since Oct 14).
 - `/learn/stats-engine/` — the reference: every metric, what it needs, how it is counted; momentum, patterns, practice sessions, cuts, trends.
 - `/privacy/`, `/terms/` — the policies App Review links to.
+- `/get/` — the QR code's landing: forwards to the App Store once `appStoreUrl` is set; 'Coming soon' until then. Not indexed.
 - `sitemap.xml`, `robots.txt` — generated at build.
 
 ## App Store launch
