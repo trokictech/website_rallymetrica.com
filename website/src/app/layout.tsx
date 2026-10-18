@@ -18,5 +18,7 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return <html lang="en" className={`h-full ${manrope.variable}`}><body className="flex min-h-full flex-col">{children}</body></html>
+  /* The theme boots before paint: the saved override (rm.theme) or the system's preference → html[data-theme]; the toggle in the header changes it later. suppressHydrationWarning because the attribute is set by this inline script, not by React. */
+  const boot = "(function(){try{var s=localStorage.getItem('rm.theme');var t=s==='light'||s==='dark'?s:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();"
+  return <html lang="en" className={`h-full ${manrope.variable}`} data-theme="dark" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: boot }} /></head><body className="flex min-h-full flex-col">{children}</body></html>
 }

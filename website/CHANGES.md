@@ -3,7 +3,7 @@
 Text only. The app gains PDF and CSV export on every report's Share sheet and a season CSV under Settings › Data (design: DECISIONS › CSV export · The PDF was never scheduled; built in 4h-j). The SwingVision import is advertised and not released: the column map waits on SwingVision.
 
 ## New
-- **The report, on paper — a home-page section** (`PaperFeatures.tsx`, between the stats engine and Practice; the only picture on the page that is not a phone, because this is the one feature that leaves it): the fanned cover · Aggression · Landings pages (`public/screens/paper.png`, rendered from the design prototype's Report PDF), the heading *Take the match off the phone*, two buttons (the guide's Share step, Support › Your data), three cards — one sheet three ways · the data too · every session kind.
+- **The report, on paper — a home-page section** (`PaperFeatures.tsx`, between the stats engine and Practice; the only picture on the page that is not a phone, because this is the one feature that leaves it): the cover · Aggression · Landings pages as a trio on a transparent ground (`public/screens/paper.png`, rendered from the design prototype's Report PDF — the cover upright in front, the two pages turned outward behind it), the heading *Take the match off the phone*, two buttons (the guide's Share step, Support › Your data), three cards — one sheet three ways · the data too · every session kind.
 - **/features 03 / The report, on paper** — the same picture and words as a feature block after *02 / After the point*; the later blocks renumbered 04–08.
 
 ## Changed

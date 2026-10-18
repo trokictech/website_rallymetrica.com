@@ -1,32 +1,42 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 
+/* Two themes, the app's (design/lib/design/tokens.js › DARK · LIGHT — DECISIONS › Colour decisions, Oct 17): the roles keep their names, html[data-theme] picks the values.
+   Dark: the neon #F8FBA6 on #111217. Light: ONE yellow #FFB733 (the accent, player A, the logo's ball) on the app's ground #EDECE6 → #DDDCD4, ink #1A1B22. The utilities read the tokens, so a section needs no second class. */
 @theme {
   --font-sans: var(--font-manrope), sans-serif;
-  --color-accent: #f8fba6;
-  --color-ground: #111217;
-  --color-surface: #1b1c24;
-  --color-muted: #acaebc;
-  --color-ink: #f6f6f8;
+  --color-accent: var(--t-accent);
+  --color-on-accent: var(--t-on-accent);
+  --color-ground: var(--t-ground);
+  --color-surface: var(--t-surface);
+  --color-muted: var(--t-muted);
+  --color-ink: var(--t-ink);
+  --color-line: var(--t-line);
+  --color-line-2: var(--t-line-2);
 }
 
-:root { color-scheme: dark; }
+:root, html[data-theme='dark'] { color-scheme: dark; --t-accent: #f8fba6; --t-on-accent: #111217; --t-ground: #111217; --t-surface: #1b1c24; --t-muted: #acaebc; --t-ink: #f6f6f8; --t-line: rgba(255,255,255,.1); --t-line-2: rgba(255,255,255,.07); --t-glow: #f8fba60d; --t-phone-border: #4f515a; --t-phone-shell: #0b0c11; --t-phone-inset: #22242c; --t-shadow: #0008; --t-body-bg: #111217; }
+html[data-theme='light'] { color-scheme: light; --t-accent: #ffb733; --t-on-accent: #161821; --t-ground: #edece6; --t-surface: #ffffff; --t-muted: #5c5e6b; --t-ink: #1a1b22; --t-line: rgba(26,27,34,.12); --t-line-2: rgba(26,27,34,.08); --t-glow: #ffb7331a; --t-phone-border: #c9c8c0; --t-phone-shell: #1a1b22; --t-phone-inset: #2a2b33; --t-shadow: #0003; --t-body-bg: linear-gradient(to bottom right, #edece6, #dddcd4); }
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-body { background: #111217; color: #f6f6f8; font-family: var(--font-manrope), sans-serif; }
-::selection { background: #f8fba6; color: #111217; }
+body { background: var(--t-body-bg); background-attachment: fixed; color: var(--t-ink); font-family: var(--font-manrope), sans-serif; }
+::selection { background: var(--t-accent); color: var(--t-on-accent); }
 button, a, summary { -webkit-tap-highlight-color: transparent; }
 button:not(:disabled), summary { cursor: pointer; }
-:focus-visible { outline: 2px solid #f8fba6; outline-offset: 5px; }
+:focus-visible { outline: 2px solid var(--t-accent); outline-offset: 5px; }
 .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; }
 .section-heading { font-size: clamp(2rem, 4vw, 3.3rem); font-weight: 600; letter-spacing: -.05em; line-height: 1.12; }
-.hero-glow { background: radial-gradient(ellipse at center, #f8fba60d 0, transparent 70%); }
-.phone-shell { padding: 8px; border-radius: 36px; border: 1px solid #4f515a; background: #0b0c11; box-shadow: 0 30px 80px #0008, inset 0 0 0 2px #22242c; }
+.hero-glow { background: radial-gradient(ellipse at center, var(--t-glow) 0, transparent 70%); }
+.phone-shell { padding: 8px; border-radius: 36px; border: 1px solid var(--t-phone-border); background: var(--t-phone-shell); box-shadow: 0 30px 80px var(--t-shadow), inset 0 0 0 2px var(--t-phone-inset); }
 .phone-screen { border-radius: 28px; overflow: hidden; background: #1b1c24; }
+/* a safety net for any surviving white-relative line in the tree (one known: the worked-reading card on /learn/stats-engine) — in light the white alpha is invisible on a light ground, so the line token takes over */
+html[data-theme='light'] [class*='border-white/'] { border-color: var(--t-line); }
+.phone-screen .theme-light-only { display: none; } html[data-theme='light'] .phone-screen .theme-light-only { display: block; } html[data-theme='light'] .phone-screen .theme-dark-only { display: none; }
+/* a screen without its light twin keeps its dark capture — the phone's shell is dark in both themes, so a dark screen in a light site is a phone in dark mode, not a mistake */
 .phone-screen img { display: block; width: 100%; height: auto; }
 /* Prose rhythm stays unlayered so it beats text-sm's own line height; the colours sit in the base layer so a text-accent / text-ink utility on a paragraph still wins. */
 .guide-copy p, .guide-copy li { line-height: 1.85; }
 @layer base {
-  .guide-copy p, .guide-copy li { color: #acaebc; }
-  .guide-copy strong { color: #f6f6f8; font-weight: 600; }
+  .guide-copy p, .guide-copy li { color: var(--t-muted); }
+  .guide-copy strong { color: var(--t-ink); font-weight: 600; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; } }

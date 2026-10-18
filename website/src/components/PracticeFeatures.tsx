@@ -35,8 +35,8 @@ export function PracticeFeatures() {
         <p className="mt-5 text-base leading-7 text-muted">The Sessions tab holds your matches, rally sessions and serve sessions side by side. A session is tracked like a Detailed match — every landing — and opens its own report. On the Player plan and up.</p>
       </div>
       <TabGroup className="mt-12">
-        <TabList aria-labelledby="practice-heading" className="mx-auto flex max-w-md gap-2 rounded-full border border-white/10 bg-ground p-1.5">
-          {kinds.map((kind, index) => <Tab key={kind.name} className="flex-1 rounded-full px-4 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-ground"><span className="mr-2 opacity-50">0{index + 1}</span>{kind.name}</Tab>)}
+        <TabList aria-labelledby="practice-heading" className="mx-auto flex max-w-md gap-2 rounded-full border border-line bg-ground p-1.5">
+          {kinds.map((kind, index) => <Tab key={kind.name} className="flex-1 rounded-full px-4 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-on-accent"><span className="mr-2 opacity-50">0{index + 1}</span>{kind.name}</Tab>)}
         </TabList>
         <TabPanels className="mt-12">
           {kinds.map(kind => <TabPanel key={kind.name} className="outline-none">

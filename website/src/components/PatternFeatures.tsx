@@ -39,7 +39,7 @@ const patterns = [
 ]
 
 export function PatternFeatures() {
-  return <section id="patterns" className="border-y border-white/10 bg-surface/50 py-20 sm:py-28">
+  return <section id="patterns" className="border-y border-line bg-surface/50 py-20 sm:py-28">
     <Container>
       <div className="mx-auto max-w-2xl text-center">
         <p id="patterns-heading" className="eyebrow text-accent">Patterns of play</p>
@@ -47,8 +47,8 @@ export function PatternFeatures() {
         <p className="mt-5 text-base leading-7 text-muted">Create a sequence, assign it to players, and see how it was executed on court.</p>
       </div>
       <TabGroup className="mt-12">
-        <TabList aria-labelledby="patterns-heading" className="mx-auto flex max-w-md gap-2 rounded-full border border-white/10 bg-ground p-1.5">
-          {patterns.map((pattern, index) => <Tab key={pattern.name} className="flex-1 rounded-full px-4 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-ground"><span className="mr-2 opacity-50">0{index + 1}</span>{pattern.name}</Tab>)}
+        <TabList aria-labelledby="patterns-heading" className="mx-auto flex max-w-md gap-2 rounded-full border border-line bg-ground p-1.5">
+          {patterns.map((pattern, index) => <Tab key={pattern.name} className="flex-1 rounded-full px-4 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-on-accent"><span className="mr-2 opacity-50">0{index + 1}</span>{pattern.name}</Tab>)}
         </TabList>
         <TabPanels className="mt-12">
           {patterns.map(pattern => <TabPanel key={pattern.name} className="outline-none">

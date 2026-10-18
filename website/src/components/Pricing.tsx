@@ -3,7 +3,7 @@ import { Container } from '@/components/Container'
 import { plans } from '@/lib/site'
 
 export function Pricing() {
-  return <section id="pricing" className="border-y border-white/10 bg-surface/50 py-20 sm:py-28">
+  return <section id="pricing" className="border-y border-line bg-surface/50 py-20 sm:py-28">
     <Container>
       <div className="mx-auto max-w-2xl text-center">
         <p className="eyebrow text-accent">Plans</p>
@@ -11,7 +11,7 @@ export function Pricing() {
         <p className="mt-5 text-base leading-7 text-muted">Every plan scores every match. Player adds detailed tracking, rally and serve sessions and the full stats engine; Coach and Academy add the roster — five students or twenty-five. Each with a 7-day free trial through the App Store.</p>
       </div>
       <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-        {plans.map(plan => <div key={plan.id} className={`flex flex-col rounded-3xl border p-7 ${plan.id === 'player' ? 'border-accent/40 bg-ground' : 'border-white/10 bg-ground/60'}`}>
+        {plans.map(plan => <div key={plan.id} className={`flex flex-col rounded-3xl border p-7 ${plan.id === 'player' ? 'border-accent/40 bg-ground' : 'border-line bg-ground/60'}`}>
           <div className="flex items-baseline justify-between gap-4">
             <h3 className="text-sm font-semibold tracking-[.12em] uppercase">{plan.name}</h3>
             <p className="text-right"><span className="text-2xl font-semibold tracking-tight">{plan.price}</span>{plan.per && <span className="ml-1.5 text-sm text-muted">{plan.per}</span>}</p>

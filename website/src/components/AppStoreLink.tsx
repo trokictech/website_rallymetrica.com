@@ -6,7 +6,7 @@ function AppleIcon() {
 }
 
 export function AppStoreLink({ className }: { className?: string }) {
-  const styles = clsx('inline-flex min-h-[54px] items-center gap-3 rounded-xl border border-white/20 bg-white/5 px-4 py-2.5 text-ink', className)
+  const styles = clsx('inline-flex min-h-[54px] items-center gap-3 rounded-xl border border-line bg-ink/5 px-4 py-2.5 text-ink', className)
   const content = <><AppleIcon /><span className="text-left"><span className="block text-[10px] leading-4 text-muted">{appStoreUrl ? 'Download on the' : 'Coming soon to the'}</span><span className="block text-lg font-semibold leading-5">App Store</span></span></>
-  return appStoreUrl ? <a href={appStoreUrl} className={clsx(styles, 'transition-colors hover:bg-white/10')} target="_blank" rel="noopener noreferrer">{content}</a> : <span className={styles} aria-label="Rallymetrica is coming soon to the App Store">{content}</span>
+  return appStoreUrl ? <a href={appStoreUrl} className={clsx(styles, 'transition-colors hover:bg-ink/10')} target="_blank" rel="noopener noreferrer">{content}</a> : <span className={styles} aria-label="Rallymetrica is coming soon to the App Store">{content}</span>
 }

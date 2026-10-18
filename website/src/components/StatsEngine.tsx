@@ -45,8 +45,8 @@ export function StatsEngine() {
         <p className="mt-5 text-base leading-7 text-muted">Nothing is estimated. A metric exists only when the points behind it were recorded, and each one is written down: what it needs, and how it is counted.</p>
       </div>
       <TabGroup className="mt-12">
-        <TabList aria-labelledby="engine-heading" className="mx-auto grid max-w-xl grid-cols-2 gap-2 rounded-2xl border border-white/10 bg-ground p-1.5 sm:flex sm:rounded-full">
-          {engines.map((engine, index) => <Tab key={engine.name} className="flex-1 rounded-full px-2 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-ground sm:px-4"><span className="mr-2 opacity-50">0{index + 1}</span>{engine.name}</Tab>)}
+        <TabList aria-labelledby="engine-heading" className="mx-auto grid max-w-xl grid-cols-2 gap-2 rounded-2xl border border-line bg-ground p-1.5 sm:flex sm:rounded-full">
+          {engines.map((engine, index) => <Tab key={engine.name} className="flex-1 rounded-full px-2 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-on-accent sm:px-4"><span className="mr-2 opacity-50">0{index + 1}</span>{engine.name}</Tab>)}
         </TabList>
         <TabPanels className="mt-12">
           {engines.map(engine => <TabPanel key={engine.name} className="outline-none">
