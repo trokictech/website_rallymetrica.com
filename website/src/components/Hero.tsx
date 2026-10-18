@@ -14,8 +14,8 @@ export function Hero() {
         <div className="mt-6 max-w-[440px] border-l-2 border-accent pl-4"><p className="text-base font-semibold">Your match. <span className="text-accent">Live on your coach’s phone.</span></p><p className="mt-2 text-sm leading-6 text-muted">Link once by scanning a code. From then on every point you save reaches your coach as it lands, with a notification every set, game or point — their choice.</p></div>
         <div className="mt-9 flex flex-wrap items-start gap-4">
           <div className="flex flex-col items-start gap-3"><AppStoreLink /><Button href="/#pricing" variant="outline">See the plans <span aria-hidden="true">↗</span></Button></div>
-          {/* The QR code carries a fixed install address; hidden on phones, where the App Store button is the path. */}
-          <a href="/get" className="hidden flex-col items-center gap-2 sm:inline-flex" aria-label="Scan to install"><img src="/qr-get.svg" alt="" width={96} height={96} className="h-24 w-24" /><span className="text-sm font-semibold text-ink">Scan to install</span></a></div>
+          {/* The QR (owner, Oct 18): the bridge from the laptop to the phone standing next to it — the bare code, nothing around it; it carries rallymetrica.com/get, a fixed address that forwards to the listing once it exists; a white tile so phones read it in both themes; hidden on a phone-width screen (the button is the path there). */}
+          <a href="/get" className="hidden flex-col items-center gap-2 sm:flex" aria-label="Scan to install"><img src="/qr-get.svg" alt="" width={128} height={128} className="h-32 w-32" /><span className="text-sm font-semibold text-ink">Scan to install</span></a></div>
         <p className="mt-5 text-xs leading-5"><a href="#privacy" className="text-ink hover:underline">It’s your data. <span className="font-semibold text-accent">You own it.</span> ↗</a><span className="block text-muted">Matches live on your phone. Sharing is end-to-end encrypted.</span></p>
       </div>
       <div className="relative mx-auto flex w-full max-w-[560px] items-start justify-between gap-4 sm:gap-6 lg:-mt-2">
