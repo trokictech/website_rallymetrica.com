@@ -2,6 +2,9 @@
 
 Brand marks copied unchanged from `trokictech/rally`: `public/mark.svg` = `design/lib/design/logo-rm.svg` (the RM monogram, 256 viewBox), `public/wordmark.svg` is the same mark on the lockup’s artboard (the type is set live by Logo.tsx). The Header, Footer (Logo.tsx) and the Hero use mark.svg; `public/apple-touch-icon.png` (180 px) and `public/og.png` (1200 × 630, the link preview) are rendered from them.
 
+## public/screens/paper*.png (Oct 18, 2026 — the report on paper)
+paper.png (1800 × 1500): three Letter pages of the match report, rendered at 2× from the design prototype's Report PDF (design/shell/Report PDF.dc.html — the demo season's m1) and fanned on the site's ground with soft shadows: Landings at the back, Aggression in the middle, the cover in front. Used by the home page's PaperFeatures section and /features 03. paper-cover.png · paper-aggression.png · paper-landings.png are the three pages alone (1632 × 2112). Re-render when the PDF's pages change.
+
 ## public/screens/ (Oct 16, 2026 — re-shot from the prototype under the new palette)
 3× DOM snapshots of the design prototype (design/shell/Home Shell.dc.html, Coach plan, the 67-match demo season) in the 402 × 874 phone frame, downscaled to 804 wide with the status bar and home indicator cropped — the site's frame draws its own. The App Store set (design/store/iphone-6.3/) is the same captures at 1206 × 2622. Replace with device captures at the re-shoot, keeping the names.
 

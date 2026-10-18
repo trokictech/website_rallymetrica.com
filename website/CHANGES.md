@@ -2,6 +2,10 @@
 
 Text only. The app gains PDF and CSV export on every report's Share sheet and a season CSV under Settings › Data (design: DECISIONS › CSV export · The PDF was never scheduled; built in 4h-j). The SwingVision import is advertised and not released: the column map waits on SwingVision.
 
+## New
+- **The report, on paper — a home-page section** (`PaperFeatures.tsx`, between the stats engine and Practice; the only picture on the page that is not a phone, because this is the one feature that leaves it): the fanned cover · Aggression · Landings pages (`public/screens/paper.png`, rendered from the design prototype's Report PDF), the heading *Take the match off the phone*, two buttons (the guide's Share step, Support › Your data), three cards — one sheet three ways · the data too · every session kind.
+- **/features 03 / The report, on paper** — the same picture and words as a feature block after *02 / After the point*; the later blocks renumbered 04–08.
+
 ## Changed
 - **Support › Your data** — three new bullets ahead of Backup: the PDF (what it contains, the three ways out of the sheet), the CSV (the ball-per-row log and the season file), and *Import from SwingVision — coming soon* (what it will read; the row sits under gear → Data and opens when the import ships).
 - **Privacy › What the app stores on your phone** — the PDF and the CSV named beside the backup as files the owner creates and keeps.
