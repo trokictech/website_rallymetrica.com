@@ -8,6 +8,11 @@
 
 Text only. The app gains PDF and CSV export on every report's Share sheet and a season CSV under Settings › Data (design: DECISIONS › CSV export · The PDF was never scheduled; built in 4h-j). The SwingVision import is advertised and not released: the column map waits on SwingVision.
 
+## Oct 18, 2026 — the re-shoot
+- Every phone picture re-captured from the design prototype after the 4h line (35 screens; the Oct 17–18 palette, the ground's watermark, the tab glyphs in the accent, the Settings foot, the live court's corners and ☰, the card's forecast face flat).
+- 17 screens gain a LIGHT twin (`<name>-light.png`); `src/lib/screens.ts › lightScreens` lists them, so the theme switch now shows a light phone on a light page.
+- The practice courts and reports are real captures (no drawn frames left but replay.png).
+
 ## New
 - **A QR code in the hero** (owner, Oct 18): the bare code beside the stacked App Store · See the plans buttons, 'Scan to install' under it — no card, no address — hidden under sm. It carries `rallymetrica.com/get`, a fixed address: `/get` forwards to the App Store listing the moment `appStoreUrl` is set in lib/site.ts (meta refresh; the site is static) and reads 'Coming soon to the App Store' until then, so the printed code never changes. The code is `public/qr-get.svg`, generated once (version 3, EC level M, verified by round-trip decode); `/get` is noindex and not in the sitemap.
 - **SHARE is the fourth pill** of Record · Analyze · Improve (owner, Oct 18: the paper and the CSV are what you do with the report once you have it — the fourth verb). The pill's pictures are four pages of the report (paper-cover · paper-momentum · paper-aggression · paper-landings) in the other pills' 2×2, each a white sheet with the phone's shadow (`.paper-sheet`); its link goes to the sharing step of the reports guide. The standalone paper section (PaperFeatures.tsx) is gone from the home page; /features keeps its 08 block. The tab track widens to max-w-xl for four pills.
