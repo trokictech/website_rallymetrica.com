@@ -38,6 +38,9 @@ const sections: LegalSection[] = [
   ] },
   { id: 'data', title: 'Your data', bullets: [
     'Matches and sessions live on your phone, not on our servers. Deleting the app deletes them.',
+    'Export a report as PDF: on any report — a match, a rally or co-op session, a serve session — tap Share. The PDF is the report on paper, page for page: the cover, Momentum, Aggression, the tables, the landing maps with their placement tables, the patterns and the timeline; a co-op’s Runs and a serve session’s Placement and Accuracy pages where those apply. Send it, save it to Files or print it from the same sheet.',
+    'Export the data as CSV: the same Share sheet offers Export CSV — one row per ball of the match or session, every recorded fact beside it (the point, the score before it, the server, how it ended, the ball’s hitter, landing and whether it was in), ready for a spreadsheet or a pivot table. Under gear → Data → Export stats to CSV the whole season goes out as one file: one row per match and player, every statistic in the catalogue with its numerator and denominator.',
+    'Import from SwingVision — coming soon. Rallymetrica will read a SwingVision match export as a Detailed match: the score, every point and every tracked ball, with the speeds and spins the file carries. The row is in the app under gear → Data; it opens when the import ships.',
     'Backup: gear → Data → Back up to a file writes one Rallymetrica document you can keep in Files, iCloud Drive or anywhere you choose. Restore it on any phone or iPad with gear → Data → Restore from backup.',
     'Start over: gear → Data → Clear all data removes every player, match and session from the phone. Your subscription is unaffected.',
     'What leaves the phone and why is set out in full in the privacy policy.',
@@ -52,5 +55,5 @@ const sections: LegalSection[] = [
 ]
 
 export default function Support() {
-  return <LegalDoc eyebrow="Support" title="Here to help." updated="October 16, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us; a real person reads every message." sections={sections} />
+  return <LegalDoc eyebrow="Support" title="Here to help." updated="October 17, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us; a real person reads every message." sections={sections} />
 }

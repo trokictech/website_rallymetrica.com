@@ -2,7 +2,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 
 const features = [
-  { number: '01', title: 'Saved on your phone', description: 'Your recorded match history lives locally on your phone. A linked coach receives read-only copies on theirs. You choose whether to share.' },
+  { number: '01', title: 'Saved on your phone, yours to take', description: 'Your recorded match history lives locally on your phone. A linked coach receives read-only copies on theirs. Every report exports as a PDF and every match, session or season as a CSV — from the Share sheet, to wherever you keep your files.' },
   { number: '02', title: 'Encrypted between you', description: 'Shared match content is end-to-end encrypted. The linked phones hold the keys to read it; the delivery service cannot read your match content.' },
   { number: '03', title: 'Unlink whenever you choose', description: 'Unlinking stops new sharing. Once the coach’s app is online and receives the unlink, it removes match copies received through that link. Your original recordings remain on your phone.' },
 ]

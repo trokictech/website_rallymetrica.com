@@ -1,3 +1,23 @@
+# Oct 17, 2026 (late) — the exports, and SwingVision as coming soon (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
+
+Text only. The app gains PDF and CSV export on every report's Share sheet and a season CSV under Settings › Data (design: DECISIONS › CSV export · The PDF was never scheduled; built in 4h-j). The SwingVision import is advertised and not released: the column map waits on SwingVision.
+
+## Changed
+- **Support › Your data** — three new bullets ahead of Backup: the PDF (what it contains, the three ways out of the sheet), the CSV (the ball-per-row log and the season file), and *Import from SwingVision — coming soon* (what it will read; the row sits under gear → Data and opens when the import ships).
+- **Privacy › What the app stores on your phone** — the PDF and the CSV named beside the backup as files the owner creates and keeps.
+- **Home › It's your data, card 01** — *Saved on your phone, yours to take*: every report a PDF, every match, session or season a CSV.
+- **The match guide** — a Share step after Replay: the PDF, the CSV, the season export.
+- **/features 02** — a bullet for the PDF and the CSV.
+- **FAQ** — *Can I get my data out?* before the storage question; names the import as coming soon.
+
+---
+
+# Oct 16, 2026 (late) — screens re-shot from the prototype
+
+24 of public/screens/ replaced with 3× prototype snapshots under the new palette (ASSETS.md has the table): Home with the forecast chip, the live court, Momentum with a swing open, Stats › FORECAST and TREND, the flipped card, the live cover with its FORECAST section, Aggression · Landings · Pressure · Summary · Points · Timeline, the roster and profile pages, Sessions › Matches and Rally, the pattern library, the VS rally court. The practice courts and reports stay placeholders until the app's re-shoot. No text changes.
+
+---
+
 # Oct 16, 2026 — the forecast as a prime object (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
 Text only; no screens.

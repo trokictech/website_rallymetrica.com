@@ -17,7 +17,7 @@ const sections: LegalSection[] = [
   ] },
   { id: 'on-device', title: 'What the app stores on your phone', paragraphs: [
     'Everything you record stays in the app’s storage on your device: the players you create (the names you give them), matches and practice sessions with every point, patterns of play, zone traits, notes, settings and your plan state. iOS protects this storage with the device’s own encryption, and it is included in any iPhone backup you make with Apple.',
-    'A backup you save under Settings → Data is a file you create and keep. We never receive it. Clear all data under Settings → Data, or deleting the app, removes everything from the phone.',
+    'A backup you save under Settings → Data, a PDF you share from a report, and a CSV you export are files you create and keep, and share only where you choose. We never receive them. Clear all data under Settings → Data, or deleting the app, removes everything from the phone.',
   ] },
   { id: 'leaves', title: 'What leaves your phone, and why', paragraphs: ['Nothing leaves your phone unless you use one of the following.'], bullets: [
     'Coach link (optional). When a player links a coach, saved points, match and session records and pattern assignments are sent between the two phones through our delivery relay. Each message is encrypted on the sending phone with keys that exist only on the two linked phones; the relay forwards sealed envelopes it cannot open. To deliver them, the relay stores each envelope until it is retrieved (undelivered envelopes are removed after thirty days), the devices’ push tokens, the link identifiers, and ordinary connection details such as IP addresses and timestamps in its logs. A device with no live link and no activity for thirty days is removed from the relay.',
@@ -50,5 +50,5 @@ const sections: LegalSection[] = [
 ]
 
 export default function Privacy() {
-  return <LegalDoc eyebrow="Privacy" title="Your data stays yours." updated="October 16, 2026" intro="Rallymetrica was built so that we do not have to be trusted with your matches: they live on your phone, and anything you share with a coach is encrypted before it leaves. This page says exactly what the app and this website do with data, and what they do not." sections={sections} />
+  return <LegalDoc eyebrow="Privacy" title="Your data stays yours." updated="October 17, 2026" intro="Rallymetrica was built so that we do not have to be trusted with your matches: they live on your phone, and anything you share with a coach is encrypted before it leaves. This page says exactly what the app and this website do with data, and what they do not." sections={sections} />
 }
