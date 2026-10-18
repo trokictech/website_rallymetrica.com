@@ -1,12 +1,13 @@
 import { type Metadata } from 'next'
 import { LegalDoc, type LegalSection } from '@/components/LegalDoc'
 import { companyName, supportEmail } from '@/lib/site'
+import { ContactCard } from '@/components/ContactCard'
 
 export const metadata: Metadata = { title: 'Support', description: 'Help with Rallymetrica: getting started, plans and purchases, practice sessions, the coach link, your data, and how to reach us.' }
 
 const sections: LegalSection[] = [
-  { id: 'contact', title: 'Reach us', paragraphs: [
-    `Write to ${supportEmail}. Say which iPhone or iPad and iOS version you use, which plan you are on (gear → Plan), and what you expected against what happened. A screenshot helps. We answer within two business days.`,
+  { id: 'contact', title: 'What to include', paragraphs: [
+    'Say which iPhone or iPad and iOS version you use, which plan you are on (gear → Plan), and what you expected against what happened. A screenshot helps. We answer within two business days.',
   ] },
   { id: 'start', title: 'Getting started', bullets: [
     'First start: enter a first name, then choose Continue free or a plan. Nothing else is asked; there is no account.',
@@ -55,5 +56,5 @@ const sections: LegalSection[] = [
 ]
 
 export default function Support() {
-  return <LegalDoc eyebrow="Support" title="Here to help." updated="October 17, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us; a real person reads every message." sections={sections} />
+  return <LegalDoc eyebrow="Support" title="Here to help." updated="October 18, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us — a real person reads every message." lead={<ContactCard eyebrow="Support & product questions" email={supportEmail} ask="Tell us what happened and what you expected, and include any detail that helps us see it — your device, your plan, a screenshot." subject="Rallymetrica support" />} sections={sections} />
 }

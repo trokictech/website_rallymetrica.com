@@ -1,3 +1,9 @@
+# Oct 18, 2026 (late) — the support page's contact card
+
+- **/support opens on a contact card** (`ContactCard.tsx`, the CallToAction surface): the eyebrow SUPPORT & PRODUCT QUESTIONS, the address as the headline, the one-line ask, WRITE AN EMAIL opening a pre-addressed mail with the subject 'Rallymetrica support'. The old Reach us section becomes 'What to include'; About no longer names a city. `LegalDoc` gains an optional `lead` slot under the header.
+
+---
+
 # Oct 17, 2026 (late) — the exports, and SwingVision as coming soon (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
 Text only. The app gains PDF and CSV export on every report's Share sheet and a season CSV under Settings › Data (design: DECISIONS › CSV export · The PDF was never scheduled; built in 4h-j). The SwingVision import is advertised and not released: the column map waits on SwingVision.
