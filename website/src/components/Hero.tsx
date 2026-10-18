@@ -2,6 +2,7 @@ import { AppStoreLink } from '@/components/AppStoreLink'
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { AppScreenshot } from '@/components/AppScreenshot'
+import { Mark } from '@/components/Mark'
 
 export function Hero() {
   return <section className="overflow-hidden">
@@ -17,7 +18,7 @@ export function Hero() {
       <div className="relative mx-auto flex w-full max-w-[560px] items-start justify-between gap-4 sm:gap-6 lg:-mt-2">
         <div className="hero-glow pointer-events-none absolute -inset-x-16 top-10 bottom-0" aria-hidden="true" />
         <div className="relative z-10 flex flex-col items-start gap-5 pt-8 sm:pt-16">
-          <img src="/mark.svg" alt="" width={176} height={176} className="h-[96px] w-[96px] sm:h-[176px] sm:w-[176px]" />
+          <Mark className="h-[96px] w-[96px] sm:h-[176px] sm:w-[176px]" />
           <p className="hidden max-w-[200px] text-sm leading-6 text-muted sm:block">The score, the shots and the rallies — recorded from the side of the court, one tap per ball.</p>
         </div>
         <AppScreenshot name="live" alt="Rallymetrica live court with the score and detailed shot tracking" priority className="relative z-10 w-[min(230px,56vw)] shrink-0 sm:w-[285px]" />

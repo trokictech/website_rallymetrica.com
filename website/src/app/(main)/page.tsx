@@ -6,11 +6,10 @@ import { PatternFeatures } from '@/components/PatternFeatures'
 import { Pricing } from '@/components/Pricing'
 import { PrivacyFeatures } from '@/components/PrivacyFeatures'
 import { StatsEngine } from '@/components/StatsEngine'
-import { PaperFeatures } from '@/components/PaperFeatures'
 import { LearnPreview } from '@/components/LearnPreview'
 import { CallToAction } from '@/components/CallToAction'
 import { Faqs } from '@/components/Faqs'
 
 export default function Home() {
-  return <><Hero /><PrimaryFeatures /><StatsEngine /><PaperFeatures /><PracticeFeatures /><CoachFeatures /><PatternFeatures /><Pricing /><PrivacyFeatures /><LearnPreview /><CallToAction /><Faqs /></>
+  return <><Hero /><PrimaryFeatures /><StatsEngine /><PracticeFeatures /><CoachFeatures /><PatternFeatures /><Pricing /><PrivacyFeatures /><LearnPreview /><CallToAction /><Faqs /></>
 }

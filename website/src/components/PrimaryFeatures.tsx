@@ -4,11 +4,14 @@ import Link from 'next/link'
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react'
 import { Container } from '@/components/Container'
 import { AppScreenshot } from '@/components/AppScreenshot'
+import Image from 'next/image'
 import { ReplayLoop } from '@/components/ReplayLoop'
 
 type Shot = { screen: string; alt: string; caption: string; replay?: boolean }
+/* The fourth pill (owner, Oct 18): SHARE — what you do with the report once you have it. Its picture is the paper trio (public/screens/paper.png, transparent) in place of the 2×2 of phones: the pages are the picture. */
+type Feature = { name: string; title: string; description: string; guide: string; items: string[]; shots: Shot[]; paper?: { src: string; alt: string; caption: string } }
 
-const features: { name: string; title: string; description: string; guide: string; items: string[]; shots: Shot[] }[] = [
+const features: Feature[] = [
   {
     name: 'Record', title: 'Be there for every point.', guide: 'tracking-modes',
     description: 'Keep the score, count the rally, or tap every landing. Choose the detail that fits the match, with undo and resume when you need them.',
@@ -42,15 +45,22 @@ const features: { name: string; title: string; description: string; guide: strin
       { screen: 'matches', alt: 'The Matches tab: every result with its report', caption: 'Matches · every result, with its report' },
     ],
   },
+  {
+    name: 'Share', title: 'Take the match off the phone.', guide: 'reports-and-replay',
+    description: 'Share any report as a PDF — page for page as the app draws it — or export the data behind it. Print it for the car ride home, send it to a parent, keep the season in a folder.',
+    items: ['One PDF: the cover, Momentum, Aggression, every table, the landing maps, the timeline', 'The CSV: one row per ball, every recorded fact beside it; the whole season from Settings → Data', 'A match, a rally session, a co-op, a serve session — each on paper in its own order'],
+    shots: [],
+    paper: { src: '/screens/paper.png', alt: 'Three pages of a Rallymetrica match report: the cover with the winner’s band in front, a Landings page with the court maps and their tables at the left, the Aggression page with its bars at the right', caption: 'The report on paper · the cover, Landings, Aggression' },
+  },
 ]
 
 export function PrimaryFeatures() {
   return <section id="features" className="border-y border-line bg-surface/50 py-20 sm:py-28">
     <Container><div className="mx-auto max-w-2xl text-center"><p className="eyebrow text-accent">The game, in focus</p><h2 className="section-heading mt-5">More understanding.<br /><span className="text-accent">From every match.</span></h2><p className="mt-5 text-base leading-7 text-muted">A simple way to record. A deeper way to look back.</p></div>
-      <TabGroup className="mt-12"><TabList className="mx-auto flex max-w-md gap-2 rounded-full border border-line bg-ground p-1.5">{features.map((feature, index) => <Tab key={feature.name} className="flex-1 rounded-full px-4 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-on-accent"><span className="mr-2 opacity-50">0{index + 1}</span>{feature.name}</Tab>)}</TabList>
+      <TabGroup className="mt-12"><TabList className="mx-auto grid max-w-xl grid-cols-2 gap-2 rounded-2xl border border-line bg-ground p-1.5 sm:flex sm:rounded-full">{features.map((feature, index) => <Tab key={feature.name} className="flex-1 rounded-full px-3 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-on-accent sm:px-4"><span className="mr-2 opacity-50">0{index + 1}</span>{feature.name}</Tab>)}</TabList>
         <TabPanels className="mt-12">{features.map(feature => <TabPanel key={feature.name} className="outline-none"><div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          <div className="lg:pl-14"><p className="eyebrow text-muted">{feature.name} your game</p><h3 className="mt-5 max-w-md text-3xl leading-tight font-semibold tracking-[-.04em] sm:text-4xl">{feature.title}</h3><p className="mt-5 max-w-md leading-7 text-muted">{feature.description}</p><ul className="mt-7 space-y-3">{feature.items.map(item => <li key={item} className="flex gap-3 text-sm text-ink"><span className="text-accent" aria-hidden="true">✓</span>{item}</li>)}</ul><Link href={`/learn/${feature.guide}`} className="mt-9 inline-flex items-center gap-3 text-sm font-semibold text-accent">See how it works <span aria-hidden="true">↗</span></Link></div>
-          <div className="relative mx-auto grid w-full max-w-[520px] grid-cols-2 gap-x-5 gap-y-8 sm:gap-x-6"><div className="absolute -inset-10 -z-10 rounded-full bg-accent/5 blur-3xl" aria-hidden="true" />{feature.shots.map(shot => <figure key={shot.screen}>{shot.replay ? <ReplayLoop alt={shot.alt} /> : <AppScreenshot name={shot.screen} alt={shot.alt} />}<figcaption className="mt-3 text-center text-xs leading-5 text-muted">{shot.caption}</figcaption></figure>)}</div>
+          <div className="lg:pl-14"><p className="eyebrow text-muted">{feature.name} your game</p><h3 className="mt-5 max-w-md text-3xl leading-tight font-semibold tracking-[-.04em] sm:text-4xl">{feature.title}</h3><p className="mt-5 max-w-md leading-7 text-muted">{feature.description}</p><ul className="mt-7 space-y-3">{feature.items.map(item => <li key={item} className="flex gap-3 text-sm text-ink"><span className="text-accent" aria-hidden="true">✓</span>{item}</li>)}</ul><Link href={feature.paper ? '/learn/reports-and-replay#step-13' : `/learn/${feature.guide}`} className="mt-9 inline-flex items-center gap-3 text-sm font-semibold text-accent">See how it works <span aria-hidden="true">↗</span></Link></div>
+          {feature.paper ? <figure className="relative mx-auto w-full max-w-[620px]"><div className="absolute inset-x-[15%] inset-y-[10%] -z-10 rounded-full bg-accent/[.06] blur-3xl" aria-hidden="true" /><Image src={feature.paper.src} alt={feature.paper.alt} width={1800} height={1400} sizes="(max-width: 1024px) 94vw, 620px" className="h-auto w-full" /><figcaption className="mt-3 text-center text-xs leading-5 text-muted">{feature.paper.caption}</figcaption></figure> : <div className="relative mx-auto grid w-full max-w-[520px] grid-cols-2 gap-x-5 gap-y-8 sm:gap-x-6"><div className="absolute -inset-10 -z-10 rounded-full bg-accent/5 blur-3xl" aria-hidden="true" />{feature.shots.map(shot => <figure key={shot.screen}>{shot.replay ? <ReplayLoop alt={shot.alt} /> : <AppScreenshot name={shot.screen} alt={shot.alt} />}<figcaption className="mt-3 text-center text-xs leading-5 text-muted">{shot.caption}</figcaption></figure>)}</div>}
         </div></TabPanel>)}</TabPanels>
       </TabGroup><div className="mt-12 text-center"><Link href="/features" className="text-sm text-muted transition-colors hover:text-accent">Explore all features <span aria-hidden="true">→</span></Link></div>
     </Container>
