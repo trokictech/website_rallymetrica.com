@@ -1,6 +1,6 @@
 # Oct 19, 2026 — the app's own screenshots (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
-- **public/screens/ replaced with the app's capture set** (4h-l (5), both themes): every screen the site shows is now a picture of the app, not the prototype — the tab bar's accent glyphs, the watermark, the ☰ courts, the light palette as built. Cropped to the site's 804 × 1624 as before; no source change (`croppedScreens` · `lightScreens` already name every one). Only the replay sprite is still the prototype's.
+- **public/screens/ replaced with the app's capture set** (4h-l (5), both themes): every screen the site shows is now a picture of the app, not the prototype — the tab bar's accent glyphs, the watermark, the ☰ courts, the light palette as built. Cropped to the site's 804 × 1624 as before; no source change (`croppedScreens` · `lightScreens` already name every one). The replay has a light twin too: `replay-sprite-light.png` · `replay-light.png` (eleven frames of m1's point 14, an 11-shot rally Asiya wins, from the prototype's replay in both themes at 402 × 812 — the FULL court with the alley names, the Oct 17 palette); `ReplayLoop` draws both strips and CSS shows the theme's; `replay-sprite.json` now 402 × 812.
 
 ---
 
