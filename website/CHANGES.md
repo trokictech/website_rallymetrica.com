@@ -1,5 +1,6 @@
-# Oct 18, 2026 (night) — light mode shows light phones (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
+# Oct 18, 2026 (night) — light mode shows light phones; the bottoms uncovered (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
+- **Every site screen re-shot at 804 × 1624** (status bar cropped, home indicator kept): the first cut's 68px bottom crop cut the courts' UNDO · FAVE row, the Counter's ending bar, SAVE PATTERN and the point sheet's buttons. `AppScreenshot` cropped height 1556 → 1624. The point sheet and pattern editor no longer show wrapped labels (a renderer artifact, pinned at capture).
 - **Nineteen more LIGHT twins** under public/screens/ (ASSETS.md lists them); `src/lib/screens.ts › lightScreens` now names every screen the site shows but the replay, so the theme switch no longer leaves dark phones on a light page — the Record gallery, Practice, Patterns, the coach sheets and every guide included. `point-end.png` · `pattern-editor.png` re-captured in dark at the site's crop and added to `AppScreenshot › croppedScreens`.
 - Left for the next pass: a light `replay-sprite.png` for the ReplayLoop (Home › Analyze, /features 04).
 
