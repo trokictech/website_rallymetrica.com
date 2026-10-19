@@ -1,3 +1,11 @@
+# Oct 19, 2026 (evening) — the guides explain the court (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
+
+- **Track, correct, and resume** gains two steps before the prompt: *Read the court from your seat* (Full and Half court, ☰ → Court view, drawn from the observer's seat, left always your left) and *Let the court change ends with the players* (the changeover turn; behind a baseline hold the phone upright, beside the net post turn it sideways; the dotted arrow between the last two balls). Duration 5 → 7 min; intro and description updated.
+- **Your first match › Set the opening serve and ends**: *Swap ends* is explained as the one-time answer to "which end am I sitting behind" — set once, then the court turns with the players.
+- **Rally sessions › Play it like a match**: one clause that the two court views and the turn apply there too.
+
+---
+
 # Oct 19, 2026 — the app's own screenshots (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
 - **public/screens/ replaced with the app's capture set** (4h-l (5), both themes): every screen the site shows is now a picture of the app, not the prototype — the tab bar's accent glyphs, the watermark, the ☰ courts, the light palette as built. Cropped to the site's 804 × 1624 as before; no source change (`croppedScreens` · `lightScreens` already name every one). The replay has a light twin too: `replay-sprite-light.png` · `replay-light.png` (eleven frames of m1's point 14, an 11-shot rally Asiya wins, from the prototype's replay in both themes at 402 × 812 — the FULL court with the alley names, the Oct 17 palette); `ReplayLoop` draws both strips and CSS shows the theme's; `replay-sprite.json` now 402 × 812.
