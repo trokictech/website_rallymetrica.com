@@ -1,3 +1,9 @@
+# Oct 19, 2026 — the app's own screenshots (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
+
+- **public/screens/ replaced with the app's capture set** (4h-l (5), both themes): every screen the site shows is now a picture of the app, not the prototype — the tab bar's accent glyphs, the watermark, the ☰ courts, the light palette as built. Cropped to the site's 804 × 1624 as before; no source change (`croppedScreens` · `lightScreens` already name every one). Only the replay sprite is still the prototype's.
+
+---
+
 # Oct 18, 2026 (night) — light mode shows light phones; the bottoms uncovered (unzip over the repo's website/ folder, rebuild, package, commit site.zip)
 
 - **Every site screen re-shot at 804 × 1624** (status bar cropped, home indicator kept): the first cut's 68px bottom crop cut the courts' UNDO · FAVE row, the Counter's ending bar, SAVE PATTERN and the point sheet's buttons. `AppScreenshot` cropped height 1556 → 1624. The point sheet and pattern editor no longer show wrapped labels (a renderer artifact, pinned at capture).
