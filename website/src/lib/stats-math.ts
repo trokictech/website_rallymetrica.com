@@ -2,18 +2,18 @@ import { type Formula } from '@/components/Math'
 
 export const statsMath = {
   aggression: [
-    { id: 'built', label: 'Points built', tex: String.raw`\begin{aligned}\mathrm{built}&=\mathrm{winners}+\mathrm{aces}\\&\quad+\text{forced errors drawn}\end{aligned}` },
-    { id: 'given', label: 'Points given away', tex: String.raw`\begin{aligned}\mathrm{given}&=\text{unforced errors}+\text{double faults}\\&\quad+\text{invited forced errors}\end{aligned}` },
+    { id: 'built', label: 'Points built', tex: String.raw`\mathrm{built}=\mathrm{winners}+\mathrm{aces}+\text{forced errors drawn}` },
+    { id: 'given', label: 'Points given away', tex: String.raw`\mathrm{given}=\text{unforced errors}+\text{double faults}+\text{invited forced errors}` },
     { id: 'margin', label: 'Aggressive margin', tex: String.raw`\mathrm{margin}=\mathrm{built}-\mathrm{given}` },
     { id: 'efficiency', label: 'Efficiency', tex: String.raw`\mathrm{efficiency}=\frac{\mathrm{built}}{\mathrm{given}}` },
     { id: 'classical-margin', label: 'Classical count', tex: String.raw`\mathrm{margin}_A-\mathrm{margin}_B=\mathrm{points}_A-\mathrm{points}_B`, note: 'This identity applies to the classical count, without landings.' },
   ],
   momentum: [
     { id: 'hold-deuce', label: 'Holding from deuce', tex: String.raw`P_D=\frac{p^2}{p^2+(1-p)^2}`, note: String.raw`$p$ is the server’s chance of winning a point; $P_D$ is the chance of holding from deuce.` },
-    { id: 'hold-game', label: 'Holding from the start of a game', tex: String.raw`\begin{aligned}P(\mathrm{hold})&=p^4\bigl[1+4(1-p)+10(1-p)^2\bigr]\\&\quad+20p^3(1-p)^3P_D\end{aligned}` },
+    { id: 'hold-game', label: 'Holding from the start of a game', tex: String.raw`P(\mathrm{hold})=p^4\bigl[1+4(1-p)+10(1-p)^2\bigr]+20p^3(1-p)^3P_D` },
     { id: 'historical-rate', label: 'The historical serve-point rate', tex: String.raw`\begin{aligned}p_0&=\frac{\kappa\cdot0.62+S_{\mathrm{before}}}{\kappa+N_{\mathrm{before}}}\\\kappa&=40\end{aligned}`, note: String.raw`$S_{\mathrm{before}}$ and $N_{\mathrm{before}}$ are serve points won and played before this match.` },
     { id: 'live-rate', label: 'Updating the rate during the match', tex: String.raw`\begin{aligned}\widehat p_n&=\frac{\kappa p_0+S_n}{\kappa+N_n}\\w_{\mathrm{match}}&=\frac{N_n}{\kappa+N_n}\end{aligned}`, note: String.raw`$S_n$ and $N_n$ are serve points won and played in this match. The other player’s rate is updated the same way.` },
-    { id: 'importance', label: 'A point’s importance', tex: String.raw`\begin{aligned}I_n&=P(\mathrm{win}\mid\text{point won})\\&\quad-P(\mathrm{win}\mid\text{point lost})\end{aligned}`, note: 'Both probabilities use the rates as they stood before the point.' },
+    { id: 'importance', label: 'A point’s importance', tex: String.raw`I_n=P(\mathrm{win}\mid\text{point won})-P(\mathrm{win}\mid\text{point lost})`, note: 'Both probabilities use the rates as they stood before the point.' },
     { id: 'point-move', label: 'The change after a point', tex: String.raw`\Delta P_n=(y_n-\pi_n)I_n+\Delta_{\mathrm{rates},n}`, note: String.raw`$y_n$ is 1 for a point won and 0 for a point lost; $\pi_n$ is the chance of winning it. The final term is the step from updating the two serve-point rates: large in the first games, small once the rates settle.` },
     { id: 'match-curve', label: 'The curve after each point', tex: String.raw`P_n=P(\text{win match}\mid\text{exact score},\widehat p_n,\widehat q_n)` },
     { id: 'rally-curve', label: 'A rally session: reaching the target first', tex: String.raw`\begin{aligned}P_R&=P(\text{target first}\mid\text{tally},\widehat r)\\\widehat r&=\frac{24\cdot\frac12+\text{rallies won}}{24+\text{rallies played}}\end{aligned}`, note: 'Blocks are trials to a majority.' },
