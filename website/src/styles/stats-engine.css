@@ -18,15 +18,15 @@
 }
 
 .math-formula + .math-formula {
-  margin-top: 1.75rem;
+  margin-top: 1rem;
   border-top: 1px solid var(--t-line);
-  padding-top: 1.5rem;
+  padding-top: 1rem;
 }
 
 .math-display {
   max-width: 100%;
   overflow-x: auto;
-  padding-block: 1rem;
+  padding-block: 0.75rem 0.5rem;
 }
 
 .math-display .katex-display {
