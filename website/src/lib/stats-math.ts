@@ -20,9 +20,9 @@ export const statsMath = {
     { id: 'aggression-form', label: 'Aggression form', tex: String.raw`\begin{aligned}F&=\operatorname{EWMean}(x_n)\\x_n&=\begin{cases}+1&\text{built}\\-1&\text{given}\end{cases}\\\mathrm{BOTH}&=F_A-F_B\end{aligned}`, note: 'The exponentially weighted mean remembers approximately the last twelve points.' },
   ],
   forecast: [
-    { id: 'level', label: 'Level', tex: String.raw`\begin{aligned}\ell_t&=\ell_{t-1}+\alpha e_t\\\widehat y_{t+1\mid t}&=\ell_t\end{aligned}` },
-    { id: 'trend', label: 'Trend', tex: String.raw`\begin{aligned}\ell_t&=\ell_{t-1}+b_{t-1}+\alpha e_t\\b_t&=b_{t-1}+\beta e_t\\\widehat y_{t+1\mid t}&=\ell_t+b_t\end{aligned}` },
-    { id: 'damped-trend', label: 'Damped trend', tex: String.raw`\begin{aligned}b_t&=\phi b_{t-1}+\beta e_t\\\widehat y_{t+1\mid t}&=\ell_t+\phi b_t\\0.8&\le\phi\le0.98\end{aligned}` },
+    { id: 'level', label: 'Level', tex: String.raw`\begin{aligned}\widehat y_{t+1\mid t}&=\ell_t\\\ell_t&=\ell_{t-1}+\alpha e_t\end{aligned}` },
+    { id: 'trend', label: 'Trend', tex: String.raw`\begin{aligned}\widehat y_{t+1\mid t}&=\ell_t+b_t\\\ell_t&=\ell_{t-1}+b_{t-1}+\alpha e_t\\b_t&=b_{t-1}+\beta e_t\end{aligned}` },
+    { id: 'damped-trend', label: 'Damped trend', tex: String.raw`\begin{aligned}\widehat y_{t+1\mid t}&=\ell_t+\phi b_t\\b_t&=\phi b_{t-1}+\beta e_t\\0.8&\le\phi\le0.98\end{aligned}` },
     { id: 'aicc', label: 'Choosing a model', tex: String.raw`\begin{aligned}\mathrm{AICc}&=-2\log L+2k+\frac{2k(k+1)}{n-k-1}\\k&\in\{3,5,6\}\end{aligned}` },
     { id: 'smoothing-shrinkage', label: 'Shrinking the smoothing weight', tex: String.raw`\begin{aligned}\alpha^*&=\frac{\kappa\alpha_{\mathrm{roster}}+n\widehat\alpha}{\kappa+n}\\\kappa&=8\end{aligned}` },
     { id: 'forecast-range', label: 'The forecast range', tex: String.raw`\begin{aligned}h&=t_{0.90}\sqrt{\max\bigl(\widehat\sigma^2,f\bigr)}\\\text{range}&:\pm h\\f_{\mathrm{rate}}&=\frac{p(1-p)}{\text{points}}\end{aligned}`, note: String.raw`$f$ is the applicable variance floor: the rate floor shown above, a count’s mean, 4 for a bare percentage or margin, or the roster’s residual spread while the history is short.` },
