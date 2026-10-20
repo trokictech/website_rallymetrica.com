@@ -7,7 +7,7 @@ export function LegalDoc({ eyebrow, title, updated, intro, sections, lead }: { e
   return <Container className="py-12 sm:py-16">
     <Link href="/" className="text-sm text-muted hover:text-accent">← Home</Link>
     <div className="mt-10 grid gap-12 lg:grid-cols-[220px_1fr] lg:gap-14">
-      <aside className="hidden lg:block"><nav aria-label="On this page" className="sticky top-8"><p className="eyebrow mb-6 text-accent">On this page</p>{sections.map(section => <a href={`#${section.id}`} key={section.id} className="block border-l border-line py-2.5 pl-4 text-sm leading-6 text-muted hover:text-ink">{section.title}</a>)}</nav></aside>
+      <aside className="hidden lg:block"><nav aria-label="On this page" className="sticky sticky-navigation"><p className="eyebrow mb-6 text-accent">On this page</p>{sections.map(section => <a href={`#${section.id}`} key={section.id} className="block border-l border-line py-2.5 pl-4 text-sm leading-6 text-muted hover:text-ink">{section.title}</a>)}</nav></aside>
       <article className="max-w-3xl">
         <header><p className="eyebrow text-accent">{eyebrow}</p><h1 className="mt-5 text-4xl leading-[1.12] font-semibold tracking-[-.05em] sm:text-5xl">{title}</h1><p className="mt-4 text-xs text-muted">Effective {updated}</p><p className="mt-6 text-lg leading-8 text-muted">{intro}</p></header>
         {lead && <div className="mt-10">{lead}</div>}

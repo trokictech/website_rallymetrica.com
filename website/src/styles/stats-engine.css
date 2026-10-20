@@ -50,11 +50,11 @@
 
   .stats-section-figure {
     position: sticky;
-    top: 2rem;
+    top: var(--sticky-offset);
     align-self: start;
   }
 
   .stats-section-figure .phone-shell {
-    width: min(230px, calc((100svh - 10rem) * 804 / 1624));
+    width: min(230px, calc((var(--sticky-content-height) - 5rem) * 804 / 1624));
   }
 }

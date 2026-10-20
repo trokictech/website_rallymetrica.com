@@ -17,7 +17,8 @@
 
 :root, html[data-theme='dark'] { color-scheme: dark; --t-accent: #f8fba6; --t-on-accent: #111217; --t-ground: #111217; --t-surface: #1b1c24; --t-muted: #acaebc; --t-ink: #f6f6f8; --t-line: rgba(255,255,255,.1); --t-line-2: rgba(255,255,255,.07); --t-glow: #f8fba60d; --t-phone-border: #4f515a; --t-phone-shell: #0b0c11; --t-phone-inset: #22242c; --t-shadow: #0008; --t-body-bg: #111217; }
 html[data-theme='light'] { color-scheme: light; --t-accent: #ffb733; --t-on-accent: #161821; --t-ground: #edece6; --t-surface: #ffffff; --t-muted: #5c5e6b; --t-ink: #1a1b22; --t-line: rgba(26,27,34,.12); --t-line-2: rgba(26,27,34,.08); --t-glow: #ffb7331a; --t-phone-border: #c9c8c0; --t-phone-shell: #1a1b22; --t-phone-inset: #2a2b33; --t-shadow: #0003; --t-body-bg: linear-gradient(to bottom right, #edece6, #dddcd4); }
-html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+:root { --site-header-height: 4.5rem; --sticky-offset: calc(var(--site-header-height) + 2rem); --sticky-content-height: calc(100svh - var(--sticky-offset) - 2rem); }
+html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
 body { background: var(--t-body-bg); background-attachment: fixed; color: var(--t-ink); font-family: var(--font-manrope), sans-serif; }
 ::selection { background: var(--t-accent); color: var(--t-on-accent); }
 button, a, summary { -webkit-tap-highlight-color: transparent; }
@@ -37,6 +38,10 @@ html[data-theme='light'] [class*='border-white/'] { border-color: var(--t-line);
 .paper-sheet { background: #fff; border: 1px solid var(--t-line); border-radius: 6px; box-shadow: 0 24px 60px var(--t-shadow); }
 /* Prose rhythm stays unlayered so it beats text-sm's own line height; the colours sit in the base layer so a text-accent / text-ink utility on a paragraph still wins. */
 .guide-copy p, .guide-copy li { line-height: 1.85; }
+.sticky-navigation { top: var(--sticky-offset); max-height: var(--sticky-content-height); overflow-y: auto; }
+@media (min-width: 1280px) {
+  .guide-preview .phone-shell { width: min(255px, calc((var(--sticky-content-height) - 5rem) * 804 / 1624)); margin-inline: auto; }
+}
 @layer base {
   .guide-copy p, .guide-copy li { color: var(--t-muted); }
   .guide-copy strong { color: var(--t-ink); font-weight: 600; }
