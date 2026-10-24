@@ -21,7 +21,7 @@ const kinds = [
   {
     name: 'Serve', title: 'A basket of serves, judged against a target.',
     description: 'One server, blocks of 5, 10 or 20 — pairs with a second serve after a fault, first serves only, or second serves only. Pick the side and the target on the court, tap where each serve lands, and read two numbers: in, and on target.',
-    items: ['DEUCE · AD and T · MID · WIDE picked per block on the court', 'IN % and ON TARGET % running as you serve; the block closes on its count', 'The report: the serve table, the placement map, streaks and accuracy over the session'],
+    items: ['DEUCE · AD and T · MID · WIDE picked per block on the court', 'Drawn from where you stand — behind the server, or turned round from behind the receiver', 'IN % and ON TARGET % running as you serve; the block closes on its count', 'The report: the serve table, the placement map, streaks and accuracy over the session'],
     guide: '/learn/serve-sessions', screen: 'serve-court', alt: 'The serve court: the side and target strips, the running in and on-target shares', caption: 'SERVE · the target strip, the running in % and on target %.',
   },
 ]
