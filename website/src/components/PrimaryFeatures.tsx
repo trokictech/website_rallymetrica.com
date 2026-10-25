@@ -41,7 +41,7 @@ const features: Feature[] = [
     shots: [
       { screen: 'stats', alt: 'Stats: one metric charted across a window of matches, with its trend', caption: 'Stats · one metric, match after match' },
       { screen: 'profile', alt: 'A player profile with the record and the trends', caption: 'Profile · the record and the trends' },
-      { screen: 'profile-zones', alt: 'A player’s Zones tab: where deep, middle and the forehand zone begin', caption: 'Zones · the player’s own court' },
+      { screen: 'profile-zones', alt: 'A player’s Zones tab: the court with the zones drawn and the sliders under it, in %, feet, metres or lanes', caption: 'Zones · the player’s own court, in % · feet · metres · lanes' },
       { screen: 'matches', alt: 'The Matches tab: every result with its report', caption: 'Matches · every result, with its report' },
     ],
   },
