@@ -19,11 +19,22 @@ const levels: { name: Level; what: string; unlocks: string }[] = [
 ]
 
 const groups: Group[] = [
-  { id: 'points', title: 'Points and serve', page: 'POINTS · SERVE', lead: 'The headline rows: the result, the serve, and how points ended.', rows: [
+  { id: 'points', title: 'Points', page: 'POINTS', lead: 'The headline rows: the result and how the points ended.', rows: [
     { metric: 'Games won', how: 'games won ÷ games played — under a cut, the complete games the cut’s points fall in: your service games under Serving (holds), your return games under Returning (breaks), the broken games under Break, the games that had a break point under Break point, the deuce games under Deuce', needs: 'Score', better: 'up' },
     { metric: 'Points won', how: 'points won ÷ points played', needs: 'Score', better: 'up' },
     { metric: 'Break points won', how: 'break points converted ÷ break points held as the receiver', needs: 'Score', better: 'up' },
     { metric: 'Win rate (Stats only)', how: 'matches won ÷ matches in the window — one dot per match, drawn as the running rate; no cut applies', needs: 'Score', better: 'up' },
+    { metric: 'Winners', how: 'shots that ended the point without the opponent reaching the ball', needs: 'Counter', better: 'up' },
+    { metric: 'Unforced errors', how: 'errors recorded as unforced', needs: 'Counter', better: 'down' },
+    { metric: 'Forced errors', how: 'errors recorded as forced by the opponent’s shot', needs: 'Counter', better: 'down' },
+    { metric: 'Total errors', how: 'unforced + forced', needs: 'Counter', better: 'down' },
+  ], reading: [
+    '**Games won** is the score written as a row, and the first thing to read it against is **Points won** under it. The two usually sit a few points apart; a wide gap is the finding. Games well above points — 60% of games on 52% of points — is a player who wins the points that decide games and gives away the ones that do not; games well below points is the reverse, the long deuce games lost after the cheap ones were won, and the Pressure page will say where. Under a cut the row changes meaning with the cut: under **Serving** it is the hold rate, under **Returning** the break rate, under **Break point** the games held from break point down — so a serve-point percentage and a hold percentage sit on one page, and a server who wins 62% of serve points but holds only 70% of service games is losing the few points that matter.',
+    'Read the table in pairs, not rows. **Points won against break points won**: 52% of points with 20% of break points is not a tennis problem but a pressure one — the Pressure page will confirm it. **Winners against unforced errors**: more winners than unforced is a match played on your terms; the reverse means the opponent only had to keep the ball in. **Forced against unforced errors**: forced errors you committed are the opponent’s good play, unforced are yours — twice as many forced as unforced is a player who was beaten; the reverse is a player who beat themselves.',
+    'Trust the fraction, not the percentage: 67% of three points is noise, 67% of thirty is a fact. The report prints n/d under every ratio for this reason.',
+  ], sample: { n: '20 points under a cut', why: 'a percentage over fewer than twenty points moves ten points with two results; compare cuts across a season on Stats before changing anything' } },
+  { id: 'serve', title: 'Serve', page: 'SERVE', lead: 'The serve chain, top to bottom, with the service games it produced.', rows: [
+    { metric: 'Games won', how: 'service games held ÷ service games played — the same row as Points’, read on the server’s games; under a further cut, the complete service games the cut’s points fall in', needs: 'Score', better: 'up' },
     { metric: '1st serve in', how: 'first serves in ÷ service points', needs: 'Counter', better: 'up' },
     { metric: '1st serve pts won', how: 'points won behind a first serve ÷ first serves in', needs: 'Counter', better: 'up' },
     { metric: '2nd serve in', how: 'second serves in ÷ second-serve points (a double fault counts against)', needs: 'Counter', better: 'up' },
@@ -31,17 +42,13 @@ const groups: Group[] = [
     { metric: 'Aces', how: 'serves the receiver did not touch', needs: 'Counter', better: 'up' },
     { metric: 'Service winners', how: 'serves touched but not put back in play', needs: 'Counter', better: 'up' },
     { metric: 'Double faults', how: 'second serves missed (on a one-serve rally session the row reads Faults: the one serve missed)', needs: 'Counter', better: 'down' },
-    { metric: 'Winners', how: 'shots that ended the point without the opponent reaching the ball', needs: 'Counter', better: 'up' },
-    { metric: 'Unforced errors', how: 'errors recorded as unforced', needs: 'Counter', better: 'down' },
-    { metric: 'Forced errors', how: 'errors recorded as forced by the opponent’s shot', needs: 'Counter', better: 'down' },
-    { metric: 'Total errors', how: 'unforced + forced', needs: 'Counter', better: 'down' },
   ], reading: [
-    '**Games won** is the score written as a row, and the first thing to read it against is **Points won** two lines below. The two usually sit a few points apart; a wide gap is the finding. Games well above points — 60% of games on 52% of points — is a player who wins the points that decide games and gives away the ones that do not; games well below points is the reverse, the long deuce games lost after the cheap ones were won, and the Pressure page will say where. Under a cut the row changes meaning with the cut: under **Serving** it is the hold rate, under **Returning** the break rate, under **Break point** the games held from break point down — so a serve-point percentage and a hold percentage sit on one page, and a server who wins 62% of serve points but holds only 70% of service games is losing the few points that matter.',
-    'Read the table in pairs, not rows. **Points won against break points won**: 52% of points with 20% of break points is not a tennis problem but a pressure one — the Pressure page will confirm it. **Winners against unforced errors**: more winners than unforced is a match played on your terms; the reverse means the opponent only had to keep the ball in. **Forced against unforced errors**: forced errors you committed are the opponent’s good play, unforced are yours — twice as many forced as unforced is a player who was beaten; the reverse is a player who beat themselves.',
+    '**Games won** here is the hold rate, and the serve rows under it are why it is what it is. Read it against **1st serve pts won** and **2nd serve pts won** together: a server holding 70% on 62% of serve points is losing the few points that matter — the Pressure page’s break points saved will say so — while a server holding 85% on the same 62% is winning them.',
     'The serve rows are a chain, top to bottom. **1st serve in** high with **1st serve pts won** low is a serve that goes in but goes nowhere — look at the zones. 1st serve in low with 1st serve pts won high is a weapon that misses too often: a percentage problem, not a serve problem. **2nd serve pts won** under 40% with double faults present is the second serve, and it is the row most matches are decided on — below 50% the server is losing their own second-serve points. **Aces** and **service winners** are the free points; both near zero against a weak returner says the serve starts the point and nothing more.',
-    'Trust the fraction, not the percentage: 67% of three points is noise, 67% of thirty is a fact. The report prints n/d under every ratio for this reason.',
-  ], sample: { n: '20 points under a cut', why: 'a serve or return percentage over fewer than twenty points moves ten points with two results; compare cuts across a season on Stats before changing anything' } },
+    '**Aces** and **service winners** against **double faults** is the risk the server is taking: many of all three is a server going for it, few of all three a server starting the rally. Neither is wrong; the hold rate says which one is working.',
+  ], sample: { n: '20 service points under a cut', why: 'a serve percentage over fewer than twenty points moves ten points with two results; compare cuts across a season on Stats before changing anything' } },
   { id: 'return', title: 'Return', page: 'RETURN', lead: 'The same facts read from the receiver’s side.', rows: [
+    { metric: 'Games won', how: 'return games won ÷ return games played — the breaks; under a further cut, the complete return games the cut’s points fall in', needs: 'Score', better: 'up' },
     { metric: '1st serve return in', how: 'returns put in play ÷ first-serve points received', needs: 'Counter', better: 'up' },
     { metric: '1st serve return pts won', how: 'points won when receiving a first serve ÷ first-serve points received', needs: 'Counter', better: 'up' },
     { metric: '2nd serve return in', how: 'returns put in play ÷ second serves received that landed', needs: 'Counter', better: 'up' },
@@ -49,6 +56,7 @@ const groups: Group[] = [
     { metric: 'Return winners', how: 'returns that won the point outright', needs: 'Counter', better: 'up' },
     { metric: 'Return errors', how: 'returns missed — unforced, forced and total', needs: 'Counter', better: 'down' },
   ], reading: [
+    '**Games won** here is the break rate, and it is the number that wins matches from the return side: a returner winning 40% of return points breaks far more often than one winning 35%, because games are won in runs of points, not shares of them. Read it against **2nd serve return pts won**: breaks come from the second serve.',
     'Return is the serve chain read from the other side, and the two pages should agree: the server’s 2nd serve pts won and the receiver’s 2nd serve return pts won sum to 100% of the same points.',
     '**1st serve return in** low is position and reaction — the returner is standing where the first serve beats them. **2nd serve return in** low is intent: a second-serve return that keeps missing was being attacked too hard; the fix is the target, not the swing. **2nd serve return pts won** is the single best measure of whether the opponent’s weakness was punished — under 50% against a player with double faults on the Serve page is a chance left on the court.',
     '**Return winners** against **return errors**: a returner with many of both is going for it; few of both is a returner who puts the ball back and lets the rally decide — right against a big server, wrong against a weak second serve. Read it under the **Deuce · Ad** track on a Detailed match: most players return from one side far better than the other, and the whole-page figure hides it.',
