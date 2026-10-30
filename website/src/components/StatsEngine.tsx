@@ -22,9 +22,9 @@ const engines = [
   },
   {
     name: 'Aggression', title: 'How the points were built.',
-    description: 'Points built — winners, aces, errors forced — against points given away, as a signed margin and an efficiency. One number says whether a player is taking the match or waiting for it; the band says whether that is their usual.',
-    items: ['A signed margin per player, with the usual range around it', 'The efficiency: points built per point given away', 'Read under any cut — a set, a situation, a score'],
-    screen: 'aggression', alt: 'The Aggression page: the margin over the match with its band', caption: 'Aggression: built against given away, over the match.',
+    description: 'Points built — winners, aces, errors forced — against points given away, and the points a player was punished for: lost after his own short ball. A margin and an intent margin say whether a player is taking the match, waiting for it; the band says whether that is their usual.',
+    items: ['A margin per player, and an intent margin that charges the gifts', 'Punished: points lost after your own short ball, stacked in red', 'Read under any cut — a set, a situation, a score'],
+    screen: 'aggression', alt: 'The Aggression page: the margin over the match with its band', caption: 'Aggression: built, given away and punished, over the match.',
     link: '/learn/stats-engine#aggression', linkLabel: 'How aggression is counted ↗',
   },
   {
