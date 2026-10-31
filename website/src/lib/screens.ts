@@ -3,4 +3,6 @@
    the replay (ReplayLoop) carries its own light strip, replay-sprite-light.png; a light page never mixes dark phones in (owner, Oct 18). Add a name here when its -light.png lands (ASSETS.md). */
 export const lightScreens = new Set<string>(['home', 'forecast-card', 'forecast-flip', 'live', 'momentum', 'aggression', 'landings', 'pressure', 'forecast-cover', 'forecast', 'stats', 'players', 'profile', 'matches', 'sessions', 'patterns', 'settings', 'live-counter', 'live-score', 'point-end', 'profile-zones', 'profile-patterns', 'pattern-editor', 'report-cover', 'report-points', 'report-timeline', 'stats-trend', 'coach-link', 'students', 'new-match', 'rally-court', 'coop-court', 'serve-court', 'serve-report', 'rally-report', 'runs', 'replay', 'coop-between-runs', 'live-half-return', 'live-turned',
   'placement-depth', 'placement-width', 'placement-court-depth', 'placement-court-width', 'placement-court-lanes', 'momentum-aggression', 'stats-placement', 'settings-zones', 'quick-stats-placement',
+  'serve-court-receiver',
+  'setup-zones',
 ])
