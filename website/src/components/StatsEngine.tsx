@@ -21,18 +21,18 @@ const engines = [
     link: '/learn/stats-engine#momentum', linkLabel: 'How momentum is read ↗',
   },
   {
-    name: 'Aggression', title: 'How the points were built.',
-    description: 'Points built — aces, service winners, winners, errors forced — against points given away, and the points a player was punished for: lost after his own short ball. A margin and an intent margin say whether a player is taking the match, waiting for it; the band says whether that is their usual.',
-    items: ['A margin per player, and an intent margin that charges the gifts', 'Punished: points lost after your own short ball, stacked in red', 'Read under any cut — a set, a situation, a score'],
-    screen: 'aggression', alt: 'The Aggression page: the margin over the match with its band', caption: 'Aggression: built, given away and punished, over the match.',
-    link: '/learn/stats-engine#aggression', linkLabel: 'How aggression is counted ↗',
-  },
-  {
     name: 'Edge map', title: 'Your shots against theirs.',
     description: 'Every exchange in a Detailed match — the ball you met, the ball you hit — counted once with the point’s outcome. Each cell says how much better or worse you did in that exchange than your rate for the match: green a strength, red a weakness, the colour deepening with evidence, grey until there are three points. Four tabs in the order a point happens: Serve, Return, Stroke, Direction.',
     items: ['On the match report and in QUICK STATS, both players at once', 'On the Stats tab across the season — against the field, or against one opponent', 'In the PDF: four sheets, the same colour formula'],
     screen: 'edge-map-stroke', alt: 'The Edge map on the Stroke tab: forehand and backhand exchanges for both players', caption: 'Edge map · Stroke: the index and its count in every cell.',
     link: '/learn/stats-engine#edge-map', linkLabel: 'How the Edge map is built ↗',
+  },
+  {
+    name: 'Aggression', title: 'How the points were built.',
+    description: 'Points built — aces, service winners, winners, errors forced — against points given away, and the points a player was punished for: lost after his own short ball. A margin and an intent margin say whether a player is taking the match, waiting for it; the band says whether that is their usual.',
+    items: ['A margin per player, and an intent margin that charges the gifts', 'Punished: points lost after your own short ball, stacked in red', 'Read under any cut — a set, a situation, a score'],
+    screen: 'aggression', alt: 'The Aggression page: the margin over the match with its band', caption: 'Aggression: built, given away and punished, over the match.',
+    link: '/learn/stats-engine#aggression', linkLabel: 'How aggression is counted ↗',
   },
   {
     name: 'Pressure', title: 'Twelve rows, each read before the point.',
@@ -52,8 +52,8 @@ export function StatsEngine() {
         <p className="mt-5 text-base leading-7 text-muted">Nothing is estimated. A metric exists only when the points behind it were recorded, and each one is written down: what it needs, and how it is counted.</p>
       </div>
       <TabGroup className="mt-12">
-        <TabList aria-labelledby="engine-heading" className="mx-auto grid max-w-2xl grid-cols-2 gap-2 rounded-2xl border border-line bg-ground p-1.5 sm:flex sm:rounded-full">
-          {engines.map((engine, index) => <Tab key={engine.name} className="flex-1 rounded-full px-2 py-3 text-sm font-semibold text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-on-accent sm:px-4"><span className="mr-2 opacity-50">0{index + 1}</span>{engine.name}</Tab>)}
+        <TabList aria-labelledby="engine-heading" className="mx-auto grid max-w-2xl grid-cols-2 gap-2 rounded-2xl border border-line bg-ground p-1.5 sm:flex sm:gap-1 sm:rounded-full">
+          {engines.map((engine, index) => <Tab key={engine.name} className="flex-1 rounded-full px-2 py-3 text-sm font-semibold whitespace-nowrap text-muted transition-colors outline-offset-4 data-selected:bg-accent data-selected:text-on-accent"><span className="mr-2 opacity-50">0{index + 1}</span>{engine.name}</Tab>)}
         </TabList>
         <TabPanels className="mt-12">
           {engines.map(engine => <TabPanel key={engine.name} className="outline-none">
