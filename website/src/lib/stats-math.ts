@@ -2,7 +2,7 @@ import { type Formula } from '@/components/Math'
 
 export const statsMath = {
   aggression: [
-    { id: 'built', label: 'Points built', tex: String.raw`\mathrm{built}=\mathrm{winners}+\mathrm{aces}+\text{forced errors drawn}` },
+    { id: 'built', label: 'Points built', tex: String.raw`\mathrm{built}=\mathrm{winners}+\text{service winners}+\mathrm{aces}+\text{forced errors drawn}` },
     { id: 'given', label: 'Points given away', tex: String.raw`\mathrm{given}=\text{unforced errors}+\text{double faults}+\text{invited forced errors}` },
     { id: 'margin', label: 'Aggressive margin', tex: String.raw`\mathrm{margin}=\mathrm{built}-\mathrm{given}` },
     { id: 'efficiency', label: 'Efficiency', tex: String.raw`\mathrm{efficiency}=\frac{\mathrm{built}}{\mathrm{given}}` },

@@ -5,4 +5,5 @@ export const lightScreens = new Set<string>(['home', 'forecast-card', 'forecast-
   'placement-depth', 'placement-width', 'placement-court-depth', 'placement-court-width', 'placement-court-lanes', 'momentum-aggression', 'stats-placement', 'settings-zones', 'quick-stats-placement',
   'serve-court-receiver',
   'setup-zones',
+  'edge-map-serve', 'edge-map-return', 'edge-map-stroke', 'edge-map-direction', 'stats-edge-map', 'placement-court-serve', 'coop-placement-court',
 ])
