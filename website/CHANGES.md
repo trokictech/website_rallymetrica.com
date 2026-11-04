@@ -1,3 +1,8 @@
+## Nov 4, 2026, late — the site pictures keep the status bar; the cut is the site's own script
+- **The pictures looked pushed up** (owner): the Oct 18 recipe cut 124 off the top — exactly the 62-pt status bar — so every header sat flush against the bezel. Now the WHOLE capture at 804 wide: **804 × 1748**, the status bar and the home indicator kept, as the store pages keep them. AppScreenshot's height 1624 → 1748 (the two 1556 prototype pages are gone).
+- **scripts/cut-screens.mjs** (`npm run screens -- <path to the app repo's app/docs/captures>`): for every PNG under public/screens with a capture of the same name (aliases: landings ← placement-court-depth, stats ← forecast, forecast-card ← home), dark and light, sharp resizes 1206 × 2622 → 804 × 1748, writes only what changed, prints each; the paper pages, the replay still and the sprite have no capture and are left alone. The owner runs it — no build slice needed for pictures again.
+- After running it: `npm run build` → package → commit.
+
 ## Nov 4, 2026, night — the 4i-l8 pictures referenced (unzip over the repo's website/ AFTER committing the working folder's public/screens — 4i-l8 wrote the files there; rebuild, package, commit)
 - guides.ts › Read the Edge map › step 2 shows **edge-map-rate** (the Serve tab with RATE on); the coach guide's *Decide how you want to be told* shows **notifications** (the Settings › Notifications sheet — until now no capture existed). screens.ts lists both light twins. The Edge map's four, stats-edge-map and report-timeline are the same names with 4i-l8's new pictures (the index as the share of the room, the band's switch) — nothing to change in the source for them.
 - The words stand: the Nov 4 index and RATE paragraphs already describe what 1.2 ships.
