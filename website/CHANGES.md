@@ -1,3 +1,7 @@
+## Nov 4, 2026, night — the 4i-l8 pictures referenced (unzip over the repo's website/ AFTER committing the working folder's public/screens — 4i-l8 wrote the files there; rebuild, package, commit)
+- guides.ts › Read the Edge map › step 2 shows **edge-map-rate** (the Serve tab with RATE on); the coach guide's *Decide how you want to be told* shows **notifications** (the Settings › Notifications sheet — until now no capture existed). screens.ts lists both light twins. The Edge map's four, stats-edge-map and report-timeline are the same names with 4i-l8's new pictures (the index as the share of the room, the band's switch) — nothing to change in the source for them.
+- The words stand: the Nov 4 index and RATE paragraphs already describe what 1.2 ships.
+
 ## Nov 4, 2026 — LAUNCH: the App Store link is live (unzip over the repo's website/, rebuild, package, commit site.zip — this one first, the pictures follow 4i-l8)
 - **lib/site.ts › appStoreUrl = https://apps.apple.com/app/id6822543580** (1.0 approved and released Nov 4). Everything keyed off it flips by itself: the hero's and the CTA's button read 'Download on the App Store' and link out; the header's pill and the mobile menu's line; the FAQ's first answer; **/get — the address in the hero's QR and the reels' QR — now redirects to the listing** (a meta refresh; the fallback line links it).
 - support/page.tsx: the TestFlight sentence under 'Purchases are not available' replaced (plans are App Store subscriptions; Settings → Subscriptions).
