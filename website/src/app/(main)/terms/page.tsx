@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: 'Terms of use', description: 'The ter
 
 const sections: LegalSection[] = [
   { id: 'agreement', title: 'The agreement', paragraphs: [
-    `These terms are an agreement between you and ${companyName} (“we”), the maker of Rallymetrica. They cover the Rallymetrica iOS app and the website rallymetrica.com. By installing or using either, you accept them; if you do not, please do not use Rallymetrica. The Privacy policy explains how data is handled and forms part of these terms.`,
+    `These terms are an agreement between you and ${companyName} (“we”), the maker of Rallymetrica. They cover the Rallymetrica app on iOS and Android and the website rallymetrica.com. By installing or using either, you accept them; if you do not, please do not use Rallymetrica. The Privacy policy explains how data is handled and forms part of these terms.`,
   ] },
   { id: 'service', title: 'What Rallymetrica is', paragraphs: [
     'Rallymetrica records tennis matches and practice sessions point by point on your phone and turns the record into scores, reports, replays and statistics. A player can link a coach so that the coach follows the match live on their own phone. The app works offline; no account is required.',

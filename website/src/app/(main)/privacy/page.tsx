@@ -9,20 +9,21 @@ const sections: LegalSection[] = [
     'There is no account. Rallymetrica never asks for your name, email or password.',
     'Your players, matches, practice sessions and points are stored on your phone. We do not keep a copy.',
     'If you link a coach, the match travels between the two phones end-to-end encrypted. The delivery service cannot read it.',
-    'Subscriptions are handled by Apple. We never see your payment details.',
+    'Subscriptions are handled by Apple or Google. We never see your payment details.',
+    'To delete everything: Settings → Data → Clear all data. Nothing is kept anywhere else, so nothing remains to delete.',
     'No advertising, no sale of personal data, no third-party analytics in the app or on this website.',
   ] },
   { id: 'who', title: 'Who we are', paragraphs: [
-    `Rallymetrica is made by ${companyName}. This policy covers the Rallymetrica iOS app and the website rallymetrica.com. Questions go to ${supportEmail}.`,
+    `Rallymetrica is made by ${companyName}. This policy covers the Rallymetrica app on iOS and Android and the website rallymetrica.com. Questions go to ${supportEmail}.`,
   ] },
   { id: 'on-device', title: 'What the app stores on your phone', paragraphs: [
-    'Everything you record stays in the app’s storage on your device: the players you create (the names you give them), matches and practice sessions with every point, patterns of play, zone traits, notes, settings and your plan state. iOS protects this storage with the device’s own encryption, and it is included in any iPhone backup you make with Apple.',
+    'Everything you record stays in the app’s storage on your device: the players you create (the names you give them), matches and practice sessions with every point, patterns of play, zone traits, notes, settings and your plan state. The operating system protects this storage with the device’s own encryption, and it is included in any backup you make with Apple or Google.',
     'A backup you save under Settings → Data, a PDF you share from a report, and a CSV you export are files you create and keep, and share only where you choose. We never receive them. Clear all data under Settings → Data, or deleting the app, removes everything from the phone.',
   ] },
   { id: 'leaves', title: 'What leaves your phone, and why', paragraphs: ['Nothing leaves your phone unless you use one of the following.'], bullets: [
     'Coach link (optional). When a player links a coach, saved points, match and session records and pattern assignments are sent between the two phones through our delivery relay. Each message is encrypted on the sending phone with keys that exist only on the two linked phones; the relay forwards sealed envelopes it cannot open. To deliver them, the relay stores each envelope until it is retrieved (undelivered envelopes are removed after thirty days), the devices’ push tokens, the link identifiers, and ordinary connection details such as IP addresses and timestamps in its logs. A device with no live link and no activity for thirty days is removed from the relay.',
-    'Notifications. Live-score notifications reach a coach through Apple’s push service as a wake-up; the notification text is composed on the coach’s phone after the update is decrypted. Apple receives the device token and the wake-up, not the match.',
-    'Subscriptions. Purchases, trials and renewals are made through your Apple ID. We use RevenueCat to confirm the purchase and keep your plan active across reinstalls; it receives an anonymous app identifier, the App Store receipt and basic device information, never your name or payment details. See Apple’s and RevenueCat’s privacy policies for how they handle that data.',
+    'Notifications. Live-score notifications reach a coach through Apple’s or Google’s push service as a wake-up; the notification text is composed on the coach’s phone after the update is decrypted. Apple or Google receives the device token and the wake-up, not the match.',
+    'Subscriptions. Purchases, trials and renewals are made through your Apple ID or your Google account. We use RevenueCat to confirm the purchase and keep your plan active across reinstalls; it receives an anonymous app identifier, the store receipt and basic device information, never your name or payment details. See Apple’s, Google’s and RevenueCat’s privacy policies for how they handle that data.',
     'Location and weather (optional). If you turn on Use location and weather at match setup, your approximate location is sent to a weather service to fetch the conditions, which are saved with the match on your phone. Your location is not stored by us.',
     'Camera. The camera is used only to scan a coach-link code. No image is stored or sent.',
     'Email. If you write to us, we keep the correspondence to answer you.',
@@ -31,11 +32,15 @@ const sections: LegalSection[] = [
     'rallymetrica.com is a static site served by GitHub Pages. It sets no cookies and runs no analytics. GitHub may record standard request logs (IP address, browser, pages requested) to operate the service.',
   ] },
   { id: 'sharing', title: 'Who else sees your data', paragraphs: [
-    'Only the people you choose. A linked coach receives read-only copies of the matches and sessions you record while the link is active; a coach’s students see nothing of the coach’s other students. We do not sell personal data and we do not share it with advertisers. The service providers above (Apple, RevenueCat, the weather service, GitHub) process only what their role needs.',
+    'Only the people you choose. A linked coach receives read-only copies of the matches and sessions you record while the link is active; a coach’s students see nothing of the coach’s other students. We do not sell personal data and we do not share it with advertisers. The service providers above (Apple, Google, RevenueCat, the weather service, GitHub) process only what their role needs.',
   ] },
-  { id: 'unlink', title: 'Unlinking and deletion', paragraphs: [
+  { id: 'delete', title: 'Deleting your data', paragraphs: [
+    'Everything Rallymetrica holds about you is on your device, so deletion is yours to do and takes effect at once. In the app: Settings → Data → Clear all data. This removes every player, match, practice session, point, pattern, note and the coach link from the device. Deleting the app does the same. Your subscription is unaffected; manage or cancel it with Apple or Google.',
+    'What is kept: nothing by us. We never receive your match data, so there is no copy of it to delete on request. The delivery relay holds only sealed envelopes it cannot read, removed when retrieved or after thirty days, and a device record that is removed when the link ends or after thirty days without activity. A linked coach’s copies are removed from the coach’s phone when you unlink (below).',
+    `If you believe we hold something about you after that, write to ${supportEmail} and we will look.`,
+  ] },
+  { id: 'unlink', title: 'Unlinking', paragraphs: [
     'Unlinking stops new sharing immediately on your phone. Once the coach’s app is online and receives the unlink, it removes the match copies it received through that link. Your original recordings stay on your phone. Unlinking does not remove matches the coach recorded independently or copies already exported or shared outside the link. Pausing a link stops new updates and keeps received copies.',
-    `Because we do not hold your match data, there is nothing for us to delete on request; the relay’s envelopes expire on retrieval or after thirty days, and push tokens are dropped when a link ends. If you believe we hold something about you, write to ${supportEmail} and we will look.`,
   ] },
   { id: 'children', title: 'Children', paragraphs: [
     'Rallymetrica is not directed at children under 13 and does not knowingly collect personal information from them. Coaches and parents who record a junior player’s matches are responsible for having the appropriate consent. A player name can be anything — initials are fine.',
@@ -50,5 +55,5 @@ const sections: LegalSection[] = [
 ]
 
 export default function Privacy() {
-  return <LegalDoc eyebrow="Privacy" title="Your data stays yours." updated="October 17, 2026" intro="Rallymetrica was built so that we do not have to be trusted with your matches: they live on your phone, and anything you share with a coach is encrypted before it leaves. This page says exactly what the app and this website do with data, and what they do not." sections={sections} />
+  return <LegalDoc eyebrow="Privacy" title="Your data stays yours." updated="November 3, 2026" intro="Rallymetrica was built so that we do not have to be trusted with your matches: they live on your phone, and anything you share with a coach is encrypted before it leaves. This page says exactly what the app and this website do with data, and what they do not." sections={sections} />
 }
