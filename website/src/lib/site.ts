@@ -1,5 +1,5 @@
-/* Set the verified Apple listing URL here when Rallymetrica launches. */
-export const appStoreUrl: string | null = null
+/* The App Store listing — Rallymetrica 1.0, approved and released Nov 4, 2026 (App Store Connect app id 6822543580). Every 'Coming soon' on the site and the /get redirect behind the hero's QR read this one constant. */
+export const appStoreUrl: string | null = 'https://apps.apple.com/app/id6822543580'
 
 export const siteUrl = 'https://rallymetrica.com'
 

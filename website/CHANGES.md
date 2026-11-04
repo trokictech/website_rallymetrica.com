@@ -1,3 +1,14 @@
+## Nov 4, 2026 — LAUNCH: the App Store link is live (unzip over the repo's website/, rebuild, package, commit site.zip — this one first, the pictures follow 4i-l8)
+- **lib/site.ts › appStoreUrl = https://apps.apple.com/app/id6822543580** (1.0 approved and released Nov 4). Everything keyed off it flips by itself: the hero's and the CTA's button read 'Download on the App Store' and link out; the header's pill and the mobile menu's line; the FAQ's first answer; **/get — the address in the hero's QR and the reels' QR — now redirects to the listing** (a meta refresh; the fallback line links it).
+- support/page.tsx: the TestFlight sentence under 'Purchases are not available' replaced (plans are App Store subscriptions; Settings → Subscriptions).
+- Unchanged on purpose: the Nov 3–4 guide and Stats Engine words (the Edge map's readings and index) — they describe 1.2, which is in review next; the pictures stay 1.2's and are refreshed when 4i-l8's captures land.
+
+## Nov 4, 2026, later — the Edge map's index is the share of the room (DECISIONS › EDGE MAP › The index is the share of the room)
+- guides.ts › Read the Edge map › step 1 and the reports guide's Edge map step: the index defined as the distance from the player's usual as a share of the room on that side (0 usual · +100 all won · −100 all lost). The Stats Engine page's Edge map paragraph states the new index and the RATE switch; stats-math.ts never carried the old formula.
+
+## Nov 4, 2026 — the Edge map's RATE reading (unzip over the repo's website/ with the Nov 3 words, rebuild, package, commit)
+- guides.ts › Read the Edge map › step 2 gains the INDEX ⟷ RATE switch (DECISIONS › EDGE MAP › The two readings): the rate is the exchange's win share, the same from both ends, for comparing the two players. The pictures stand (the switch is in the footer band under the matrices; the app's edge-map captures are re-shot at 4k).
+
 ## Nov 3, 2026, evening — the privacy policy for Google Play's Data safety form (unzip over the repo's website/, rebuild, package, commit site.zip)
 - **privacy/page.tsx:** a new section *Deleting your data* (the steps — Settings → Data → Clear all data; what is kept — nothing by us; the relay's envelopes and device record; the coach's copies), which is what Play's delete-data URL must show prominently; *Unlinking and deletion* becomes *Unlinking*; the summary gains the deletion line and reads Apple or Google; the policy covers iOS and Android (who · on-device · notifications · subscriptions · sharing); updated November 3, 2026.
 - **terms/page.tsx:** the agreement covers the app on iOS and Android.

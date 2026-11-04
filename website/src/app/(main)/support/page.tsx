@@ -47,7 +47,7 @@ const sections: LegalSection[] = [
     'What leaves the phone and why is set out in full in the privacy policy.',
   ] },
   { id: 'problems', title: 'Something is wrong', bullets: [
-    'Purchases are not available: make sure you are signed in to the App Store on the phone and have a connection, then try again. On a TestFlight build, purchases are test purchases and are never charged.',
+    'Purchases are not available: make sure you are signed in to the App Store on the phone and have a connection, then try again. Plans are App Store subscriptions and appear under Settings → Subscriptions on the phone.',
     'The app shows the wrong plan after a purchase: gear → Plan → Restore purchases.',
     'A match looks mirrored or a point is wrong: open the match → Timeline, tap the point and correct it; the report recalculates.',
     'Anything else: write to us with the steps that led there. If the app has crashed, iPhone Settings → Privacy & Security → Analytics & Improvements → Analytics Data holds a log named Rallymetrica you can attach.',
