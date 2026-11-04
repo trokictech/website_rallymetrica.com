@@ -15,9 +15,9 @@ export function Hero() {
         <div className="mt-6 max-w-[440px] border-l-2 border-accent pl-4"><p className="text-base font-semibold">Your match. <span className="text-accent">Live on your coach’s phone.</span></p><p className="mt-2 text-sm leading-6 text-muted">Link once by scanning a code. From then on every point you save reaches your coach as it lands, with a notification every set, game or point — their choice.</p></div>
         <div className="mt-9 inline-flex max-w-full flex-col items-center gap-5">
           {/* Fixed QR destinations keep printed codes usable when store links change. White tiles stay readable in both themes; phone widths use links instead. */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
-            <div className="flex flex-col items-center gap-4"><AppStoreLink className="w-full justify-center" /><a href="/get" className="hidden sm:block" aria-label="App Store: scan to install"><img src="/qr-get.svg" alt="" width={128} height={128} className="h-32 w-32" /></a></div>
-            <div className="flex flex-col items-center gap-4"><GooglePlayLink className="w-full justify-center" /><a href="/get/android/" className="hidden sm:block" aria-label="Google Play: coming soon"><img src="/qr-google-play.svg" alt="" width={128} height={128} className="h-32 w-32" /></a></div>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="flex w-[184px] flex-col items-center gap-4 rounded-2xl border border-line bg-surface p-4"><AppStoreLink variant="plain" className="w-full justify-center" /><a href="/get" className="hidden h-28 w-28 items-center justify-center overflow-hidden rounded-md bg-white sm:flex" aria-label="App Store: scan to install"><img src="/qr-get.svg" alt="" width={100} height={100} className="h-[100px] w-[100px]" /></a></div>
+            <div className="flex w-[184px] flex-col items-center gap-4 rounded-2xl border border-line bg-surface p-4"><GooglePlayLink variant="plain" className="w-full justify-center" /><a href="/get/android/" className="hidden h-28 w-28 items-center justify-center overflow-hidden rounded-md bg-white sm:flex" aria-label="Google Play: coming soon"><img src="/qr-google-play.svg" alt="" width={112} height={112} className="h-28 w-28" /></a></div>
           </div>
           <Button href="/#pricing" variant="outline">See the plans <span aria-hidden="true">↗</span></Button>
         </div>
