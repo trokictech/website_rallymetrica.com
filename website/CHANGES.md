@@ -1,3 +1,7 @@
+## Nov 5, 2026 — the Edge map's arithmetic on the Stats Engine page (unzip at the repo root, rebuild, package, commit)
+- stats-math.ts gains `edgeMap` — six formulas read off design/lib/statistics/edgemap.js: the exchange's win share $r = w/n$; the baseline $b$; the index as the share of the room (the two-case formula, rounded half away from zero, with the +50 example); the mirror across the two ends of an exchange ($r_B = 1 − r_A$, $b_B = 1 − b_A$ ⇒ index_B = −index_A); RATE's number and its tone against even ($100(2r − 1)$); the one colour formula (hue = sign, depth = min(1, |index|/50) · (0.35 + 0.65 · min(1, n/20)), grey under 3). Mounted as `<MathFormulas formulas={statsMath.edgeMap} />` under the Edge map section's colour paragraph — the same block Aggression, Momentum and Forecast carry.
+- The section's colour sentence corrected: the depth divides by **50** (EDGE_SAT since Nov 4 — the page still said 40) and the thin-cell floor is stated as the formula has it.
+
 ## Nov 4, 2026, night — the phones at their old height · the clock's place
 - PhoneFrame › StatusBar: the clock moves left, x 100 → 64 (its left edge mirrors the battery's margin on the right); the glyphs stand.
 
