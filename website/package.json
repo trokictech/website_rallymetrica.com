@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint",
-    "screens": "node scripts/cut-screens.mjs"
+    "lint": "eslint"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
