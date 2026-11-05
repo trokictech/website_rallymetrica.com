@@ -65,7 +65,7 @@ export function StatsEngine() {
                 <ul className="mt-7 space-y-3">{engine.items.map(item => <li key={item} className="flex gap-3 text-sm text-ink"><span className="text-accent" aria-hidden="true">✓</span>{item}</li>)}</ul>
                 <Button href={engine.link} variant="outline" className="mt-9">{engine.linkLabel}</Button>
               </div>
-              <div className="mx-auto w-[260px] sm:w-[290px]">
+              <div className="mx-auto w-[242px] sm:w-[269px]">
                 <AppScreenshot name={engine.screen} alt={engine.alt} />
                 <p className="mt-5 text-center text-xs leading-5 text-muted">{engine.caption}</p>
               </div>

@@ -1,3 +1,9 @@
+## Nov 4, 2026, night — the phones at their old height · the clock's place
+- PhoneFrame › StatusBar: the clock moves left, x 100 → 64 (its left edge mirrors the battery's margin on the right); the glyphs stand.
+
+## Nov 4, 2026, night — the phones at their old height (unzip over the repo's website/, rebuild, package, commit)
+- Every phone picture is 804 × 1748 now (the status bar kept, the frame drawing it), so at the old widths each phone stood 7.6% taller than before and the hero's eye moved. **Every phone width × 1624/1748:** the hero 214 (52vw) · 265; the coach pair 242 · 232; the Pattern · Practice · Stats-engine panels 242 · 269; the Record · Analyze · Improve grid 484; the guide preview 237 (and its sticky calc); the stats-engine figure 214 (its calc on 1748). Nothing else moved; the paper sheets and the replay strip keep their widths.
+
 ## Nov 4, 2026, late — the site pictures keep the status bar; the cut is the site's own script
 - **The status bar is DRAWN by the frame** (the captures' top band is blank — the walk runs on a web build with no system bar): PhoneFrame › StatusBar, an SVG over the picture in the capture's coordinates — 9:41, the signal, the wifi, the battery, the store template's own glyphs scaled 1206 → 804 — light ink over a dark capture, the dark ink over a light twin (tailwind.css › .phone-status). Phone pictures only; the replay strip and the paper sheets draw none (AppScreenshot passes statusBar).
 - **The pictures looked pushed up** (owner): the Oct 18 recipe cut 124 off the top — exactly the 62-pt status bar — so every header sat flush against the bezel. Now the WHOLE capture at 804 wide: **804 × 1748**, the status bar and the home indicator kept, as the store pages keep them. AppScreenshot's height 1624 → 1748 (the two 1556 prototype pages are gone).

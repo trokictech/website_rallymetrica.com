@@ -29,7 +29,7 @@ export function Hero() {
           <Mark className="h-[96px] w-[96px] sm:h-[176px] sm:w-[176px]" />
           <p className="hidden max-w-[200px] text-sm leading-6 text-muted sm:block">The score, the shots and the rallies — recorded from the side of the court, one tap per ball.</p>
         </div>
-        <AppScreenshot name="live" alt="Rallymetrica live court with the score and detailed shot tracking" priority className="relative z-10 w-[min(230px,56vw)] shrink-0 sm:w-[285px]" />
+        <AppScreenshot name="live" alt="Rallymetrica live court with the score and detailed shot tracking" priority className="relative z-10 w-[min(214px,52vw)] shrink-0 sm:w-[265px]" />
       </div>
     </Container>
   </section>

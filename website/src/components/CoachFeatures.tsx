@@ -24,11 +24,11 @@ export function CoachFeatures() {
           </div>
         </div>
         <div className="mx-auto grid w-full max-w-[540px] gap-8 sm:grid-cols-2 sm:gap-6">
-          <figure className="mx-auto w-full max-w-[260px] sm:max-w-[250px]">
+          <figure className="mx-auto w-full max-w-[242px] sm:max-w-[232px]">
             <AppScreenshot name="players" alt="A coach’s roster with linked students" />
             <figcaption className="mt-5 text-center text-xs leading-5 text-muted">The roster: every student, the live ones marked on the bookmark.</figcaption>
           </figure>
-          <figure className="mx-auto w-full max-w-[260px] sm:max-w-[250px]">
+          <figure className="mx-auto w-full max-w-[242px] sm:max-w-[232px]">
             <AppScreenshot name="home" alt="A student’s live match on the coach’s Home screen" />
             <figcaption className="mt-5 text-center text-xs leading-5 text-muted">Home: a student’s match, live, one tap from the report.</figcaption>
           </figure>

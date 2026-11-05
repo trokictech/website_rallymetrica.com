@@ -55,6 +55,6 @@
   }
 
   .stats-section-figure .phone-shell {
-    width: min(230px, calc((var(--sticky-content-height) - 5rem) * 804 / 1624));
+    width: min(214px, calc((var(--sticky-content-height) - 5rem) * 804 / 1748));
   }
 }

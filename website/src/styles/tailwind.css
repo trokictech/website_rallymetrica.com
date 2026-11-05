@@ -42,7 +42,7 @@ html[data-theme='light'] [class*='border-white/'] { border-color: var(--t-line);
 .guide-copy p, .guide-copy li { line-height: 1.85; }
 .sticky-navigation { top: var(--sticky-offset); max-height: var(--sticky-content-height); overflow-y: auto; }
 @media (min-width: 1280px) {
-  .guide-preview .phone-shell { width: min(255px, calc((var(--sticky-content-height) - 5rem) * 804 / 1748)); margin-inline: auto; }
+  .guide-preview .phone-shell { width: min(237px, calc((var(--sticky-content-height) - 5rem) * 804 / 1748)); margin-inline: auto; }   /* every phone width × 1624/1748 since Nov 4 — the taller 804 × 1748 picture at the height the old cut had */
 }
 @layer base {
   .guide-copy p, .guide-copy li { color: var(--t-muted); }
