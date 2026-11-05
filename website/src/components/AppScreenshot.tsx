@@ -10,5 +10,5 @@ export function AppScreenshot({ name, alt, className, priority = false }: { name
   const dark = <Image src={`/screens/${name}.png`} alt={alt} width={w} height={h} priority={priority} loading={priority ? 'eager' : 'lazy'} sizes="(max-width: 768px) 260px, 340px" className={lightScreens.has(name) ? 'theme-dark-only' : undefined} />
   /* the light twin, when the screen has one (lib/screens.ts); CSS under html[data-theme] picks which of the two shows */
   const light = lightScreens.has(name) ? <Image src={`/screens/${name}-light.png`} alt={alt} width={w} height={h} loading="lazy" sizes="(max-width: 768px) 260px, 340px" className="theme-light-only" /> : null
-  return <PhoneFrame className={className}>{dark}{light}</PhoneFrame>
+  return <PhoneFrame className={className} statusBar={isCroppedScreen && h === 1748}>{dark}{light}</PhoneFrame>   /* Only full-height phone captures have a blank status-bar band; paper and replay images do not. */
 }

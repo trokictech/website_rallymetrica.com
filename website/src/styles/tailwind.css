@@ -28,7 +28,9 @@ button:not(:disabled), summary { cursor: pointer; }
 .section-heading { font-size: clamp(2rem, 4vw, 3.3rem); font-weight: 600; letter-spacing: -.05em; line-height: 1.12; }
 .hero-glow { background: radial-gradient(ellipse at center, var(--t-glow) 0, transparent 70%); }
 .phone-shell { padding: 8px; border-radius: 36px; border: 1px solid var(--t-phone-border); background: var(--t-phone-shell); box-shadow: 0 30px 80px var(--t-shadow), inset 0 0 0 2px var(--t-phone-inset); }
-.phone-screen { border-radius: 28px; overflow: hidden; background: #1b1c24; }
+.phone-screen { position: relative; border-radius: 28px; overflow: hidden; background: #1b1c24; }
+/* the status bar the frame draws over the picture's blank top band (PhoneFrame › StatusBar): the capture's own width, 124/804 of it tall; the ink by the picture shown — light ink over a dark capture, the dark ink over a light one */
+.phone-status { position: absolute; left: 0; top: 0; width: 100%; height: auto; pointer-events: none; color: #F6F6F8; } html[data-theme='light'] .phone-screen:has(.theme-light-only) .phone-status { color: #161821; }
 /* a safety net for any surviving white-relative line in the tree (one known: the worked-reading card on /learn/stats-engine) — in light the white alpha is invisible on a light ground, so the line token takes over */
 html[data-theme='light'] [class*='border-white/'] { border-color: var(--t-line); }
 .phone-screen .theme-light-only { display: none; } html[data-theme='light'] .phone-screen .theme-light-only { display: block; } html[data-theme='light'] .phone-screen .theme-dark-only { display: none; }
@@ -40,7 +42,7 @@ html[data-theme='light'] [class*='border-white/'] { border-color: var(--t-line);
 .guide-copy p, .guide-copy li { line-height: 1.85; }
 .sticky-navigation { top: var(--sticky-offset); max-height: var(--sticky-content-height); overflow-y: auto; }
 @media (min-width: 1280px) {
-  .guide-preview .phone-shell { width: min(255px, calc((var(--sticky-content-height) - 5rem) * 804 / 1624)); margin-inline: auto; }
+  .guide-preview .phone-shell { width: min(255px, calc((var(--sticky-content-height) - 5rem) * 804 / 1748)); margin-inline: auto; }
 }
 @layer base {
   .guide-copy p, .guide-copy li { color: var(--t-muted); }
