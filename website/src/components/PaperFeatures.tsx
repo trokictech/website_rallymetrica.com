@@ -17,7 +17,7 @@ export function PaperFeatures() {
           <p className="eyebrow text-accent">The report, on paper</p>
           <h2 className="section-heading mt-5">Take the match<br /><span className="text-accent">off the phone.</span></h2>
           <p className="mt-5 text-base leading-7 text-muted">Share any report as a PDF — page for page as the app draws it. Print it for the car ride home, send it to a parent, keep the season in a folder.</p>
-          <div className="mt-8 flex flex-wrap gap-3"><Button href="/learn/reports-and-replay#step-13" variant="outline">How sharing works ↗</Button><Button href="/support#data" variant="outline">PDF and CSV, in detail ↗</Button></div>
+          <div className="mt-8 flex flex-wrap gap-3"><Button href="/learn/reports-and-replay#step-8" variant="outline">How sharing works ↗</Button><Button href="/support#data" variant="outline">PDF and CSV, in detail ↗</Button></div>
         </div>
         <figure className="relative mx-auto w-full max-w-[820px] lg:-mr-6">
           <div className="absolute inset-x-[15%] inset-y-[10%] -z-10 rounded-full bg-accent/[.06] blur-3xl" aria-hidden="true" />
