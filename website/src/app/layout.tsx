@@ -3,6 +3,9 @@ import { Manrope } from 'next/font/google'
 import '@/styles/tailwind.css'
 import { siteUrl } from '@/lib/site'
 
+/* Cloudflare Web Analytics: the public site token enables the beacon; an empty or placeholder token disables it. */
+const CF_BEACON_TOKEN: string = 'f4126de544884c4aa40865d602a02b85'
+
 const manrope = Manrope({ subsets: ['latin'], display: 'swap', variable: '--font-manrope' })
 const title = 'Rallymetrica · Record. Analyze. Improve.'
 const description = 'Tennis match and practice tracking for players and coaches. Tap the points as they are played — in a match, a rally game or a serve session; Rallymetrica turns them into a report, a replay and a season of stats — and sends every point to your coach, live.'
@@ -20,5 +23,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   /* The theme boots before paint: the saved override (rm.theme) or the system's preference → html[data-theme]; the toggle in the header changes it later. suppressHydrationWarning because the attribute is set by this inline script, not by React. */
   const boot = "(function(){try{var s=localStorage.getItem('rm.theme');var t=s==='light'||s==='dark'?s:(matchMedia('(prefers-color-scheme: light)').matches?'light':'dark');document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();"
-  return <html lang="en" className={`h-full ${manrope.variable}`} data-theme="dark" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: boot }} /></head><body className="flex min-h-full flex-col">{children}</body></html>
+  const beacon = CF_BEACON_TOKEN && CF_BEACON_TOKEN !== 'PASTE_TOKEN_HERE'
+  return <html lang="en" className={`h-full ${manrope.variable}`} data-theme="dark" suppressHydrationWarning><head><script dangerouslySetInnerHTML={{ __html: boot }} /></head><body className="flex min-h-full flex-col">{children}{beacon ? <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: CF_BEACON_TOKEN })} /> : null}</body></html>
 }

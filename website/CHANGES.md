@@ -1,4 +1,7 @@
 ## Nov 5, 2026 — the report guide split into six (unzip at the repo root, rebuild, package, commit)
+## Nov 9, 2026 — Cloudflare Web Analytics
+- layout.tsx emits Cloudflare's cookie-less beacon when CF_BEACON_TOKEN (line 7) carries the site's token; with the placeholder the script is not emitted. The website privacy section describes the beacon. The token: dash.cloudflare.com › Analytics & Logs › Web Analytics › the site's snippet.
+
 ## Nov 9, 2026 — Keep on roster · students in their own section
 - Guides: *Your first match › Choose the players* explains the Keep on roster switch with the form's picture; *Run your roster* gains a step, *Keep the roster yours* (the switch, Remove from roster, Mark as student, the STUDENTS · ROSTER dividers folding, the HIDDEN scope) with the players-folded picture, a new note, and a wider description. Coaching feature caption rewritten. One FAQ: *Will every opponent end up on my list?* screens.ts registers the light twins of players-folded · players-hidden · form-roster · form-roster-student · setup-picker (the files landed with the 1.3 pictures).
 

@@ -3,9 +3,9 @@ import { type Formula } from '@/components/Math'
 export const statsMath = {
   aggression: [
     { id: 'built', label: 'Points built', tex: String.raw`\mathrm{built}=\mathrm{winners}+\text{service winners}+\mathrm{aces}+\text{forced errors drawn}` },
-    { id: 'given', label: 'Points given away', tex: String.raw`\mathrm{given}=\text{unforced errors}+\text{double faults}+\text{invited forced errors}` },
+    { id: 'given', label: 'Points given away', tex: String.raw`\mathrm{given}=\text{unforced errors}+\text{double faults}` },
     { id: 'margin', label: 'Aggressive margin', tex: String.raw`\mathrm{margin}=\mathrm{built}-\mathrm{given}` },
-    { id: 'efficiency', label: 'Efficiency', tex: String.raw`\mathrm{efficiency}=\frac{\mathrm{built}}{\mathrm{given}}` },
+    { id: 'efficiency', label: 'Efficiency', tex: String.raw`\mathrm{efficiency}=\frac{\mathrm{built}}{\mathrm{given}}` }, { id: 'intent-margin', label: 'Intent margin', tex: String.raw`\text{intent margin}=\mathrm{built}-\mathrm{given}-\mathrm{punished}`, note: 'Detailed matches only: Punished needs landings.' }, { id: 'intent-efficiency', label: 'Intent efficiency', tex: String.raw`\text{intent efficiency}=\frac{\mathrm{built}}{\mathrm{given}+\mathrm{punished}}`, note: 'The same strict read as a ratio; 1.0× is even.' },
     { id: 'classical-margin', label: 'Classical count', tex: String.raw`\mathrm{margin}_A-\mathrm{margin}_B=\mathrm{points}_A-\mathrm{points}_B`, note: 'This identity applies to the classical count, without landings.' },
   ],
   edgeMap: [

@@ -11,7 +11,7 @@ const sections: LegalSection[] = [
     'If you link a coach, the match travels between the two phones end-to-end encrypted. The delivery service cannot read it.',
     'Subscriptions are handled by Apple or Google. We never see your payment details.',
     'To delete everything: Settings → Data → Clear all data. Nothing is kept anywhere else, so nothing remains to delete.',
-    'No advertising, no sale of personal data, no third-party analytics in the app or on this website.',
+    'No advertising or sale of personal data, and no third-party analytics in the app. This website uses Cloudflare Web Analytics as described below.',
   ] },
   { id: 'who', title: 'Who we are', paragraphs: [
     `Rallymetrica is made by ${companyName}. This policy covers the Rallymetrica app on iOS and Android and the website rallymetrica.com. Questions go to ${supportEmail}.`,
@@ -29,10 +29,11 @@ const sections: LegalSection[] = [
     'Email. If you write to us, we keep the correspondence to answer you.',
   ] },
   { id: 'website', title: 'This website', paragraphs: [
-    'rallymetrica.com is a static site served by GitHub Pages. It sets no cookies and runs no analytics. GitHub may record standard request logs (IP address, browser, pages requested) to operate the service.',
+    'rallymetrica.com is a static site served by GitHub Pages. It sets no cookies. GitHub may record standard request logs (IP address, browser, pages requested) to operate the service.',
+    'We use Cloudflare Web Analytics to measure page views, referral sources, countries, browser and device types, and page-load performance. Cloudflare states that this service uses no analytics cookies or local storage and does not fingerprint visitors. Website analytics does not include the players, matches or points stored in the app.',
   ] },
   { id: 'sharing', title: 'Who else sees your data', paragraphs: [
-    'Only the people you choose. A linked coach receives read-only copies of the matches and sessions you record while the link is active; a coach’s students see nothing of the coach’s other students. We do not sell personal data and we do not share it with advertisers. The service providers above (Apple, Google, RevenueCat, the weather service, GitHub) process only what their role needs.',
+    'Only the people you choose. A linked coach receives read-only copies of the matches and sessions you record while the link is active; a coach’s students see nothing of the coach’s other students. We do not sell personal data and we do not share it with advertisers. The service providers above (Apple, Google, RevenueCat, the weather service, GitHub and Cloudflare) process only what their role needs.',
   ] },
   { id: 'delete', title: 'Deleting your data', paragraphs: [
     'Everything Rallymetrica holds about you is on your device, so deletion is yours to do and takes effect at once. In the app: Settings → Data → Clear all data. This removes every player, match, practice session, point, pattern, note and the coach link from the device. Deleting the app does the same. Your subscription is unaffected; manage or cancel it with Apple or Google.',
@@ -55,5 +56,5 @@ const sections: LegalSection[] = [
 ]
 
 export default function Privacy() {
-  return <LegalDoc eyebrow="Privacy" title="Your data stays yours." updated="November 3, 2026" intro="Rallymetrica was built so that we do not have to be trusted with your matches: they live on your phone, and anything you share with a coach is encrypted before it leaves. This page says exactly what the app and this website do with data, and what they do not." sections={sections} />
+  return <LegalDoc eyebrow="Privacy" title="Your data stays yours." updated="November 9, 2026" intro="Rallymetrica was built so that we do not have to be trusted with your matches: they live on your phone, and anything you share with a coach is encrypted before it leaves. This page says exactly what the app and this website do with data, and what they do not." sections={sections} />
 }
