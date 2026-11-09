@@ -6,4 +6,5 @@ export const lightScreens = new Set<string>(['edge-map-rate', 'notifications', '
   'serve-court-receiver',
   'setup-zones',
   'edge-map-serve', 'edge-map-return', 'edge-map-stroke', 'edge-map-direction', 'stats-edge-map', 'placement-court-serve', 'coop-placement-court',
+  'players-folded', 'players-hidden', 'form-roster', 'form-roster-student', 'setup-picker',
 ])

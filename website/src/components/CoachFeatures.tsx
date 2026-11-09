@@ -26,7 +26,7 @@ export function CoachFeatures() {
         <div className="mx-auto grid w-full max-w-[540px] gap-8 sm:grid-cols-2 sm:gap-6">
           <figure className="mx-auto w-full max-w-[242px] sm:max-w-[232px]">
             <AppScreenshot name="players" alt="A coach’s roster with linked students" />
-            <figcaption className="mt-5 text-center text-xs leading-5 text-muted">The roster: every student, the live ones marked on the bookmark.</figcaption>
+            <figcaption className="mt-5 text-center text-xs leading-5 text-muted">The roster: your students in their own section, everyone else below; one-off opponents can stay off the list.</figcaption>
           </figure>
           <figure className="mx-auto w-full max-w-[242px] sm:max-w-[232px]">
             <AppScreenshot name="home" alt="A student’s live match on the coach’s Home screen" />
