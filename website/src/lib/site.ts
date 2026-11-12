@@ -1,6 +1,8 @@
 /* The App Store listing — Rallymetrica 1.0, approved and released Nov 4, 2026 (App Store Connect app id 6822543580). Every 'Coming soon' on the site and the /get redirect behind the hero's QR read this one constant. */
 export const appStoreUrl: string | null = 'https://apps.apple.com/app/id6822543580'
 
+export const googlePlayUrl = 'https://play.google.com/store/apps/details?id=tech.trokic.rallymetrica'
+
 export const siteUrl = 'https://rallymetrica.com'
 
 /* Prices as set in App Store Connect (Oct 2026). The 7-day free trial applies to every subscription. Coach and Academy differ only in the student cap. Practice sessions (rally and serve) are on every paid plan. */

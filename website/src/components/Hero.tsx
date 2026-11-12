@@ -4,6 +4,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 import { AppScreenshot } from '@/components/AppScreenshot'
 import { Mark } from '@/components/Mark'
+import { googlePlayUrl } from '@/lib/site'
 
 export function Hero() {
   return <section className="overflow-hidden">
@@ -14,10 +15,10 @@ export function Hero() {
         <p className="mt-7 max-w-[440px] text-base leading-7 text-muted">Tap the points as they are played — in a match, a rally game or a serve session. Rallymetrica turns them into a report, a replay and a season of stats.</p>
         <div className="mt-6 max-w-[440px] border-l-2 border-accent pl-4"><p className="text-base font-semibold">Your match. <span className="text-accent">Live on your coach’s phone.</span></p><p className="mt-2 text-sm leading-6 text-muted">Link once by scanning a code. From then on every point you save reaches your coach as it lands, with a notification every set, game or point — their choice.</p></div>
         <div className="mt-9 inline-flex max-w-full flex-col items-center gap-5">
-          {/* Fixed QR destinations keep printed codes usable when store links change. White tiles stay readable in both themes; phone widths use links instead. */}
+          {/* White QR tiles stay readable in both themes; phone widths use links instead. */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <div className="flex w-[184px] flex-col items-center gap-4 rounded-2xl border border-line bg-surface p-4"><AppStoreLink variant="plain" className="w-full justify-center" /><a href="/get" className="hidden h-28 w-28 items-center justify-center overflow-hidden rounded-md bg-white sm:flex" aria-label="App Store: scan to install"><img src="/qr-get.svg" alt="" width={100} height={100} className="h-[100px] w-[100px]" /></a></div>
-            <div className="flex w-[184px] flex-col items-center gap-4 rounded-2xl border border-line bg-surface p-4"><GooglePlayLink variant="plain" className="w-full justify-center" /><a href="/get/android/" className="hidden h-28 w-28 items-center justify-center overflow-hidden rounded-md bg-white sm:flex" aria-label="Google Play: coming soon"><img src="/qr-google-play.svg" alt="" width={112} height={112} className="h-28 w-28" /></a></div>
+            <div className="flex w-[184px] flex-col items-center gap-4 rounded-2xl border border-line bg-surface p-4"><GooglePlayLink variant="plain" className="w-full justify-center" /><a href={googlePlayUrl} target="_blank" rel="noopener noreferrer" className="hidden h-28 w-28 items-center justify-center overflow-hidden rounded-md bg-white sm:flex" aria-label="Google Play: scan to install"><img src="/qr-google-play.svg" alt="" width={112} height={112} className="h-28 w-28" /></a></div>
           </div>
           <Button href="/#pricing" variant="outline">See the plans <span aria-hidden="true">↗</span></Button>
         </div>
