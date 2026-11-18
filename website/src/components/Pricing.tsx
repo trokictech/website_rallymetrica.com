@@ -14,7 +14,7 @@ export function Pricing() {
         {plans.map(plan => <div key={plan.id} className={`flex flex-col rounded-3xl border p-7 ${plan.id === 'player' ? 'border-accent/40 bg-ground' : 'border-line bg-ground/60'}`}>
           <div className="flex items-baseline justify-between gap-4">
             <h3 className="text-sm font-semibold tracking-[.12em] uppercase">{plan.name}</h3>
-            <p className="text-right"><span className="text-2xl font-semibold tracking-tight">{plan.price}</span>{plan.per && <span className="ml-1.5 text-sm text-muted">{plan.per}</span>}</p>
+            <p className="text-right"><span className={`text-2xl font-semibold tracking-tight ${plan.id === 'player' ? 'text-accent' : ''}`}>{plan.price}</span>{plan.per && <span className="ml-1.5 text-sm text-muted">{plan.per}</span>}</p>
           </div>
           <p className="mt-2 text-xs leading-5 text-muted">{plan.note}</p>
           <ul className="mt-6 space-y-3">{plan.items.map(item => <li key={item} className="flex gap-3 text-sm leading-6 text-ink"><span className="text-accent" aria-hidden="true">✓</span>{item}</li>)}</ul>

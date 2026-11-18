@@ -20,7 +20,7 @@ export function Header() {
         </PopoverButton>
         <AnimatePresence>{open && <>
           <PopoverBackdrop static as={motion.div} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 bg-ground/80 backdrop-blur-sm" />
-          <PopoverPanel static as={motion.div} initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} className="absolute inset-x-4 top-[calc(var(--site-header-height)+0.5rem)] max-h-[calc(100dvh-var(--site-header-height)-1.5rem)] overflow-y-auto rounded-2xl border border-line bg-surface p-6">
+          <PopoverPanel static as={motion.div} initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }} className="absolute inset-x-4 top-[calc(var(--site-header-height)+0.5rem)] max-h-[calc(100dvh-var(--site-header-height)-5rem)] overflow-y-auto rounded-2xl border border-line bg-surface p-6">
             {navigation.map(link => <PopoverButton as={Link} href={link.href} key={link.href} className="block border-b border-line py-4 text-lg">{link.label}</PopoverButton>)}
             <p className="mt-6 text-sm text-accent">{appStoreUrl ? <a href={appStoreUrl}>Download on the App Store ↗</a> : 'Coming soon to the App Store'}</p>
           </PopoverPanel>
