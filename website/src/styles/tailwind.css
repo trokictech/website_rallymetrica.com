@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 
-/* Two themes, the app's (design/lib/design/tokens.js › DARK · LIGHT — DECISIONS › Colour decisions, Oct 17): the roles keep their names, html[data-theme] picks the values.
-   Dark: the neon #F8FBA6 on #111217. Light: ONE yellow #FFB733 (the accent, player A, the logo's ball) on the app's ground #EDECE6 → #DDDCD4, ink #1A1B22. The utilities read the tokens, so a section needs no second class. */
+/* Two themes, the app's: the roles keep their names, html[data-theme] picks the values.
+   Dark: the neon #F8FBA6 on #111217. Light: green #2F916A (the accent, player A, the logo's ball) on the app's ground #EDECE6 → #DDDCD4, ink #1A1B22. The utilities read the tokens, so a section needs no second class. */
 @theme {
   --font-sans: var(--font-manrope), sans-serif;
   --color-accent: var(--t-accent);
@@ -16,7 +16,7 @@
 }
 
 :root, html[data-theme='dark'] { color-scheme: dark; --t-accent: #f8fba6; --t-on-accent: #111217; --t-ground: #111217; --t-surface: #1b1c24; --t-muted: #acaebc; --t-ink: #f6f6f8; --t-line: rgba(255,255,255,.1); --t-line-2: rgba(255,255,255,.07); --t-glow: #f8fba60d; --t-phone-border: #4f515a; --t-phone-shell: #0b0c11; --t-phone-inset: #22242c; --t-shadow: #0008; --t-body-bg: #111217; }
-html[data-theme='light'] { color-scheme: light; --t-accent: #ffb733; --t-on-accent: #161821; --t-ground: #edece6; --t-surface: #ffffff; --t-muted: #5c5e6b; --t-ink: #1a1b22; --t-line: rgba(26,27,34,.12); --t-line-2: rgba(26,27,34,.08); --t-glow: #ffb7331a; --t-phone-border: #c9c8c0; --t-phone-shell: #1a1b22; --t-phone-inset: #2a2b33; --t-shadow: #0003; --t-body-bg: linear-gradient(to bottom right, #edece6, #dddcd4); }
+html[data-theme='light'] { color-scheme: light; --t-accent: #2f916a; --t-on-accent: #161821; --t-ground: #edece6; --t-surface: #ffffff; --t-muted: #5c5e6b; --t-ink: #1a1b22; --t-line: rgba(26,27,34,.12); --t-line-2: rgba(26,27,34,.08); --t-glow: #2f916a1a; --t-phone-border: #c9c8c0; --t-phone-shell: #1a1b22; --t-phone-inset: #2a2b33; --t-shadow: #0003; --t-body-bg: linear-gradient(to bottom right, #edece6, #dddcd4); }
 :root { --site-header-height: 4.5rem; --sticky-offset: calc(var(--site-header-height) + 2rem); --sticky-content-height: calc(100svh - var(--sticky-offset) - 2rem); }
 html { scroll-behavior: smooth; scroll-padding-top: var(--sticky-offset); }
 body { background: var(--t-body-bg); background-attachment: fixed; color: var(--t-ink); font-family: var(--font-manrope), sans-serif; }
