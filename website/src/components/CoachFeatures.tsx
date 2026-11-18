@@ -3,7 +3,7 @@ import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
 
 const steps = [
-  { number: '01', title: 'Connect', description: 'The player opens Settings → Coach link to show their Rallymetrica code. The coach scans it from Settings → Students → Add student, and the player taps Link. Their profile, match history and any match in progress arrive on the coach’s phone.' },
+  { number: '01', title: 'Connect', description: 'The player opens Settings → Coach link and sends the coach a link, or shows the code on screen. The coach taps the link, or scans or pastes the code from Settings → Students → Add student, and the player confirms. Their profile, match history and any match in progress arrive on the coach’s phone.' },
   { number: '02', title: 'Follow', description: 'From then on every point the player saves reaches the coach as it lands — in the background, with a notification every set, game or point, set per student. Open the live card for the score, the report so far and the replay. Rally and serve sessions arrive the same way; for a session you are told when it starts and when it ends.' },
 ]
 

@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: 'Support', description: 'Help with Ra
 
 const sections: LegalSection[] = [
   { id: 'contact', title: 'What to include', paragraphs: [
-    'Say which iPhone or iPad and iOS version you use, which plan you are on (gear → Plan), and what you expected against what happened. A screenshot helps. We answer within two business days.',
+    'Say which phone or tablet and which iOS or Android version you use, which plan you are on (gear → Plan), and what you expected against what happened. A screenshot helps. We answer within two business days.',
   ] },
   { id: 'start', title: 'Getting started', bullets: [
     'First start: enter a first name, then choose Continue free or a plan. Nothing else is asked; there is no account.',
@@ -18,11 +18,11 @@ const sections: LegalSection[] = [
     'To see every screen populated before you record anything: gear → Data → Load demo season.',
   ] },
   { id: 'plans', title: 'Plans and purchases', bullets: [
-    'Free scores every match and includes two Detailed matches to try. Player adds Detailed tracking on every match, rally and serve sessions, the full stats engine and a coach link. Coach (up to 5 students) and Academy (up to 25) add the roster, play patterns and per-student notifications.',
-    'Every subscription starts with a 7-day free trial and is billed through your Apple ID. Cancel any time in iPhone Settings → your name → Subscriptions; the plan runs to the end of the period you paid for.',
+    'Free scores every match and includes two Detailed matches to try. The two are counted per device: clearing the data or reinstalling does not reset them, and a new installation shows them a few seconds after its first launch online. Player adds Detailed tracking on every match, rally and serve sessions, the full stats engine and a coach link. Coach (up to 5 students) and Academy (up to 25) add the roster, play patterns and per-student notifications.',
+    'Every subscription starts with a 7-day free trial and is billed through your Apple ID or Google account. Cancel any time: on iPhone in Settings → your name → Subscriptions, on Android in Google Play under Payments & subscriptions. The plan runs to the end of the period you paid for.',
     'Changing plan: gear → Plan. Upgrades take effect at once; a downgrade applies when the current period ends.',
-    'Reinstalled or new phone: gear → Plan → Restore purchases. Your plan is tied to your Apple ID, so nothing is lost; your match data is restored separately from a backup (below).',
-    'Refunds are handled by Apple: reportaproblem.apple.com.',
+    'Reinstalled or new phone: gear → Plan → Restore purchases. Your plan is tied to your Apple ID or Google account, so nothing is lost; your match data is restored separately from a backup (below).',
+    'Refunds are handled by the store: reportaproblem.apple.com for Apple, your order history in Google Play for Google.',
   ] },
   { id: 'sessions', title: 'Practice sessions', bullets: [
     'A rally session is a game with a score: first to 11, 15 or 21 in one to five blocks, timed, or open. Each rally starts with a serve or a feed, as set in the format; the board’s dot marks who starts next. One rally is one point, so the report is the match report — without the pressure page or the situation and score cuts, which belong to a tennis score.',
@@ -32,22 +32,24 @@ const sections: LegalSection[] = [
     'A session cannot change its format once started; stopping early is the menu’s End session.',
   ] },
   { id: 'coach', title: 'The coach link', bullets: [
-    'Linking: the player opens gear → Coach link to show a code; the coach opens gear → Students → Add student and scans it; the player taps Link to confirm. Both phones need to be online.',
+    'Linking: the player opens gear → Coach link and taps Send link, or shows the code on screen. The coach taps the link in the message (the app asks before anything is sent), or opens gear → Students → Add student to scan the code or paste it. The player confirms on their phone. Both phones need to be online.',
+    'If the link in a message cannot be tapped in your chat app, copy the message and use Paste code under Add student.',
+    'A request sent by mistake: the coach opens gear → Students, taps the waiting row and Withdraw request. Nothing is shared until the player confirms.',
     'After that the coach receives the player’s matches and sessions live, point by point. Everything travels end-to-end encrypted between the two phones; our relay cannot read it.',
     'Live scores not arriving: check the coach’s gear → Notifications (and the per-student setting under gear → Students), that notifications are allowed for Rallymetrica in iPhone Settings, and that the player’s phone has a connection — points are queued and sent when it does. For a practice session the coach is told at its start and end only.',
-    'Unlinking: the player taps gear → Coach link → Unlink; the coach taps the student → Remove. The coach’s copies of the player’s matches are removed; the player keeps everything.',
+    'Unlinking: the player taps gear → Coach link → Unlink; the coach opens gear → Students, taps the student and Unlink student. The matches, sessions and patterns the player’s phone sent leave the coach’s phone; the coach’s roster entry for the player stays, and the player keeps everything.',
   ] },
   { id: 'data', title: 'Your data', bullets: [
     'Matches and sessions live on your phone, not on our servers. Deleting the app deletes them.',
     'Export a report as PDF: on any report — a match, a rally or co-op session, a serve session — tap Share. The PDF is the report on paper, page for page: the cover, Momentum, Aggression, the tables, the landing maps with their placement tables, the patterns and the timeline; a co-op’s Runs and a serve session’s Placement and Accuracy pages where those apply. Send it, save it to Files or print it from the same sheet.',
-    'Export the data as CSV: the same Share sheet offers Export CSV — one row per ball of the match or session, every recorded fact beside it (the point, the score before it, the server, how it ended, the ball’s hitter, landing and whether it was in), ready for a spreadsheet or a pivot table. Under gear → Data → Export stats to CSV the whole season goes out as one file: one row per match and player, every statistic in the catalogue with its numerator and denominator.',
+    'Export the data as CSV: the same Share sheet offers Export CSV — one row per ball of the match or session, every recorded fact beside it (the point, the score before it, the server, how it ended, the ball’s hitter, landing, whether it was in, whether it was a hook or a half volley, and when it was tapped), ready for a spreadsheet or a pivot table. Under gear → Data → Export stats to CSV the whole season goes out as one file: one row per match and player, every statistic in the catalogue with its numerator and denominator.',
     'Import from SwingVision — coming soon. Rallymetrica will read a SwingVision match export as a Detailed match: the score, every point and every tracked ball, with the speeds and spins the file carries. The row is in the app under gear → Data; it opens when the import ships.',
     'Backup: gear → Data → Back up to a file writes one Rallymetrica document you can keep in Files, iCloud Drive or anywhere you choose. Restore it on any phone or iPad with gear → Data → Restore from backup.',
-    'Start over: gear → Data → Clear all data removes every player, match and session from the phone. Your subscription is unaffected.',
+    'Start over: gear → Data → Clear all data removes every player, match and session from the phone. Your subscription is unaffected, and so is the count of free Detailed matches already used.',
     'What leaves the phone and why is set out in full in the privacy policy.',
   ] },
   { id: 'problems', title: 'Something is wrong', bullets: [
-    'Purchases are not available: make sure you are signed in to the App Store on the phone and have a connection, then try again. Plans are App Store subscriptions and appear under Settings → Subscriptions on the phone.',
+    'Purchases are not available: make sure you are signed in to the App Store or Google Play on the phone and have a connection, then try again. Plans are store subscriptions: on iPhone they appear under Settings → Subscriptions, on Android in Google Play under Payments & subscriptions.',
     'The app shows the wrong plan after a purchase: gear → Plan → Restore purchases.',
     'A match looks mirrored or a point is wrong: open the match → Timeline, tap the point and correct it; the report recalculates.',
     'Anything else: write to us with the steps that led there. If the app has crashed, iPhone Settings → Privacy & Security → Analytics & Improvements → Analytics Data holds a log named Rallymetrica you can attach.',
@@ -56,5 +58,5 @@ const sections: LegalSection[] = [
 ]
 
 export default function Support() {
-  return <LegalDoc eyebrow="Support" title="Here to help." updated="October 18, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us — a real person reads every message." lead={<ContactCard eyebrow="Support & product questions" email={supportEmail} ask="Tell us what happened and what you expected, and include any detail that helps us see it — your device, your plan, a screenshot." subject="Rallymetrica support" />} sections={sections} />
+  return <LegalDoc eyebrow="Support" title="Here to help." updated="November 18, 2026" intro="Most questions are answered below or in the Learn guides. For anything else, write to us — a real person reads every message." lead={<ContactCard eyebrow="Support & product questions" email={supportEmail} ask="Tell us what happened and what you expected, and include any detail that helps us see it — your device, your plan, a screenshot." subject="Rallymetrica support" />} sections={sections} />
 }
